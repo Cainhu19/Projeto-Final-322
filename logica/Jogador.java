@@ -37,5 +37,8 @@ public class Jogador {
     public void setPontosOportunidade(int pontosOportunidade) { this.pontosOportunidade = pontosOportunidade; }
     public void setPontosNetworking(int pontosNetworking) { this.pontosNetworking = pontosNetworking; }
     
-    
+    /**
+     * Classe que gerencia a escolha 
+     */
+
 }
