@@ -2,7 +2,7 @@ package logica.grupos_e_ocupacoes;
 
 import logica.dados.*;
 
-// Representa os grupos (entidades, ligas, etc) que um jogador pode fazer parte
+// Representa os grupos (entidades, ligas, etc) que um jogador pode fazer parte.
 public class Grupo {
     private final String nome;
     private final Dado dado;

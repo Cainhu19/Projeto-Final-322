@@ -1,6 +1,6 @@
 package logica.grupos_e_ocupacoes;
 
-// Representa as ocupações que um jogador pode ter
+// Representa as ocupações que um jogador pode ter.
 public class Ocupacao {
     private final String nome;
     private final int renda;
