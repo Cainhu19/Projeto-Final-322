@@ -1,18 +1,24 @@
 package logica.grupos_e_ocupacoes;
 
-import logica.dados.*;
+import logica.dados_do_jogo.*;
 
-// Representa os grupos (entidades, ligas, etc) que um jogador pode fazer parte.
+/**
+ * Classe que representa os grupos (entidades, ligas etc.) dos quais um jogador pode fazer parte.
+ * 
+ * Possui atributos de nome, o dado especial que vem de bônus, 
+ * a quantidade de vezes que esse dado especial é rodado caso for escolhido
+ * e um valor booleano para indicar se um jogador já possui a instância do grupo.
+ */
 public class Grupo {
     private final String nome;
     private final Dado dado;
-    private final int qtdDados;
+    private final int qtdVezesDado;
     private boolean ocupado;
     
-    public Grupo(String nome, Dado dado, int qtdDados) {
+    public Grupo(String nome, Dado dado, int qtdVezesDado) {
     	this.nome = nome;
     	this.dado = dado;
-    	this.qtdDados = qtdDados;
+    	this.qtdVezesDado = qtdVezesDado;
     	this.ocupado = false;
     }
     
@@ -24,8 +30,8 @@ public class Grupo {
     	return dado;
     }
     
-    public int qtdDados() {
-    	return qtdDados;
+    public int getQtdVezesDado() {
+    	return qtdVezesDado;
     }
     
     public boolean isOcupado() {
