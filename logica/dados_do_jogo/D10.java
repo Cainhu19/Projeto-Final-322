@@ -11,7 +11,7 @@ public class D10 extends Dado {
     private int[] valores;
 
     public D10(int v0, int v1, int v2, int v3, int v4, int v5, int v6, int v7, int v8, int v9) {
-        valores = new int[8];
+        valores = new int[10];
         valores[0] = v0;
         valores[1] = v1;
         valores[2] = v2;
@@ -35,8 +35,6 @@ public class D10 extends Dado {
         for (int i = 0; i < vezes; i++) {
             resultado += valores[rand.nextInt(10)];
         }
-
-        return valores[resultado];
+        return resultado;
     }
-
 }

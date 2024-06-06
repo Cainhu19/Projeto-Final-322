@@ -49,7 +49,7 @@ public class Jogador {
     /**
      * Retorna o resultado da ação de rodar o dado normal (1d10).
      */
-    private int resultadoDadoNormal() {
+    public int resultadoDadoNormal() {
         return dados[0].rodar(1);
     }
 
@@ -64,6 +64,6 @@ public class Jogador {
      * Retorna verdadeiro se o jogador possui um dado comprado e falso caso contrário.
      */
     public boolean possuiDadoComprado() {
-        return (dados[2] == null ? false : true);
+        return dados[2] != null;
     }
 }

@@ -31,7 +31,6 @@ public class D6 extends Dado {
         for (int i = 0; i < vezes; i++) {
             resultado += valores[rand.nextInt(6)];
         }
-
-        return valores[resultado];
+        return resultado;
     }
 }

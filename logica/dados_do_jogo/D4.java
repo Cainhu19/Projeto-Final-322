@@ -29,8 +29,6 @@ public class D4 extends Dado {
         for (int i = 0; i < vezes; i++) {
             resultado += valores[rand.nextInt(4)];
         }
-
-        return valores[resultado];
+        return resultado;
     }
-
 }

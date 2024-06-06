@@ -17,15 +17,7 @@ public class Ocupacao {
     	this.ocupada = false;
     }
     
-    public String getNome() {
-    	return nome;
-    }
-    
-    public int getRenda() {
-    	return renda;
-    }
-    
-    public boolean isOcupada() {
-    	return ocupada;
-    }
+    public String getNome() { return nome; }
+    public int getRenda() { return renda; }
+    public boolean isOcupada() { return ocupada; }
 }

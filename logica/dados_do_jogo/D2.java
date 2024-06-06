@@ -27,7 +27,6 @@ public class D2 {
         for (int i = 0; i < vezes; i++) {
             resultado += valores[rand.nextInt(2)];
         }
-
-        return valores[resultado];
+        return resultado;
     }
 }

@@ -22,19 +22,8 @@ public class Grupo {
     	this.ocupado = false;
     }
     
-    public String getNome() {
-    	return nome;
-    }
-    
-    public Dado getDado() {
-    	return dado;
-    }
-    
-    public int getQtdVezesDado() {
-    	return qtdVezesDado;
-    }
-    
-    public boolean isOcupado() {
-    	return ocupado;
-    }
+    public String getNome() { return nome; }
+    public Dado getDado() { return dado; }
+    public int getQtdVezesDado() { return qtdVezesDado; }
+    public boolean isOcupado() { return ocupado; }
 }
