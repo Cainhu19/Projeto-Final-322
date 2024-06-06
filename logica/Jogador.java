@@ -19,6 +19,7 @@ public class Jogador {
     private int dinheiro;
     private int pontosOportunidade;
     private int pontosNetworking;
+    private int posicao;
 
     public Jogador(String nome) {
         this.nome = nome;
@@ -33,6 +34,7 @@ public class Jogador {
         this.dinheiro = 0;
         this.pontosOportunidade = 0;
         this.pontosNetworking = 0;
+        this.posicao = 0;
     }
 
     public String getNome() { return nome; }

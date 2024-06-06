@@ -27,7 +27,7 @@ public class Jogo {
 
         while (true) {
             for (Jogador jogador : jogadores) {
-
+                
             }
         }
     }

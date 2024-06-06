@@ -14,7 +14,7 @@ public class Main {
         jogadores.add(j2);
         jogadores.add(j3);
         LinkedList<Espaco> espacos = new LinkedList<>();
-
+        
         Jogo jogo = Jogo.getInstance(jogadores, 12, null);
     }
 }
