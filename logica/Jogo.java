@@ -23,4 +23,12 @@ public class Jogo {
         return jogoInstance;
     }
 
+    public void loopDeJogo() {
+
+        while (true) {
+            for (Jogador jogador : jogadores) {
+
+            }
+        }
+    }
 }
