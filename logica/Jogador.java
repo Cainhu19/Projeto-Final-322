@@ -88,6 +88,13 @@ public class Jogador {
     }
     
     /**
+     * Retorna o resultado da ação de rodar o dado especial comprado do jogador.
+     */
+    private int resultadoDadoComprado() {
+        return dados[2].rodar(1);
+    }
+
+    /**
      * Retorna verdadeiro se o jogador possui um dado comprado e falso caso contrário.
      */
     public boolean possuiDadoComprado() {
@@ -101,5 +108,19 @@ public class Jogador {
      */
     public void adicionarDinheiro(int valor) {
         this.dinheiro += valor;
+    }
+
+    /**
+     * Roda o dado de acordo com a escolha do jogador e retorna o resultado.
+     * 
+     * Escolha 1 é usar dado comprado e escolha 2 é usar dado especial.
+     */
+    public int resultadoDado(int escolha) {
+        if (escolha == 1 && possuiDadoComprado())
+            return resultadoDadoComprado();
+        else if (escolha == 2)
+            return resultadoDadoEspecial();
+        else
+            return resultadoDadoNormal();
     }
 }
