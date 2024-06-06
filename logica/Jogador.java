@@ -19,7 +19,7 @@ public class Jogador {
     private int dinheiro;
     private int pontosOportunidade;
     private int pontosNetworking;
-    private int posicao;
+    private int[] posicao;
 
     public Jogador(String nome) {
         this.nome = nome;
@@ -34,7 +34,9 @@ public class Jogador {
         this.dinheiro = 0;
         this.pontosOportunidade = 0;
         this.pontosNetworking = 0;
-        this.posicao = 0;
+        this.posicao = new int[2];
+        posicao[0] = 0; // Caminho
+        posicao[1] = 0; // Espaço (dentro do caminho)
     }
 
     public String getNome() { return nome; }
@@ -47,7 +49,6 @@ public class Jogador {
     public int getPontosOportunidade() { return pontosOportunidade; }
     public int getPontosNetworking() { return pontosNetworking; }
 
-    //TODO: ver se esse setter do grupo ta ok
     public void setTipoUniversidade(TipoUniversidade tipo) { this.tipoUniversidade = tipo; }
     public void setFonteDeRenda(FonteDeRenda fonte) { this.fonteDeRenda = fonte; }
     public void setDados(Dado[] dados) { this.dados = dados; }
@@ -81,7 +82,7 @@ public class Jogador {
         if (tipoUniversidade == TipoUniversidade.PARTICULAR) {
             FonteDeRenda[] fontesParticular = {FonteDeRenda.HERDEIRO_PARTICULAR, FonteDeRenda.BOLSA_AUXILIO, FonteDeRenda.TIOS, FonteDeRenda.PAIS,
                 FonteDeRenda.EMPREGO, FonteDeRenda.MEIO_PERIODO, FonteDeRenda.ESTAGIO, FonteDeRenda.EMPREENDIMENTO};
-            fonteDeRenda = fontesParticular[rand.nextInt(7)];
+            fonteDeRenda = fontesParticular[rand.nextInt(8)];
         } else {
             FonteDeRenda[] fontesPublica = {FonteDeRenda.HERDEIRO_PUBLICA, FonteDeRenda.BOLSA_AUXILIO, FonteDeRenda.EMPREGO, FonteDeRenda.MEIO_PERIODO, 
                 FonteDeRenda.ESTAGIO, FonteDeRenda.EMPREENDIMENTO};

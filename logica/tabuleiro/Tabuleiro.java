@@ -3,20 +3,22 @@ package logica.tabuleiro;
 import java.util.LinkedList;
 
 public class Tabuleiro {
-    // TODO: singleton aqui
     private static Tabuleiro tabuleiroInstance;
-    private LinkedList<Espaco> espacos;
+    private LinkedList<Caminho> caminhos;
 
-    private Tabuleiro(int n, LinkedList<Espaco> espacos) {
-        this.espacos = new LinkedList<Espaco>();
-        this.espacos = espacos;
+    private Tabuleiro() {
+        this.caminhos= new LinkedList<Caminho>();
     }
 
-    public static Tabuleiro getInstance(int n, LinkedList<Espaco> espacos) {
+    public static Tabuleiro getInstance() {
         if (tabuleiroInstance == null) {
-            tabuleiroInstance = new Tabuleiro(n, espacos);
+            tabuleiroInstance = new Tabuleiro();
         }
 
         return tabuleiroInstance;
+    }
+
+    public void adicionarCaminho(Caminho caminho) {
+        caminhos.add(caminho);
     }
 }

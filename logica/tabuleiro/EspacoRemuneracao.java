@@ -2,7 +2,7 @@ package logica.tabuleiro;
 
 import logica.Jogador;
 
-public class EspacoRemuneracao implements Espaco {
+public class EspacoRemuneracao extends Espaco {
     @Override
     public void acao(Jogador jogador) {
         jogador.adicionarDinheiro(jogador.getFonteDeRenda().getRenda());

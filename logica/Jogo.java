@@ -12,7 +12,7 @@ public class Jogo {
 
     private Jogo(LinkedList<Jogador> jogadores, int nEspacos, LinkedList<Espaco> espacos) {
         this.jogadores = jogadores;
-        this.tabuleiro = Tabuleiro.getInstance(nEspacos, espacos);
+        this.tabuleiro = Tabuleiro.getInstance();
     }
 
     public static Jogo getInstance(LinkedList<Jogador> jogadores, int nEspacos, LinkedList<Espaco> espacos) {

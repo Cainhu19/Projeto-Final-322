@@ -2,6 +2,10 @@ package logica.tabuleiro;
 
 import logica.Jogador;
 
-public interface Espaco {
-    public void acao(Jogador jogador);
+public abstract class Espaco {
+    private String descricao;
+
+    public String imprimeDescricao() { return descricao; }
+
+    public abstract void acao(Jogador jogador);
 }
