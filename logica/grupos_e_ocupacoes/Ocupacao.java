@@ -20,4 +20,6 @@ public class Ocupacao {
     public String getNome() { return nome; }
     public int getRenda() { return renda; }
     public boolean isOcupada() { return ocupada; }
+
+    public void setOcupada(boolean ocupada) { this.ocupada = ocupada; }
 }

@@ -26,4 +26,6 @@ public class Grupo {
     public Dado getDado() { return dado; }
     public int getQtdVezesDado() { return qtdVezesDado; }
     public boolean isOcupado() { return ocupado; }
+
+    public void setOcupado(boolean ocupado) { this.ocupado = ocupado; }
 }
