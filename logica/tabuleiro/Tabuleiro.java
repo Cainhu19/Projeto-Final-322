@@ -7,7 +7,7 @@ public class Tabuleiro {
     private LinkedList<Caminho> caminhos;
 
     private Tabuleiro() {
-        this.caminhos= new LinkedList<Caminho>();
+        this.caminhos = new LinkedList<Caminho>();
     }
 
     public static Tabuleiro getInstance() {

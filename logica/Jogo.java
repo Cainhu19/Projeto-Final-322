@@ -10,14 +10,14 @@ public class Jogo {
     private LinkedList<Jogador> jogadores;
     private Tabuleiro tabuleiro;
 
-    private Jogo(LinkedList<Jogador> jogadores, int nEspacos, LinkedList<Espaco> espacos) {
+    private Jogo(LinkedList<Jogador> jogadores) {
         this.jogadores = jogadores;
         this.tabuleiro = Tabuleiro.getInstance();
     }
 
-    public static Jogo getInstance(LinkedList<Jogador> jogadores, int nEspacos, LinkedList<Espaco> espacos) {
+    public static Jogo getInstance(LinkedList<Jogador> jogadores) {
         if (jogoInstance == null) {
-            jogoInstance = new Jogo(jogadores, nEspacos, espacos);
+            jogoInstance = new Jogo(jogadores);
         }
 
         return jogoInstance;
@@ -27,7 +27,7 @@ public class Jogo {
 
         while (true) {
             for (Jogador jogador : jogadores) {
-                
+
             }
         }
     }
