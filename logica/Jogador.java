@@ -2,6 +2,8 @@ package logica;
 
 import logica.dados_do_jogo.*;
 import logica.grupos_e_ocupacoes.*;
+
+import java.util.LinkedList;
 import java.util.Random;
 
 /**
@@ -20,6 +22,7 @@ public class Jogador {
     private int pontosOportunidade;
     private int pontosNetworking;
     private int[] posicao;
+    private LinkedList<Integer> bifurcacoesPercorridas;
 
     public Jogador(String nome) {
         this.nome = nome;
@@ -37,6 +40,7 @@ public class Jogador {
         this.posicao = new int[2];
         posicao[0] = 0; // Caminho
         posicao[1] = 0; // Espaço (dentro do caminho)
+        this.bifurcacoesPercorridas = new LinkedList<Integer>();
     }
 
     public String getNome() { return nome; }
@@ -48,6 +52,8 @@ public class Jogador {
     public int getDinheiro() { return dinheiro; }
     public int getPontosOportunidade() { return pontosOportunidade; }
     public int getPontosNetworking() { return pontosNetworking; }
+    public int[] getPosicao() { return posicao; }
+    public LinkedList<Integer> getBifurcacoesPercorridas() { return bifurcacoesPercorridas; }
 
     public void setTipoUniversidade(TipoUniversidade tipo) { this.tipoUniversidade = tipo; }
     public void setFonteDeRenda(FonteDeRenda fonte) { this.fonteDeRenda = fonte; }
@@ -57,6 +63,7 @@ public class Jogador {
     public void setDinheiro(int dinheiro) { this.dinheiro = dinheiro; }
     public void setPontosOportunidade(int pontosOportunidade) { this.pontosOportunidade = pontosOportunidade; }
     public void setPontosNetworking(int pontosNetworking) { this.pontosNetworking = pontosNetworking; }
+    public void setPosicao(int[] posicao) { this.posicao = posicao; }
     
     
     /**
@@ -72,12 +79,65 @@ public class Jogador {
     private int resultadoDadoEspecial() {
         return grupo.getDado().rodar(grupo.getQtdVezesDado());
     }
+    
+    /**
+     * Retorna o resultado da ação de rodar o dado especial comprado do jogador.
+     */
+    private int resultadoDadoComprado() {
+        return dados[2].rodar(1);
+    }
+    
+    /**
+     * Retorna verdadeiro se o jogador possui um dado comprado e falso caso contrário.
+     */
+    public boolean possuiDadoComprado() {
+        return dados[2] != null;
+    }
+    
+    /**
+     * Roda o dado de acordo com a escolha do jogador e retorna o resultado.
+     * 
+     * @param escolha indica qual dado o jogador quer utilizar (1: dado comprado, 2: dado especial, nenhum dos dois: dado normal).
+     */
+    public int resultadoDado(int escolha) {
+        if (escolha == 1 && possuiDadoComprado())
+        return resultadoDadoComprado();
+        else if (escolha == 2)
+        return resultadoDadoEspecial();
+        else
+        return resultadoDadoNormal();
+    }
+    
+    /**
+     * Calcula a pontuação do jogador ao decorrer do jogo.
+     */
+    public int calcularPontuacao() {
+        return (dinheiro / 1000) + pontosOportunidade + (pontosNetworking / 3);
+    }
+    
+    /**
+     * Adiciona um valor à quantidade de dinheiro atual do jogador.
+     * 
+     * @param valor a quantidade de dinheiro a ser adicionada.
+     */
+    public void adicionarDinheiro(int valor) {
+        this.dinheiro += valor;
+    }
+
+    /**
+     * Remove certa quantidade dinheiro do jogador.
+     * 
+     * @param valor a quantidade de dinheiro a ser removida.
+     */
+    public void removerDinheiro(int valor) {
+        this.dinheiro -= valor;
+    }
 
     // TODO: ver se o método tá certo até agr pelo menos e ajustar a chance de sortear cada fonte
     /**
      * Determina qual fonte de renda será recebida pelo jogador no início do jogo de acordo com o tipo de sua universidade.
      */
-    private void sortearFonteDeRendaInicial() {
+    public void sortearFonteDeRendaInicial() {
         Random rand = new Random();
         if (tipoUniversidade == TipoUniversidade.PARTICULAR) {
             FonteDeRenda[] fontesParticular = {FonteDeRenda.HERDEIRO_PARTICULAR, FonteDeRenda.BOLSA_AUXILIO, FonteDeRenda.TIOS, FonteDeRenda.PAIS,
@@ -89,41 +149,8 @@ public class Jogador {
             fonteDeRenda = fontesPublica[rand.nextInt(6)];
         }
     }
-    
-    /**
-     * Retorna o resultado da ação de rodar o dado especial comprado do jogador.
-     */
-    private int resultadoDadoComprado() {
-        return dados[2].rodar(1);
-    }
 
-    /**
-     * Retorna verdadeiro se o jogador possui um dado comprado e falso caso contrário.
-     */
-    public boolean possuiDadoComprado() {
-        return dados[2] != null;
-    }
-
-    /**
-     * Adiciona um valor à quantidade de dinheiro atual do jogador.
-     * 
-     * @param valor a quantidade de dinheiro a ser adicionada.
-     */
-    public void adicionarDinheiro(int valor) {
-        this.dinheiro += valor;
-    }
-
-    /**
-     * Roda o dado de acordo com a escolha do jogador e retorna o resultado.
-     * 
-     * Escolha 1 é usar dado comprado e escolha 2 é usar dado especial.
-     */
-    public int resultadoDado(int escolha) {
-        if (escolha == 1 && possuiDadoComprado())
-            return resultadoDadoComprado();
-        else if (escolha == 2)
-            return resultadoDadoEspecial();
-        else
-            return resultadoDadoNormal();
+    public void adicionarBifurcacaoPercorrida(int bifurcacao) {
+        bifurcacoesPercorridas.add(bifurcacao);
     }
 }

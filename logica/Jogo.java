@@ -24,15 +24,27 @@ public class Jogo {
     }
 
     public void loopDeJogo() {
+        Scanner sc = new Scanner(System.in);
+        int jogadorAtual = 0;
+        boolean continuarJogo = true;
+        while (continuarJogo) {
+            Jogador jogador = jogadores.get(jogadorAtual);
+            int resultadoDado = jogador.resultadoDado(0);
+            System.out.printf("Jogador %s joga o dado: %d\n", jogador.getNome(), resultadoDado);
 
-        while (true) {
-            for (Jogador jogador : jogadores) {
-                System.err.printf("Jogador %s joga o dado: %d\n", jogador.getNome(), jogador.resultadoDado(0));
-                Scanner sc = new Scanner(System.in);
+            tabuleiro.moverJogador(jogador, resultadoDado, sc);
 
-                System.err.println("Digite para sair");
-                sc.next();
+            System.out.println("Digite 'sair' para sair");
+            if (sc.next().equals("sair")) {
+                jogadores.remove(jogadorAtual);
+                if (jogadores.size() <= 1) {
+                    continuarJogo = false;
+                    break;
+                }
+            } else {
+                jogadorAtual = (jogadorAtual + 1) % jogadores.size();
             }
         }
+        sc.close();
     }
 }

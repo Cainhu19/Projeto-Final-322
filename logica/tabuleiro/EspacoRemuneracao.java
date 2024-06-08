@@ -11,6 +11,8 @@ public class EspacoRemuneracao extends Espaco {
 
     @Override
     public void acao(Jogador jogador) {
-        jogador.adicionarDinheiro(jogador.getFonteDeRenda().getRenda());
+        if (jogador.getFonteDeRenda() != null) {
+            jogador.adicionarDinheiro(jogador.getFonteDeRenda().getRenda());
+        }
     }
 }
