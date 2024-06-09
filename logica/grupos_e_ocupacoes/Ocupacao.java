@@ -1,5 +1,7 @@
 package logica.grupos_e_ocupacoes;
 
+import logica.FonteDeRenda;
+
 /**
  * Classe que representa as ocupações (emprego, estágio etc.) que um jogador pode ter.
  * 
@@ -8,18 +10,22 @@ package logica.grupos_e_ocupacoes;
  */
 public class Ocupacao {
     private final String nome;
-    private final int renda;
+    private final FonteDeRenda fonteDeRenda;
     private boolean ocupada;
     
-    public Ocupacao(String nome, int renda) {
+    public Ocupacao(String nome, FonteDeRenda fonteDeRenda) {
     	this.nome = nome;
-    	this.renda = renda;
+    	this.fonteDeRenda = fonteDeRenda;
     	this.ocupada = false;
     }
     
     public String getNome() { return nome; }
-    public int getRenda() { return renda; }
+    public FonteDeRenda getFonteDeRenda() { return fonteDeRenda; }
     public boolean isOcupada() { return ocupada; }
 
     public void setOcupada(boolean ocupada) { this.ocupada = ocupada; }
+
+    public int getRenda() {
+        return fonteDeRenda.getRenda();
+    }
 }

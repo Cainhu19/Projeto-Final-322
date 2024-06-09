@@ -108,6 +108,7 @@ public class Jogador {
 
     public void setOcupacao(Ocupacao ocupacao) {
         this.ocupacao = ocupacao;
+        this.setFonteDeRenda(ocupacao.getFonteDeRenda());
     }
 
     public void setDinheiro(int dinheiro) {
@@ -122,8 +123,8 @@ public class Jogador {
         this.pontosNetworking = pontosNetworking;
     }
 
-    public void setPosicao(int i, int pos) {
-        this.posicao[i] = pos;
+    public void setPosicao(int[] pos) {
+        this.posicao = pos;
     }
 
     /**
@@ -219,5 +220,13 @@ public class Jogador {
 
     public void adicionarBifurcacaoPercorrida(int bifurcacao) {
         bifurcacoesPercorridas.add(bifurcacao);
+    }
+
+    public void adicionarPontosNetworking(int pontos) {
+        pontosNetworking += pontos;
+    }
+
+    public void adicionarPontosOportunidade(int pontos) {
+        pontosOportunidade += pontos;
     }
 }

@@ -1,7 +1,6 @@
 package logica;
 
 import java.util.LinkedList;
-import java.util.Scanner;
 
 import logica.tabuleiro.Tabuleiro;
 
@@ -30,12 +29,10 @@ public class Jogo {
             Jogador jogador = jogadores.get(jogadorAtual);
             int resultadoDado = jogador.resultadoDado(0);
             System.out.printf("Jogador %s joga o dado: %d\n", jogador.getNome(), resultadoDado);
-
             tabuleiro.moverJogador(jogador, resultadoDado);
 
             System.out.println("Digite 'sair' para sair");
-            continuarJogo = Entrada.continuarJogo();
-            if (continuarJogo) {
+            if (Entrada.continuarJogo()) {
                 jogadores.remove(jogadorAtual);
                 if (jogadores.size() <= 1) {
                     continuarJogo = false;
@@ -45,5 +42,6 @@ public class Jogo {
                 jogadorAtual = (jogadorAtual + 1) % jogadores.size();
             }
         }
+        Entrada.fecharScanner();
     }
 }

@@ -9,6 +9,8 @@ public class EspacoRemuneracao extends Espaco {
         this.descricao = descricao;
     }
 
+    public String getDescricao() { return descricao; }
+
     @Override
     public void acao(Jogador jogador) {
         if (jogador.getFonteDeRenda() != null) {
