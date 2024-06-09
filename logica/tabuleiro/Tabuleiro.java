@@ -67,13 +67,16 @@ public class Tabuleiro {
             jogador.setPosicao(1, 0);
             switch (escolha) {
                 case 1:
-                    return caminhos.get(jogador.getPosicao()[0] + 1);
+                    jogador.setPosicao(0, jogador.getPosicao()[0] + 1);
+                    return caminhos.get(jogador.getPosicao()[0]);
                 case 2:
-                    return caminhos.get(jogador.getPosicao()[0] + 2);
+                    jogador.setPosicao(0, jogador.getPosicao()[0] + 2);
+                    return caminhos.get(jogador.getPosicao()[0]);
                 // alguma coisa no caso default (tratar exceção de escolha inválida??)
             }
         }
-        return caminhos.get(jogador.getPosicao()[0] + 1);
+        jogador.setPosicao(0, jogador.getPosicao()[0] + 1);
+        return caminhos.get(jogador.getPosicao()[0]);
     }
 
     /**
@@ -84,7 +87,7 @@ public class Tabuleiro {
      *                   avança; negativo: jogador volta)
      * @param scan       scanner que lê a entrada do jogador.
      */
-    public void moverJogador(Jogador jogador, int quantidade, Scanner sc) {
+    public void moverJogador(Jogador jogador, int quantidade) {
         Caminho caminhoAtual = caminhos.get(jogador.getPosicao()[0]);
         Espaco espacoAtual = caminhoAtual.getEspacos().get(jogador.getPosicao()[1]);
 
@@ -92,11 +95,12 @@ public class Tabuleiro {
             if (checaFimCaminho(jogador)) {
                 caminhoAtual = jogadorMudaCaminho(jogador);
                 espacoAtual = caminhoAtual.getEspacos().get(0);
+
             } else {
-                jogador.getPosicao()[1] += 1;
-                jogador.getPosicao()[2] += 1;
+                jogador.setPosicao(1, jogador.getPosicao()[1] + 1);
                 espacoAtual = caminhoAtual.getEspacos().get(jogador.getPosicao()[1]);
             }
+            jogador.setPosicao(2, jogador.getPosicao()[2] + 1);
         }
 
         // int espacosCaminhoAtual = caminhos.get(caminhoAtual).getNumeroEspacos();

@@ -24,7 +24,6 @@ public class Jogo {
     }
 
     public void loopDeJogo() {
-        Scanner sc = new Scanner(System.in);
         int jogadorAtual = 0;
         boolean continuarJogo = true;
         while (continuarJogo) {
@@ -32,10 +31,11 @@ public class Jogo {
             int resultadoDado = jogador.resultadoDado(0);
             System.out.printf("Jogador %s joga o dado: %d\n", jogador.getNome(), resultadoDado);
 
-            tabuleiro.moverJogador(jogador, resultadoDado, sc);
+            tabuleiro.moverJogador(jogador, resultadoDado);
 
             System.out.println("Digite 'sair' para sair");
-            if (sc.next().equals("sair")) {
+            continuarJogo = Entrada.continuarJogo();
+            if (continuarJogo) {
                 jogadores.remove(jogadorAtual);
                 if (jogadores.size() <= 1) {
                     continuarJogo = false;
@@ -45,6 +45,5 @@ public class Jogo {
                 jogadorAtual = (jogadorAtual + 1) % jogadores.size();
             }
         }
-        sc.close();
     }
 }
