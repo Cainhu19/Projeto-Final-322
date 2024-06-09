@@ -9,7 +9,7 @@ public class Entrada {
         return sc.nextInt();
     }
     
-    public static String respotaString() {
+    public static String respostaString() {
         return sc.next();
     }
 
@@ -17,9 +17,7 @@ public class Entrada {
         return sc.next().equals("sair");
     }
 
-
     public static void fecharScanner() {
         sc.close();
     }
-
 }

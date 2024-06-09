@@ -25,7 +25,7 @@ public class Ocupacao {
 
     public void setOcupada(boolean ocupada) { this.ocupada = ocupada; }
 
-    public int getRenda() {
+    public int getRemuneracao() {
         return fonteDeRenda.getRenda();
     }
 }

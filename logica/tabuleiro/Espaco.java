@@ -3,7 +3,11 @@ package logica.tabuleiro;
 import logica.Jogador;
 
 public abstract class Espaco {
-    private String descricao;
+    protected String descricao;
+
+    protected Espaco(String descricao) {
+        this.descricao = descricao;
+    }
 
     public String imprimeDescricao() { return descricao; }
 

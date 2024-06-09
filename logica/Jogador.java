@@ -24,6 +24,7 @@ public class Jogador {
     private int pontosNetworking;
     private int[] posicao;
     private LinkedList<Integer> bifurcacoesPercorridas;
+    private boolean caiuEmCasaDeEstudos;
 
     public Jogador(String nome) {
         this.nome = nome;
@@ -35,7 +36,7 @@ public class Jogador {
         dados[2] = null;
         this.grupo = null;
         this.ocupacao = null;
-        this.dinheiro = 0;
+        this.dinheiro = 500;
         this.pontosOportunidade = 0;
         this.pontosNetworking = 0;
         this.posicao = new int[3];
@@ -43,6 +44,7 @@ public class Jogador {
         posicao[1] = 0; // Espaço (dentro do caminho)
         posicao[2] = 0; // Posicao absoluta
         this.bifurcacoesPercorridas = new LinkedList<Integer>();
+        this.caiuEmCasaDeEstudos = false;
     }
 
     public String getNome() {
@@ -89,6 +91,10 @@ public class Jogador {
         return bifurcacoesPercorridas;
     }
 
+    public boolean getCaiuEmCasaDeEstudos() {
+        return caiuEmCasaDeEstudos;
+    }
+
     public void setTipoUniversidade(TipoUniversidade tipo) {
         this.tipoUniversidade = tipo;
     }
@@ -125,6 +131,10 @@ public class Jogador {
 
     public void setPosicao(int[] pos) {
         this.posicao = pos;
+    }
+
+    public void setCaiuEmCasaDeEstudos(boolean caiuEmCasaDeEstudos) {
+        this.caiuEmCasaDeEstudos = caiuEmCasaDeEstudos;
     }
 
     /**
@@ -179,21 +189,13 @@ public class Jogador {
     }
 
     /**
-     * Adiciona um valor à quantidade de dinheiro atual do jogador.
+     * Ajusta a quantidade de dinheiro atual do jogador. Pode ser usado para adicionar (valor positivo)
+     * ou remover (valor negativo) dinheiro.
      * 
-     * @param valor a quantidade de dinheiro a ser adicionada.
+     * @param valor a quantidade de dinheiro a ser adicionada (se for positivo) ou removida (negativo).
      */
-    public void adicionarDinheiro(int valor) {
+    public void ajustarDinheiro(int valor) {
         this.dinheiro += valor;
-    }
-
-    /**
-     * Remove certa quantidade dinheiro do jogador.
-     * 
-     * @param valor a quantidade de dinheiro a ser removida.
-     */
-    public void removerDinheiro(int valor) {
-        this.dinheiro -= valor;
     }
 
     // TODO: ver se o método tá certo até agr pelo menos e ajustar a chance de
