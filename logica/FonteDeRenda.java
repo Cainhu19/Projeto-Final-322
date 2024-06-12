@@ -1,11 +1,10 @@
 package logica;
 
 public enum FonteDeRenda {
-    HERDEIRO_PARTICULAR(1500),
-    HERDEIRO_PUBLICA(1100),
-    BOLSA_AUXILIO(900),
+    HERDEIRO(1500),
     TIOS(1000),
     PAIS(1000),
+    BOLSA_AUXILIO(900),
     EMPREGO(1400),
     MEIO_PERIODO(700),
     ESTAGIO(600),

@@ -207,13 +207,13 @@ public class Jogador {
     public void sortearFonteDeRendaInicial() {
         Random rand = new Random();
         if (tipoUniversidade == TipoUniversidade.PARTICULAR) {
-            FonteDeRenda[] fontesParticular = { FonteDeRenda.HERDEIRO_PARTICULAR, FonteDeRenda.BOLSA_AUXILIO,
+            FonteDeRenda[] fontesParticular = { FonteDeRenda.BOLSA_AUXILIO,
                     FonteDeRenda.TIOS, FonteDeRenda.PAIS,
                     FonteDeRenda.EMPREGO, FonteDeRenda.MEIO_PERIODO, FonteDeRenda.ESTAGIO,
                     FonteDeRenda.EMPREENDIMENTO };
             fonteDeRenda = fontesParticular[rand.nextInt(8)];
         } else {
-            FonteDeRenda[] fontesPublica = { FonteDeRenda.HERDEIRO_PUBLICA, FonteDeRenda.BOLSA_AUXILIO,
+            FonteDeRenda[] fontesPublica = { FonteDeRenda.BOLSA_AUXILIO,
                     FonteDeRenda.EMPREGO, FonteDeRenda.MEIO_PERIODO,
                     FonteDeRenda.ESTAGIO, FonteDeRenda.EMPREENDIMENTO };
             fonteDeRenda = fontesPublica[rand.nextInt(6)];
