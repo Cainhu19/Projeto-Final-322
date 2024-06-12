@@ -1,13 +1,14 @@
 package logica.tabuleiro;
 
 import logica.Entrada;
+import logica.FonteDeRenda;
+import logica.GerenciadorDeFontes;
 import logica.Jogador;
-import logica.grupos_e_ocupacoes.Grupo;
-import logica.grupos_e_ocupacoes.Ocupacao;
+import logica.grupos.Grupo;
 
 public class EspacoOportunidade extends Espaco {
     private Grupo grupo;
-    private Ocupacao ocupacao;
+    private FonteDeRenda fonteDeRenda;
 
     // Citar uso de polimorfismo nos construtores
     public EspacoOportunidade(String descricao, Grupo grupo) {
@@ -15,45 +16,53 @@ public class EspacoOportunidade extends Espaco {
         this.grupo = grupo;
     }
 
-    public EspacoOportunidade(String descricao, Ocupacao ocupacao) {
+    public EspacoOportunidade(String descricao, FonteDeRenda fonteDeRenda) {
         super(descricao);
-        this.ocupacao = ocupacao;
+        this.fonteDeRenda = fonteDeRenda;
     }
 
     // TODO: revisar esse método
     @Override
     public void acao(Jogador jogador) {
-        // Oportunidade de entrar num grupo
-        if (grupo != null && !grupo.isOcupado()) {
-            System.out.println(descricao);
-            if (Entrada.respostaString().equals("s")) {
-                if (jogador.getGrupo() != null) {
-                    if (jogador.getGrupo().equals(grupo)) { System.out.println("Você já faz parte desse grupo!"); return; }
-                    System.out.printf("Você já faz parte do grupo %s. Você vai sair do grupo atual.\n", jogador.getGrupo().getNome());
-                    jogador.getGrupo().setOcupado(false);
+        // Oportunidade de ter uma fonte de renda/ocupação
+        if (fonteDeRenda != null) {
+            if (!GerenciadorDeFontes.disponivel(fonteDeRenda)) {
+                if (!jogador.getFonteDeRenda().equals(fonteDeRenda)) {
+                    System.out.printf("A fonte de renda %s já está sendo ocupada por um jogador.\n", fonteDeRenda.getNome());
+                } else {
+                    System.out.printf("%s já é sua fonte de renda!\n", fonteDeRenda.getNome());
                 }
-                jogador.setGrupo(grupo);
-                grupo.setOcupado(true);
-                jogador.adicionarPontosNetworking(grupo.getBonusNetworking());
-                System.out.printf("Novo grupo: %s. (+%d pontos de networking)\n", grupo.getNome(), grupo.getBonusNetworking());
-            } else if (Entrada.respostaString().equals("n")) { 
-                System.out.println("Você não entrou no grupo."); 
+            } else {
+                System.out.println(descricao);
+                if (Entrada.respostaString().equals("s")) {
+                    if (fonteDeRenda.equals(FonteDeRenda.BOLSA_AUXILIO)) {
+                        jogador.setFonteDeRenda(fonteDeRenda);
+                    } else {
+                        GerenciadorDeFontes.ocupar(fonteDeRenda, jogador);
+                    }
+                    System.out.printf("Nova fonte de renda: %s.\n", fonteDeRenda.getNome());
+                }
             }
 
-        // Oportunidade de ter uma ocupação (mudar pra fonte de renda?)
-        } else if (ocupacao != null && !ocupacao.isOcupada()) {
-            System.out.println(descricao); 
-            if (Entrada.respostaString().equals("s")) {
-                if (jogador.getOcupacao() != null) {
-                    if (jogador.getOcupacao().equals(ocupacao)) { System.out.println("Você já tem essa fonte de renda!"); return;}
-                    System.out.printf("Você já tem uma fonte de renda: %s. Você deixará de ter essa fonte.\n", jogador.getOcupacao().getNome());
-                    jogador.getOcupacao().setOcupada(false);
+        // Oportunidade de entrar num grupo
+        } else if (grupo != null) {
+            if (grupo.isOcupado()) {
+                if (!jogador.getGrupo().equals(grupo)) {
+                    System.out.printf("Um jogador já faz parte de %s.\n", grupo.getNome());
+                } else {
+                    System.out.printf("Você já faz parte de %s!\n", grupo.getNome());
                 }
-                jogador.setOcupacao(ocupacao);
-                ocupacao.setOcupada(true);
-                System.out.printf("Nova fonte de renda: %s. (remuneração: %d)\n", ocupacao.getNome(), ocupacao.getRemuneracao());
-            } else if (Entrada.respostaString().equals("n")) { 
-                System.out.println("Você recusou a proposta."); 
+            } else {
+                System.out.println(descricao);
+                if (Entrada.respostaString().equals("s")) {
+                    if (jogador.getGrupo() != null) { 
+                        jogador.getGrupo().setOcupado(false); 
+                    }
+                    jogador.setGrupo(grupo);
+                    grupo.setOcupado(true);
+                    jogador.adicionarPontosNetworking(grupo.getBonusNetworking());
+                    System.out.printf("Novo grupo: %s. (+%d pontos de networking)\n", grupo.getNome(), grupo.getBonusNetworking());
+                }
             }
         }
     }

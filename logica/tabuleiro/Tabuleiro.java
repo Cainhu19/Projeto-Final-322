@@ -3,6 +3,7 @@ package logica.tabuleiro;
 import java.util.LinkedList;
 
 import logica.Entrada;
+import logica.FonteDeRenda;
 import logica.Jogador;
 
 public class Tabuleiro {
@@ -49,8 +50,8 @@ public class Tabuleiro {
     private int jogadorEscolheBifurcacao(Jogador jogador, int caminho) {
         System.out.println("Você chegou em uma bifurcação. Qual caminho deseja seguir?");
         if (caminho == 1) {
-            System.out.println("1. Universidade particular");
-            System.out.println("2. Universidade pública");
+            System.out.println("1. Socialização");
+            System.out.println("2. Estudos");
         }
         if (caminho == 4) {
             System.out.println("1. Caminho do networking");
@@ -97,6 +98,11 @@ public class Tabuleiro {
             // True se caminhoAtual igualar ao da bifurcação B mas jogador decidiu percorrer a A
             if (caminhoAtual % 3 == 2 && jogador.getBifurcacoesPercorridas().contains(caminhoAtual - 1)) {
                 caminhoAtual++;
+            }
+            // Verifica se saiu da primeira bifurcação sem uma fonte de renda
+            if (caminhoAtual == 3 && jogador.getFonteDeRenda() == null) {
+                jogador.setFonteDeRenda(FonteDeRenda.BOLSA_AUXILIO);
+                System.out.printf("A universidade decidiu lhe dar uma bolsa-auxílio! (%d de remuneração)", FonteDeRenda.BOLSA_AUXILIO.getRenda());
             }
             espacosCaminhoAtual = caminhos.get(caminhoAtual).getNumeroEspacos();
             if (caminhoAtual >= caminhos.size()) {  // Verifica se chegou no final do tabuleiro

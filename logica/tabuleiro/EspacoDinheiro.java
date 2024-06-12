@@ -14,9 +14,9 @@ public class EspacoDinheiro extends Espaco {
     public void acao(Jogador jogador) { // Usado tanto para ganhar quanto gastar dinheiro
         System.out.println(descricao);
         if (quantidade > 0) {
-            System.out.printf("(+%d na sua conta)", quantidade);
+            System.out.printf("(+%d na sua conta)\n", quantidade);
         } else {
-            System.out.printf("(-%d na sua conta)", quantidade);
+            System.out.printf("(%d na sua conta)\n", quantidade);
         }
         jogador.ajustarDinheiro(quantidade);
     }

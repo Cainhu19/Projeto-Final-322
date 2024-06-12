@@ -1,10 +1,9 @@
 package logica;
 
 import logica.dados_do_jogo.*;
-import logica.grupos_e_ocupacoes.*;
+import logica.grupos.*;
 
 import java.util.LinkedList;
-import java.util.Random;
 
 /**
  * Classe que gerencia o jogador no jogo.
@@ -14,11 +13,9 @@ import java.util.Random;
  */
 public class Jogador {
     private final String nome;
-    private TipoUniversidade tipoUniversidade;
     private FonteDeRenda fonteDeRenda;
     private Dado[] dados; // limite de três dados: o normal, o do grupo e um da loja.
     private Grupo grupo;
-    private Ocupacao ocupacao;
     private int dinheiro;
     private int pontosOportunidade;
     private int pontosNetworking;
@@ -28,31 +25,24 @@ public class Jogador {
 
     public Jogador(String nome) {
         this.nome = nome;
-        this.tipoUniversidade = null;
         this.fonteDeRenda = null;
         this.dados = new Dado[3];
         dados[0] = new D10(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         dados[1] = null;
         dados[2] = null;
         this.grupo = null;
-        this.ocupacao = null;
         this.dinheiro = 500;
         this.pontosOportunidade = 0;
         this.pontosNetworking = 0;
-        this.posicao = new int[3];
+        this.posicao = new int[2];
         posicao[0] = 0; // Caminho
         posicao[1] = 0; // Espaço (dentro do caminho)
-        posicao[2] = 0; // Posicao absoluta
         this.bifurcacoesPercorridas = new LinkedList<Integer>();
         this.caiuEmCasaDeEstudos = false;
     }
 
     public String getNome() {
         return nome;
-    }
-
-    public TipoUniversidade getTipoUniversidade() {
-        return tipoUniversidade;
     }
 
     public FonteDeRenda getFonteDeRenda() {
@@ -65,10 +55,6 @@ public class Jogador {
 
     public Grupo getGrupo() {
         return grupo;
-    }
-
-    public Ocupacao getOcupacao() {
-        return ocupacao;
     }
 
     public int getDinheiro() {
@@ -95,10 +81,6 @@ public class Jogador {
         return caiuEmCasaDeEstudos;
     }
 
-    public void setTipoUniversidade(TipoUniversidade tipo) {
-        this.tipoUniversidade = tipo;
-    }
-
     public void setFonteDeRenda(FonteDeRenda fonte) {
         this.fonteDeRenda = fonte;
     }
@@ -110,11 +92,6 @@ public class Jogador {
     public void setGrupo(Grupo grupo) {
         this.grupo = grupo;
         this.dados[1] = grupo.getDado();
-    }
-
-    public void setOcupacao(Ocupacao ocupacao) {
-        this.ocupacao = ocupacao;
-        this.setFonteDeRenda(ocupacao.getFonteDeRenda());
     }
 
     public void setDinheiro(int dinheiro) {
@@ -196,28 +173,6 @@ public class Jogador {
      */
     public void ajustarDinheiro(int valor) {
         this.dinheiro += valor;
-    }
-
-    // TODO: ver se o método tá certo até agr pelo menos e ajustar a chance de
-    // sortear cada fonte
-    /**
-     * Determina qual fonte de renda será recebida pelo jogador no início do jogo de
-     * acordo com o tipo de sua universidade.
-     */
-    public void sortearFonteDeRendaInicial() {
-        Random rand = new Random();
-        if (tipoUniversidade == TipoUniversidade.PARTICULAR) {
-            FonteDeRenda[] fontesParticular = { FonteDeRenda.BOLSA_AUXILIO,
-                    FonteDeRenda.TIOS, FonteDeRenda.PAIS,
-                    FonteDeRenda.EMPREGO, FonteDeRenda.MEIO_PERIODO, FonteDeRenda.ESTAGIO,
-                    FonteDeRenda.EMPREENDIMENTO };
-            fonteDeRenda = fontesParticular[rand.nextInt(8)];
-        } else {
-            FonteDeRenda[] fontesPublica = { FonteDeRenda.BOLSA_AUXILIO,
-                    FonteDeRenda.EMPREGO, FonteDeRenda.MEIO_PERIODO,
-                    FonteDeRenda.ESTAGIO, FonteDeRenda.EMPREENDIMENTO };
-            fonteDeRenda = fontesPublica[rand.nextInt(6)];
-        }
     }
 
     public void adicionarBifurcacaoPercorrida(int bifurcacao) {

@@ -1,4 +1,4 @@
-package logica.grupos_e_ocupacoes;
+package logica.grupos;
 
 import logica.dados_do_jogo.D4;
 
