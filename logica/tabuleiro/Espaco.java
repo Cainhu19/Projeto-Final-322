@@ -9,7 +9,9 @@ public abstract class Espaco {
         this.descricao = descricao;
     }
 
-    public String imprimeDescricao() { return descricao; }
+    public String imprimeDescricao() {
+        return descricao;
+    }
 
     public abstract void acao(Jogador jogador);
 }

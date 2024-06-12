@@ -1,7 +1,6 @@
 package logica;
 
 import logica.dados_do_jogo.*;
-import logica.grupos.*;
 
 import java.util.LinkedList;
 
@@ -166,10 +165,12 @@ public class Jogador {
     }
 
     /**
-     * Ajusta a quantidade de dinheiro atual do jogador. Pode ser usado para adicionar (valor positivo)
+     * Ajusta a quantidade de dinheiro atual do jogador. Pode ser usado para
+     * adicionar (valor positivo)
      * ou remover (valor negativo) dinheiro.
      * 
-     * @param valor a quantidade de dinheiro a ser adicionada (se for positivo) ou removida (negativo).
+     * @param valor a quantidade de dinheiro a ser adicionada (se for positivo) ou
+     *              removida (negativo).
      */
     public void ajustarDinheiro(int valor) {
         this.dinheiro += valor;

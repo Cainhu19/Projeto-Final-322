@@ -1,4 +1,4 @@
-package logica.grupos;
+package logica;
 
 import logica.dados_do_jogo.*;
 

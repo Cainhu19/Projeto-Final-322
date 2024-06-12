@@ -3,8 +3,6 @@ package logica;
 import java.util.HashMap;
 import java.util.Map;
 
-import logica.grupos.Grupo;
-
 /**
  * Classe que gerencia os grupos(Ligas/Entidades) disponíveis no jogo.
  * Garante que cada grupo seja ocupado por apenas um jogador por vez.

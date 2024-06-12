@@ -3,8 +3,9 @@ package logica.tabuleiro;
 import logica.Entrada;
 import logica.FonteDeRenda;
 import logica.GerenciadorDeFontes;
+import logica.GerenciadorDeGrupos;
+import logica.Grupo;
 import logica.Jogador;
-import logica.grupos.Grupo;
 
 public class EspacoOportunidade extends Espaco {
     private Grupo grupo;
@@ -28,7 +29,8 @@ public class EspacoOportunidade extends Espaco {
         if (fonteDeRenda != null) {
             if (!GerenciadorDeFontes.disponivel(fonteDeRenda)) {
                 if (!jogador.getFonteDeRenda().equals(fonteDeRenda)) {
-                    System.out.printf("A fonte de renda %s já está sendo ocupada por um jogador.\n", fonteDeRenda.getNome());
+                    System.out.printf("A fonte de renda %s já está sendo ocupada por um jogador.\n",
+                            fonteDeRenda.getNome());
                 } else {
                     System.out.printf("%s já é sua fonte de renda!\n", fonteDeRenda.getNome());
                 }
@@ -44,7 +46,7 @@ public class EspacoOportunidade extends Espaco {
                 }
             }
 
-        // Oportunidade de entrar num grupo
+            // Oportunidade de entrar num grupo
         } else if (grupo != null) {
             if (grupo.isOcupado()) {
                 if (!jogador.getGrupo().equals(grupo)) {
@@ -55,13 +57,10 @@ public class EspacoOportunidade extends Espaco {
             } else {
                 System.out.println(descricao);
                 if (Entrada.respostaString().equals("s")) {
-                    if (jogador.getGrupo() != null) { 
-                        jogador.getGrupo().setOcupado(false); 
-                    }
-                    jogador.setGrupo(grupo);
-                    grupo.setOcupado(true);
+                    GerenciadorDeGrupos.ocupar(grupo, jogador);
                     jogador.adicionarPontosNetworking(grupo.getBonusNetworking());
-                    System.out.printf("Novo grupo: %s. (+%d pontos de networking)\n", grupo.getNome(), grupo.getBonusNetworking());
+                    System.out.printf("Novo grupo: %s. (+%d pontos de networking)\n", grupo.getNome(),
+                            grupo.getBonusNetworking());
                 }
             }
         }
