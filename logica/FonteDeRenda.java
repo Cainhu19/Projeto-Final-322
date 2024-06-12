@@ -1,11 +1,13 @@
 package logica;
 
 public enum FonteDeRenda {
-    BOLSA_AUXILIO("Bolsa-Auxílio", 900),
-    EMPREGO("Emprego", 1400),
-    MEIO_PERIODO("Meio Período", 700),
-    ESTAGIO("Estágio", 600),
-    EMPREENDIMENTO("Empreendimento", 800);
+    BOLSA_AUXILIO("Bolsa-Auxílio", 500),
+    ASSISTENCIA_A_DOCENCIA("Assistência à docência", 600),
+    FREELANCER("Freelancer", 650),
+    ESTAGIO("Estágio", 700),
+    MEIO_PERIODO("Meio Período", 800),
+    EMPREENDIMENTO("Empreendimento", 1000),
+    EMPREGO("Emprego", 1500);
 
     private final String nome;
     private final int renda;
