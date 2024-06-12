@@ -36,10 +36,10 @@ public class Main {
                 Espaco e8a = new EspacoOportunidade("Você pode entrar na Atlética do seu curso. Deseja entrar? (s/n)",
                                 Grupo.ATLETICA_ESPORTES);
                 Espaco e9a = new EspacoOportunidade(
-                                "Você recebeu uma proposta de estágio com vale-transporte do lado da suacasa. Deseja aceitar? (s/n)",
+                                "Você recebeu uma proposta de estágio com vale-transporte do lado da suacasa.Deseja aceitar? (s/n)",
                                 FonteDeRenda.ESTAGIO);
                 Espaco e10a = new EspacoOportunidade(
-                                "Você foi aceito para receber uma bolsa-auxílio da sua universidade. Deseja recebê-la? (s/n)",
+                                "Você foi aceito para receber uma bolsa-auxílio da sua universidade. Desejarecebê-la? (s/n)",
                                 FonteDeRenda.BOLSA_AUXILIO);
                 Espaco e3b = new EspacoOportunidade(
                                 "Surgiu uma oportunidade de ser representante discente. Deseja aproveitá-la? (s/n)",

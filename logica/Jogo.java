@@ -23,6 +23,8 @@ public class Jogo {
     }
 
     public void loopDeJogo() {
+        tabuleiro.moverJogador(jogadores.getFirst(), 10);
+        tabuleiro.moverJogador(jogadores.getFirst(), 1);
         int jogadorAtual = 0;
         boolean continuarJogo = true;
         while (continuarJogo) {
