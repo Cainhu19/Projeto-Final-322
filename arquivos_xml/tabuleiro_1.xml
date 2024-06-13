@@ -1,0 +1,18 @@
+<Tabuleiro>
+    <Caminho>
+        <Espaco>
+            <desc>Inicio</desc>
+            <tipo>EXTREMIDADE</tipo>
+        </Espaco>
+        <Espaco>
+            <desc>Formatura do ensino médio com 80 pessoas</desc>
+            <tipo>NETWORKING</tipo>
+            <bonusNetworking>80</bonusNetworking>
+        </Espaco>
+        <Espaco>
+            <desc>Início das aulas, gaste 200 com materiais novos</desc>
+            <tipo>DINHEIRO</tipo>
+            <quantidade>-200</quantidade>
+        </Espaco>
+    </Caminho>
+</Tabuleiro>
