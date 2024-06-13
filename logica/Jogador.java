@@ -20,7 +20,7 @@ public class Jogador {
     private int pontosNetworking;
     private int[] posicao;
     private LinkedList<Integer> bifurcacoesPercorridas;
-    private boolean caiuEmCasaDeEstudos;
+    private int vezesEstudo;
 
     public Jogador(String nome) {
         this.nome = nome;
@@ -37,7 +37,7 @@ public class Jogador {
         posicao[0] = 0; // Caminho
         posicao[1] = 0; // Espaço (dentro do caminho)
         this.bifurcacoesPercorridas = new LinkedList<Integer>();
-        this.caiuEmCasaDeEstudos = false;
+        this.vezesEstudo = 0;
     }
 
     public String getNome() {
@@ -76,8 +76,8 @@ public class Jogador {
         return bifurcacoesPercorridas;
     }
 
-    public boolean getCaiuEmCasaDeEstudos() {
-        return caiuEmCasaDeEstudos;
+    public int getVezesEstudo() {
+        return vezesEstudo;
     }
 
     public void setFonteDeRenda(FonteDeRenda fonte) {
@@ -107,10 +107,6 @@ public class Jogador {
 
     public void setPosicao(int[] pos) {
         this.posicao = pos;
-    }
-
-    public void setCaiuEmCasaDeEstudos(boolean caiuEmCasaDeEstudos) {
-        this.caiuEmCasaDeEstudos = caiuEmCasaDeEstudos;
     }
 
     /**
@@ -186,5 +182,9 @@ public class Jogador {
 
     public void adicionarPontosOportunidade(int pontos) {
         pontosOportunidade += pontos;
+    }
+
+    public void incrementarVezesEstudo() {
+        vezesEstudo++;
     }
 }

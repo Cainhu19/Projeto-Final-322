@@ -16,7 +16,6 @@ public class EspacoPerdeRenda extends Espaco {
     @Override
     public void acao(Jogador jogador) {
         if (jogador.getFonteDeRenda() == null) {
-
             System.out.println("Não possui renda para perder");
             return;
         } else if (jogador.getFonteDeRenda().equals(FonteDeRenda.BOLSA_AUXILIO)) {
@@ -26,5 +25,4 @@ public class EspacoPerdeRenda extends Espaco {
         GerenciadorDeFontes.liberar(jogador.getFonteDeRenda());
         System.out.println("Jogador perdeu a renda e agora tem apenas a Bolsa");
     }
-
 }

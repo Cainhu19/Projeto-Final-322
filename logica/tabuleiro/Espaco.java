@@ -14,4 +14,9 @@ public abstract class Espaco {
     }
 
     public abstract void acao(Jogador jogador);
+
+    public void imprimirDescricao(String descricao) {
+        if (descricao == null) { return; }
+        System.out.println(descricao);
+    }
 }

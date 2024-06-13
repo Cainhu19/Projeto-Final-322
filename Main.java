@@ -1,8 +1,15 @@
 import java.util.LinkedList;
 
 import arquivos_leitura.LerEspacos;
-import logica.Jogador;
-import logica.Jogo;
+import logica.*;
+// import logica.tabuleiro.Caminho;
+// import logica.tabuleiro.Espaco;
+// import logica.tabuleiro.EspacoDinheiro;
+// import logica.tabuleiro.EspacoEstudo;
+// import logica.tabuleiro.EspacoNetworking;
+// import logica.tabuleiro.EspacoOportunidade;
+// import logica.tabuleiro.EspacoRemuneracao;
+// import logica.tabuleiro.Tabuleiro;
 
 public class Main {
         public static void main(String args[]) {
@@ -25,45 +32,29 @@ public class Main {
                 // Espaco e0 = new EspacoRemuneracao();
                 // Espaco e1 = new EspacoRemuneracao();
                 // Espaco e2 = new EspacoRemuneracao();
-                // Espaco e3a = new EspacoDinheiro("Início das aulas, gaste 200 com materiais
-                // novos", 200);
-                // Espaco e4a = new EspacoNetworking("Festa da Biologia, conversou com 25
-                // pessoas", 25);
+                // Espaco e3a = new EspacoDinheiro("Início das aulas, gaste 200 com materiais novos", 200);
+                // Espaco e4a = new EspacoNetworking("Festa da Biologia, conversou com 25 pessoas", 25);
                 // Espaco e5a = new EspacoDinheiro("Ganhou uma rifa da Veterinária", 150);
                 // Espaco e6a = new EspacoEstudo("Ficou estudando na biblioteca");
-                // Espaco e7a = new EspacoNetworking("Foi na recepção dos calouros do curso,
-                // conheceu 30 pessoas", 30);
-                // Espaco e8a = new EspacoOportunidade("Você pode entrar na Atlética do seu
-                // curso. Deseja entrar? (s/n)",
+                // Espaco e7a = new EspacoNetworking("Foi na recepção dos calouros do curso, conheceu 30 pessoas", 30);
+                // Espaco e8a = new EspacoOportunidade("Você pode entrar na Atlética do seu curso. Deseja entrar? (s/n)",
                 // Grupo.ATLETICA_ESPORTES);
-                // Espaco e9a = new EspacoOportunidade(
-                // "Você recebeu uma proposta de estágio com vale-transporte do lado da suacasa.
-                // Deseja aceitar? (s/n)",
+                // Espaco e9a = new EspacoOportunidade("Você recebeu uma proposta de estágio com vale-transporte do lado da suacasa. Deseja aceitar? (s/n)",
                 // FonteDeRenda.ESTAGIO);
-                // Espaco e10a = new EspacoOportunidade(
-                // "Você foi aceito para receber uma bolsa-auxílio da sua universidade. Deseja
-                // recebê-la? (s/n)",
+                // Espaco e10a = new EspacoOportunidade("Você foi aceito para receber uma bolsa-auxílio da sua universidade. Deseja recebê-la? (s/n)",
                 // FonteDeRenda.BOLSA_AUXILIO);
-                // Espaco e3b = new EspacoOportunidade(
-                // "Surgiu uma oportunidade de ser representante discente. Deseja aproveitá-la?
-                // (s/n)",
+                // Espaco e3b = new EspacoOportunidade("Surgiu uma oportunidade de ser representante discente. Deseja aproveitá-la? (s/n)",
                 // Grupo.REP_DISCENTE);
-                // Espaco e4b = new EspacoOportunidade(
-                // "Você foi aceito para receber uma bolsa-auxílio da sua universidade. Deseja
-                // recebê-la? (s/n)",
+                // Espaco e4b = new EspacoOportunidade("Você foi aceito para receber uma bolsa-auxílio da sua universidade. Deseja recebê-la? (s/n)",
                 // FonteDeRenda.BOLSA_AUXILIO);
-                // Espaco e5b = new EspacoOportunidade(
-                // "Você pensa em participar do seletivo de uma Liga Acadêmica. Deseja
-                // participar? (s/n)",
+                // Espaco e5b = new EspacoOportunidade("Você pensa em participar do seletivo de uma Liga Acadêmica. Deseja participar? (s/n)",
                 // Grupo.LIGA_PESQUISAS);
-                // Espaco e6b = new EspacoOportunidade("Te chamaram para entrar na Atlética.
-                // Deseja entrar? (s/n)",
+                // Espaco e6b = new EspacoOportunidade("Te chamaram para entrar na Atlética. Deseja entrar? (s/n)",
                 // Grupo.ATLETICA_ESPORTES);
                 // Espaco e15 = new EspacoOportunidade(
                 // "Seu primo de segundo grau lhe ofereceu um emprego. Aceita a vaga? (s/n)",
                 // FonteDeRenda.EMPREGO);
-                // Espaco e16 = new EspacoNetworking(
-                // "Seu grupo de estudo de matemática de 15 pessoas se aproximou de você.", 15);
+                // Espaco e16 = new EspacoNetworking("Seu grupo de estudo de matemática de 15 pessoas se aproximou de você.", 15);
                 // Espaco e17 = new EspacoEstudo("Estudou com vídeos no YouTube.");
                 // c0.adicionarEspaco(e0);
                 // c0.adicionarEspaco(e1);

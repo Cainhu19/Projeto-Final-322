@@ -70,39 +70,68 @@ public class Tabuleiro {
     }
 
     /**
+     * Verifica se tem espaços obrigatórios em determinado intervalo de um caminho. Se tiver, executa a ação de cada um.
+     * 
+     * @param jogador jogador sobre o qual a ação vai ser executada.
+     * @param caminho caminho atual do jogador.
+     * @param espacoInicial espaço inicial do intervalo.
+     * @param limite limite do intervalo.
+     */
+    private void executarEspacosObrigatorios(Jogador jogador, int caminho,  int espacoInicial, int limite) {
+        for (int i = espacoInicial; i < limite; i++) {
+            Espaco espacoIntermediario = caminhos.get(caminho).getEspacos().get(i);
+            if (espacoIntermediario instanceof EspacoRemuneracao) {
+                espacoIntermediario.acao(jogador);
+            }
+        }
+    }
+
+    /**
      * Move o jogador no tabuleiro baseado na quantidade de espaços determinada.
      * 
      * @param jogador jogador que vai se mover.
      * @param quantidade quantos espaços serão percorridos (positivo: jogador avança; negativo: jogador volta)
-     * @param scan scanner que lê a entrada do jogador.
      */
     public void moverJogador(Jogador jogador, int quantidade) {
+        if (quantidade == 0) { // Caso o jogador ande 0 espaços (fica parado / perde uma rodada)
+            System.out.println("Rodada perdida. Na próxima, já poderá voltar a andar.");
+            return; 
+        }
         int caminhoAtual = jogador.getPosicao()[0];
         int espacoAtual = jogador.getPosicao()[1];
         int espacosCaminhoAtual = caminhos.get(caminhoAtual).getNumeroEspacos();
-        int novoEspaco = espacoAtual + quantidade;
+        int novoEspaco = espacoAtual + quantidade;  // novo espaço do jogador após se mover
         
-        if (jogador.getGrupo() != null && quantidade > 0) {   // Jogador, ao avançar casas, ganha pontos de "oportunidade" se estiver num grupo
+        if (quantidade > 0 && jogador.getGrupo() != null) {   
             jogador.adicionarPontosOportunidade(quantidade);
         }
-
         // Jogador avança um caminho
+        int caminhosAvancados = 0;
         while (caminhoAtual < caminhos.size() && novoEspaco >= espacosCaminhoAtual) {
+            // Verifica e executa espaços obrigatórios entre o espaço atual e o fim do caminho
+            if (caminhosAvancados > 0) {
+                executarEspacosObrigatorios(jogador, caminhoAtual, 0, espacosCaminhoAtual);
+            } else {
+                executarEspacosObrigatorios(jogador, caminhoAtual, espacoAtual + 1, espacosCaminhoAtual);
+            }
             novoEspaco -= espacosCaminhoAtual;
             caminhoAtual++;
+            // Verifica todos os espaços entre espacoAtual - 1 e espacosCaminhoAtual para ver se tem um espaço obrigatório
             // True se ele entrar numa bifurcação pela primeira vez (vai sempre entrar pela bifurcação A primeiro)
-            if (jogadorEntrouEmBifurcacao(caminhoAtual) && !jogador.getBifurcacoesPercorridas().contains(caminhoAtual)) {
+            if (jogadorEntrouEmBifurcacao(caminhoAtual) && !jogador.getBifurcacoesPercorridas().contains(caminhoAtual) && 
+                !jogador.getBifurcacoesPercorridas().contains(caminhoAtual + 1)) {
                 caminhoAtual = jogadorEscolheBifurcacao(jogador, caminhoAtual);
                 jogador.adicionarBifurcacaoPercorrida(caminhoAtual);
             }
-            // True se caminhoAtual igualar ao da bifurcação B mas jogador decidiu percorrer a A
-            if (caminhoAtual % 3 == 2 && jogador.getBifurcacoesPercorridas().contains(caminhoAtual - 1)) {
+            // True se caminhoAtual igualar ao da bifurcação A mas jogador decidiu percorrer a B anteriormente (e vice-versa)
+            if (jogadorEntrouEmBifurcacao(caminhoAtual) && !jogador.getBifurcacoesPercorridas().contains(caminhoAtual) || 
+                (caminhoAtual % 3 == 2 && jogador.getBifurcacoesPercorridas().contains(caminhoAtual - 1))) {
                 caminhoAtual++;
             }
             // Verifica se saiu da primeira bifurcação sem uma fonte de renda
             if (caminhoAtual == 3 && jogador.getFonteDeRenda() == null) {
                 jogador.setFonteDeRenda(FonteDeRenda.BOLSA_AUXILIO);
-                System.out.printf("A universidade decidiu lhe dar uma bolsa-auxílio! (%d de remuneração)", FonteDeRenda.BOLSA_AUXILIO.getRenda());
+                System.out.printf("A universidade decidiu lhe dar uma bolsa-auxílio! (%d de remuneração)\n", FonteDeRenda.BOLSA_AUXILIO.getRenda());
             }
             espacosCaminhoAtual = caminhos.get(caminhoAtual).getNumeroEspacos();
             if (caminhoAtual >= caminhos.size()) {  // Verifica se chegou no final do tabuleiro
@@ -110,17 +139,18 @@ public class Tabuleiro {
                 novoEspaco = espacosCaminhoAtual - 1;
                 break;
             }
+            caminhosAvancados++;
         }
 
         // Jogador volta um caminho
         while (caminhoAtual >= 0 && novoEspaco < 0) {
             caminhoAtual--;
+            espacosCaminhoAtual = caminhos.get(caminhoAtual).getNumeroEspacos();
             // Verifica se o jogador entrou na bifurcação errada: se entrou, volta mais um caminho (ou seja, B -> A ou A -> caminho normal)
             if ((jogadorEntrouEmBifurcacao(caminhoAtual) && !jogador.getBifurcacoesPercorridas().contains(caminhoAtual)) || 
             (caminhoAtual % 3 == 2 && jogador.getBifurcacoesPercorridas().contains(caminhoAtual - 1))) {
                 caminhoAtual--;
             }
-            espacosCaminhoAtual = caminhos.get(caminhoAtual).getNumeroEspacos();
             if (caminhoAtual < 0) { // Verifica se voltou pro início do tabuleiro (não sei se vai ser possível mas sla)
                 caminhoAtual = 0;
                 novoEspaco = 0;
@@ -129,7 +159,14 @@ public class Tabuleiro {
             novoEspaco += espacosCaminhoAtual;
         }
         jogador.setPosicao(new int[]{caminhoAtual, novoEspaco});
-        caminhos.get(caminhoAtual).getEspacos().get(novoEspaco).acao(jogador);    
+        if (quantidade > 0) {   // Só executa a ação do espaço se o jogador tiver avançado no tabuleiro, não voltado
+            if (caminhosAvancados > 0) {
+                executarEspacosObrigatorios(jogador, caminhoAtual, 0, novoEspaco);
+            } else {
+                executarEspacosObrigatorios(jogador, caminhoAtual, espacoAtual + 1, novoEspaco);
+            }
+            caminhos.get(caminhoAtual).getEspacos().get(novoEspaco).acao(jogador);    
+        }
     }
 
     public void adicionarCaminho(Caminho caminho) {

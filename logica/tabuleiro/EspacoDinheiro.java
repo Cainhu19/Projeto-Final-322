@@ -10,9 +10,15 @@ public class EspacoDinheiro extends Espaco {
         this.quantidade = quantidade;
     }
 
+    public EspacoDinheiro(String descricao, int quantidade, Jogador jogador) {
+        super(descricao);
+        this.quantidade = quantidade;
+
+    }
+
     @Override
     public void acao(Jogador jogador) { // Usado tanto para ganhar quanto gastar dinheiro
-        System.out.println(descricao);
+        imprimirDescricao(descricao);
         if (quantidade > 0) {
             System.out.printf("(+%d na sua conta)\n", quantidade);
         } else {

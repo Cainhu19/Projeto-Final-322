@@ -56,7 +56,7 @@ public class GerenciadorDeFontes {
     public static void liberar(FonteDeRenda fonteDeRenda) {
         Jogador jogador = fontes.get(fonteDeRenda);
         if (jogador != null) {
-            jogador.setFonteDeRenda(null);
+            jogador.setFonteDeRenda(FonteDeRenda.BOLSA_AUXILIO);
             fontes.put(fonteDeRenda, null);
             fonteDeRenda.setOcupada(false);
         }

@@ -27,18 +27,22 @@ public class EspacoOportunidade extends Espaco {
     public void acao(Jogador jogador) {
         // Oportunidade de ter uma fonte de renda/ocupação
         if (fonteDeRenda != null) {
-            if (!GerenciadorDeFontes.disponivel(fonteDeRenda)) {
-                if (!jogador.getFonteDeRenda().equals(fonteDeRenda)) {
+            if (!GerenciadorDeFontes.disponivel(fonteDeRenda) || jogador.getFonteDeRenda() != null && jogador.getFonteDeRenda().equals(fonteDeRenda)) {
+                if (jogador.getFonteDeRenda() != null && !jogador.getFonteDeRenda().equals(fonteDeRenda)) {
                     System.out.printf("A fonte de renda %s já está sendo ocupada por um jogador.\n",
                             fonteDeRenda.getNome());
                 } else {
                     System.out.printf("%s já é sua fonte de renda!\n", fonteDeRenda.getNome());
                 }
             } else {
-                System.out.println(descricao);
+                imprimirDescricao(descricao);
                 if (Entrada.respostaString().equals("s")) {
                     if (fonteDeRenda.equals(FonteDeRenda.BOLSA_AUXILIO)) {
-                        jogador.setFonteDeRenda(fonteDeRenda);
+                        if (jogador.getFonteDeRenda() != null) {
+                            GerenciadorDeFontes.liberar(jogador.getFonteDeRenda());
+                        } else {
+                            jogador.setFonteDeRenda(fonteDeRenda);
+                        }
                     } else {
                         GerenciadorDeFontes.ocupar(fonteDeRenda, jogador);
                     }
@@ -49,13 +53,13 @@ public class EspacoOportunidade extends Espaco {
             // Oportunidade de entrar num grupo
         } else if (grupo != null) {
             if (grupo.isOcupado()) {
-                if (!jogador.getGrupo().equals(grupo)) {
+                if (jogador.getGrupo() != null && !jogador.getGrupo().equals(grupo)) {
                     System.out.printf("Um jogador já faz parte de %s.\n", grupo.getNome());
                 } else {
                     System.out.printf("Você já faz parte de %s!\n", grupo.getNome());
                 }
             } else {
-                System.out.println(descricao);
+                imprimirDescricao(descricao);
                 if (Entrada.respostaString().equals("s")) {
                     GerenciadorDeGrupos.ocupar(grupo, jogador);
                     jogador.adicionarPontosNetworking(grupo.getBonusNetworking());
