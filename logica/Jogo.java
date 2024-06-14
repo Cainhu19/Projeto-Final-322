@@ -23,25 +23,29 @@ public class Jogo {
     }
 
     public void loopDeJogo() {
-        tabuleiro.moverJogador(jogadores.getFirst(), 10);
-        tabuleiro.moverJogador(jogadores.getFirst(), 1);
         int jogadorAtual = 0;
         boolean continuarJogo = true;
         while (continuarJogo) {
             Jogador jogador = jogadores.get(jogadorAtual);
-            int resultadoDado = jogador.resultadoDado(0);
-            System.out.printf("Jogador %s joga o dado: %d\n", jogador.getNome(), resultadoDado);
-            tabuleiro.moverJogador(jogador, resultadoDado);
-
-            System.out.println("Digite 'sair' para sair");
-            if (Entrada.continuarJogo()) {
-                jogadores.remove(jogadorAtual);
-                if (jogadores.size() <= 1) {
-                    continuarJogo = false;
-                    break;
-                }
-            } else {
+            if (jogador.getPerdeuProxRodada()) {
+                System.out.println(jogador.getNome() + " não pode jogar essa rodada.");
+                jogador.setPerdeuProxRodada(false);
                 jogadorAtual = (jogadorAtual + 1) % jogadores.size();
+            } else {
+                int resultadoDado = jogador.resultadoDado(0);
+                System.out.printf("Jogador %s joga o dado: %d\n", jogador.getNome(), resultadoDado);
+                tabuleiro.moverJogador(jogador, resultadoDado);
+
+                System.out.println("Digite 'sair' para sair");
+                if (Entrada.continuarJogo()) {
+                    jogadores.remove(jogadorAtual);
+                    if (jogadores.size() <= 1) {
+                        continuarJogo = false;
+                        break;
+                    }
+                } else {
+                    jogadorAtual = (jogadorAtual + 1) % jogadores.size();
+                }
             }
         }
         Entrada.fecharScanner();

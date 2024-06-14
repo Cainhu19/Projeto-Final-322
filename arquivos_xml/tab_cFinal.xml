@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<!-- Arquivo com espaços da reta final do tabuleiro -->
+<caminhos>
+    <!-- Caminho 12: reta final do tabuleiro -->
+    <caminho>
+        <espaco tipo="GANHAR_P_NETWORKING">
+            <desc>Apareceu no spotted e ganhou 45 seguidores</desc>
+            <bonusNetworking>45</bonusNetworking>
+        </espaco>
+        <espaco tipo="CASA_DA_CARIDADE">
+            <desc>CASA DA CARIDADE</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="GANHAR_P_NETWORKING">
+            <desc>Festa da Química, conversou com 45 pessoas</desc>
+            <bonusNetworking>45</bonusNetworking>
+        </espaco>
+        <espaco tipo="GANHAR_P_NETWORKING">
+            <desc>Festa da Educação Física, conheceu 80 pessoas</desc>
+            <bonusNetworking>80</bonusNetworking>
+        </espaco>
+        <espaco tipo="REMUNERACAO">
+            <desc>REMUNERAÇÃO</desc>
+        </espaco>
+        <espaco tipo="PERDER_RODADA">
+            <desc>Seu orientador fez muitos comentários sobre seu TCC, perca uma rodada analisando tudo</desc>
+        </espaco>
+        <espaco tipo="ESTUDO">
+            <desc>Estudos para as últimas provas</desc>
+        </espaco>
+        <espaco tipo="GANHAR_P_NETWORKING">
+            <desc>Último bar com seus 15 amigos da faculdade</desc>
+            <bonusNetworking>15</bonusNetworking>
+        </espaco>
+        <espaco tipo="ESTUDO_PARA_P_OPORTUNIDADES">
+            <desc>Se você tiver estudado pelo menos 5 vezes, se forme com honras acadêmicas e receba 400 pontos de oportunidades acadêmicas futuras</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="P_NETWORKING_EM_FUNCAO_DE_DADO">
+            <desc>Cole grau com número de pessoas igual a 6 vezes o número de um 1d10</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="DINHEIRO">
+            <desc>Sua avó está muito orgulhosa de sua trajetória e deu 100 de presente a você</desc>
+            <qtd>100<qtd>
+        </espaco>
+        <espaco tipo="EXTREMIDADE">
+            <desc>FESTA DE FORMATURA</desc>
+        </espaco>
+    </caminho>
+</caminhos>

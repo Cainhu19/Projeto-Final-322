@@ -21,6 +21,7 @@ public class Jogador {
     private int[] posicao;
     private LinkedList<Integer> bifurcacoesPercorridas;
     private int vezesEstudo;
+    private boolean perdeuProxRodada;
 
     public Jogador(String nome) {
         this.nome = nome;
@@ -38,6 +39,7 @@ public class Jogador {
         posicao[1] = 0; // Espaço (dentro do caminho)
         this.bifurcacoesPercorridas = new LinkedList<Integer>();
         this.vezesEstudo = 0;
+        this.perdeuProxRodada = false;
     }
 
     public String getNome() {
@@ -80,6 +82,10 @@ public class Jogador {
         return vezesEstudo;
     }
 
+    public boolean getPerdeuProxRodada() {
+        return perdeuProxRodada;
+    }
+
     public void setFonteDeRenda(FonteDeRenda fonte) {
         this.fonteDeRenda = fonte;
     }
@@ -107,6 +113,10 @@ public class Jogador {
 
     public void setPosicao(int[] pos) {
         this.posicao = pos;
+    }
+
+    public void setPerdeuProxRodada(boolean perdeuProxRodada) {
+        this.perdeuProxRodada = perdeuProxRodada;
     }
 
     /**

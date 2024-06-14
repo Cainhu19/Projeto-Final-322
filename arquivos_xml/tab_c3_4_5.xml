@@ -26,7 +26,7 @@
         <espaco tipo="ESTUDO">
             <desc>Estudo com vídeos no YouTube</desc>
         </espaco>
-        <espaco tipo="RECEBER_OFERTA_GRUPO">
+        <espaco tipo="RECEBER_OFERTA_GRUPO_ESPECIFICO">
             <desc>Você pensa em participar das eleições para representante discente</desc>
             <grupo>REP_DISCENTE</grupo>
         </espaco>
@@ -98,7 +98,7 @@
             <desc>Festa da Arquitetura, conheceu 45 pessoas</desc>
             <bonusNetworking>45</bonusNetworking>
         </espaco>
-        <espaco tipo="RECEBER_OFERTA_GRUPO">
+        <espaco tipo="RECEBER_OFERTA_GRUPO_ESPECIFICO">
             <desc>Talvez haja vaga na Empresa Júnior do seu curso</desc>
             <grupo>EMPRESA_JUNIOR</grupo>
         </espaco>
@@ -113,11 +113,11 @@
             <desc>Você pensa em participar do seletivo de uma Liga Acadêmica</desc>
             <!-- TODO: Completar depois -->
         </espaco>
-        <espaco tipo="RECEBER_OFERTA_RENDA">
+        <espaco tipo="RECEBER_OFERTA_RENDA_ESPECIFICA">
             <desc>Abriu uma vaga de meio-período na sua área perto de casa</desc>
             <fonteDeRenda>MEIO_PERIODO</fonteDeRenda>
         </espaco>
-        <espaco tipo="RECEBER_OFERTA_RENDA">
+        <espaco tipo="RECEBER_OFERTA_RENDA_ESPECIFICA">
             <desc>Sua melhor amiga te chamou para fundar um empreendimento com ele</desc>
             <fonteDeRenda>EMPREENDIMENTO</fonteDeRenda>
         </espaco>
@@ -129,7 +129,7 @@
             <desc>Achou uma nota de 50 na rua</desc>
             <qtd>50<qtd>
         </espaco>
-        <espaco tipo="RECEBER_OFERTA_RENDA">
+        <espaco tipo="RECEBER_OFERTA_RENDA_ESPECIFICA">
             <desc>Oportunidade de estágio na empresa da sua tia-avó</desc>
             <fonteDeRenda>ESTAGIO</fonteDeRenda>
         </espaco>
@@ -139,8 +139,8 @@
         <espaco tipo="ESTUDO">
             <desc>Você lotou sua parede de post-its de estudos</desc>
         </espaco>
-        <espaco tipo="GANHAR_P_OPORTUNIDADES_SE_ESTIVER_EM_GRUPO">
-            <desc>Feira das entidades estudantis, ganhe 300 pontos de oportunidades se você estiver em uma entidade estudantil</desc>
+        <espaco tipo="P_OPORTUNIDADES_SE_ESTIVER_EM_GRUPO">
+            <desc>Feira das entidades estudantis; se você estiver fazendo uma atividade extracurricular, vá para lá ganhe 200 pontos de oportunidades</desc>
             <!-- TODO: Completar depois -->
         </espaco>
         <espaco tipo="PERDER_RODADA">

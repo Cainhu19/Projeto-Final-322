@@ -4,7 +4,7 @@
     <!-- Caminho 0: início do tabuleiro -->
     <caminho>
         <espaco tipo="EXTREMIDADE">
-            <desc>Inicio</desc>
+            <desc>INÍCIO</desc>
         </espaco>
         <espaco tipo="GANHAR_P_NETWORKING">
             <desc>Formatura do ensino médio com 80 pessoas</desc>
@@ -17,11 +17,11 @@
     </caminho>
     <!-- Caminho 1: caminho do dinheiro -->
     <caminho>
-        <espaco tipo="RECEBER_OFERTA_RENDA">
+        <espaco tipo="RECEBER_OFERTA_RENDA_ESPECIFICA">
             <desc>Você pensa em fazer serviços de design como freelancer</desc>
             <fonteDeRenda>FREELANCER</fonteDeRenda>
         </espaco>
-        <espaco tipo="RECEBER_OFERTA_RENDA">
+        <espaco tipo="RECEBER_OFERTA_RENDA_ESPECIFICA">
             <desc>Proposta de estágio no laboratório de física</desc>
             <fonteDeRenda>ESTAGIO</fonteDeRenda>
         </espaco>
@@ -36,15 +36,15 @@
             <desc>Surgiu a oportunidade de entrar em uma atividade estudantil</desc>
             <!-- TODO: Completar depois -->
         </espaco>
-        <espaco tipo="RECEBER_OFERTA_RENDA">
+        <espaco tipo="RECEBER_OFERTA_RENDA_ESPECIFICA">
             <desc>Proposta de emprego da empresa do seu primo de segundo grau</desc>
             <fonteDeRenda>EMPREGO</fonteDeRenda>
         </espaco>
-        <espaco tipo="RECEBER_OFERTA_RENDA">
+        <espaco tipo="RECEBER_OFERTA_RENDA_ESPECIFICA">
             <desc>Proposta de assistência à docência de um professor da Geografia</desc>
             <fonteDeRenda>ASSISTENCIA_A_DOCENCIA</fonteDeRenda>
         </espaco>
-        <espaco tipo="RECEBER_OFERTA_RENDA">
+        <espaco tipo="RECEBER_OFERTA_RENDA_ESPECIFICA">
             <desc>Você teve uma ideia inovadora de empreendedorismo</desc>
             <fonteDeRenda>EMPREENDIMENTO</fonteDeRenda>
         </espaco>
@@ -63,7 +63,7 @@
             <desc>Você pensa em participar do seletivo de uma Liga Acadêmica</desc>
             <!-- TODO: Completar depois -->
         </espaco>
-        <espaco tipo="RECEBER_OFERTA_GRUPO">
+        <espaco tipo="RECEBER_OFERTA_GRUPO_ESPECIFICO">
             <desc>Você está pensando em entrar para a Empresa Júnior do seu curso</desc>
             <grupo>EMPRESA_JUNIOR</grupo>
         </espaco>
@@ -71,7 +71,7 @@
             <desc>Chamaram você para entrar para a Atlética do seu curso</desc>
             <!-- TODO: Completar depois -->
         </espaco>
-        <espaco tipo="RECEBER_OFERTA_RENDA">
+        <espaco tipo="RECEBER_OFERTA_RENDA_ESPECIFICA">
             <desc>Vaga de meio-período na loja do seu cunhado</desc>
             <fonteDeRenda>MEIO_PERIODO</fonteDeRenda>
         </espaco>
@@ -79,7 +79,7 @@
             <desc>Estão convidando calouros para entrar no Centro Acadêmico</desc>
             <!-- TODO: Completar depois -->
         </espaco>
-        <espaco tipo="RECEBER_OFERTA_GRUPO">
+        <espaco tipo="RECEBER_OFERTA_GRUPO_ESPECIFICO">
             <desc>Você e seus amigos tiveram uma ideia de projeto de extensão</desc>
             <grupo>PROJETO_EXTENSAO</grupo>
         </espaco>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding = "UTF-8"?>
 <!-- Arquivo com espaços logo após a segunda bifurcação e espaços da terceira bifurcação do tabuleiro -->
 <caminhos>
-    <!-- Caminho 7: sequência normal do tabuleiro -->
+    <!-- Caminho 6: sequência normal do tabuleiro -->
     <caminho>
-        <espaco tipo="RECEBER_OFERTA_GRUPO">
+        <espaco tipo="RECEBER_OFERTA_GRUPO_ESPECIFICO">
             <desc>A Atlética do seu curso abriu um time do seu esporte favorito</desc>
             <grupo>ATLETICA_ESPORTES</grupo>
         </espaco>
@@ -19,7 +19,7 @@
             <desc>Gastou 150 em energéticos e cafeína</desc>
             <qtd>-150<qtd>
         </espaco>
-        <espaco tipo="RECEBER_OFERTA_GRUPO">
+        <espaco tipo="RECEBER_OFERTA_GRUPO_ESPECIFICO">
             <desc>Chamaram você para um projeto de extensão no centro da cidade</desc>
             <grupo>PROJETO_EXTENSAO</grupo>
         </espaco>
@@ -42,7 +42,7 @@
             <desc>Motivação súbita, role o dado de novo</desc>
             <!-- TODO: Completar depois -->
         </espaco>
-        <espaco tipo="RECEBER_OFERTA_GRUPO">
+        <espaco tipo="RECEBER_OFERTA_GRUPO_ESPECIFICO">
             <desc>Surgiu uma vaga para a representação discente do seu curso</desc>
             <grupo>REP_DISCENTE</grupo>
         </espaco>
@@ -117,9 +117,9 @@
             <desc>virou a noite estudando</desc>
         </espaco>
     </caminho>
-    <!-- Caminho 8: bifurcação A, para cima no tabuleiro -->
+    <!-- Caminho 7: bifurcação A, para cima no tabuleiro -->
     <caminho>
-        <espaco tipo="RECEBER_OFERTA_RENDA">
+        <espaco tipo="RECEBER_OFERTA_RENDA_ESPECIFICA">
             <desc>Proposta de estágio do sobrinho do pai do seu amigo</desc>
             <fonteDeRenda>ESTAGIO</fonteDeRenda>
         </espaco>
@@ -127,7 +127,7 @@
             <desc>Você pensa em entrar para a Atlética do seu curso</desc>
             <!-- TODO: Completar depois -->
         </espaco>
-        <espaco tipo="RECEBER_OFERTA_RENDA">
+        <espaco tipo="RECEBER_OFERTA_RENDA_ESPECIFICA">
             <desc>Oferta de emprego em uma empresa unicórnio</desc>
             <fonteDeRenda>EMPREGO</fonteDeRenda>
         </espaco>
@@ -136,13 +136,13 @@
             <!-- TODO: Completar depois -->
         </espaco>
     </caminho>
-    <!-- Caminho 9: bifurcação B, para a direita -->
+    <!-- Caminho 8: bifurcação B, para a direita -->
     <caminho>
         <espaco tipo="RECEBER_OFERTA_GRUPO_CONJUNTO">
             <desc>Você pensa em participar do seletivo de uma Liga Acadêmica</desc>
             <!-- TODO: Completar depois -->
         </espaco>
-        <espaco tipo="RECEBER_OFERTA_RENDA">
+        <espaco tipo="RECEBER_OFERTA_RENDA_ESPECIFICA">
             <desc>Você viu o anúncio de uma vaga de meio-período perfeita para você</desc>
             <fonteDeRenda>MEIO_PERIODO</fonteDeRenda>
         </espaco>
@@ -150,7 +150,7 @@
             <desc>Se já tiver caído em duas casas de estudos, você pode aceitar uma proposta de IC do seu professor</desc>
             <!-- TODO: Completar depois -->
         </espaco>
-        <espaco tipo="RECEBER_OFERTA_RENDA">
+        <espaco tipo="RECEBER_OFERTA_RENDA_ESPECIFICA">
             <desc>Você pensa em fazer serviços de programação como freelancer</desc>
             <fonteDeRenda>FREELANCER</fonteDeRenda>
         </espaco>
