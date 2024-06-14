@@ -32,25 +32,9 @@ public class LerEspacos implements I_Arquivo {
 
                 NodeList espacosNodeList = caminho.getElementsByTagName("Espaco");
                 for (int j = 0; j < espacosNodeList.getLength(); j++) {
-                    Element espaco = (Element) espacosNodeList.item(j);
-                    String desc = espaco.getElementsByTagName("desc").item(0).getTextContent();
-                    String tipo = espaco.getElementsByTagName("tipo").item(0).getTextContent();
-                    switch (tipo) {
-                        case "DINHEIRO":
-                            int quantidade = Integer.parseInt(espaco.getElementsByTagName("quantidade").item(0).getTextContent());
-                            EspacoDinheiro espDin = new EspacoDinheiro(desc, quantidade);
-                            c.adicionarEspaco(espDin);
-                            break;
-                        case "NETWORKING":
-                            int bonusNetworking = Integer.parseInt(espaco.getElementsByTagName("bonusNetworking").item(0).getTextContent());
-                            EspacoNetworking espNet = new EspacoNetworking(desc, bonusNetworking);
-                            c.adicionarEspaco(espNet);
-                            break;
-                    
-                        // default é o tipo EXTREMIDADE, i.e. início e fim do tabuleiro
-                        default: 
-                            break;
-                    }
+                    Element espacoElement = (Element) espacosNodeList.item(j);
+                    Espaco espaco = EspacoFactory.criarEspaco(espacoElement);
+                    c.adicionarEspaco(espaco);
                 }
 
                 t.adicionarCaminho(c);

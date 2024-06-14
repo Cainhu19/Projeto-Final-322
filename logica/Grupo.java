@@ -20,7 +20,7 @@ public enum Grupo {
     INICIACAO_CIENTIFICA("Iniciação científica", new D8(1, 2, 3, 4, 5, 6, 7, 8), 1),
     LIGA_MULTIDISCIPLINAR("Liga multidisciplinar", new D6(3, 4, 5, 6, 7, 8), 1),
     LIGA_PESQUISAS("Liga de pesquisas acadêmicas", new D6(0, 1, 2, 3, 4, 5), 1),
-    PROJETO_EXNTENSAO("Projeto de extensão", new D4(1, 2, 3, 4), 1),
+    PROJETO_EXTENSAO("Projeto de extensão", new D4(1, 2, 3, 4), 1),
     REP_DISCENTE("Representação discente", new D6(4, 4, 4, 5, 5, 5), 1);
 
     private final String nome;

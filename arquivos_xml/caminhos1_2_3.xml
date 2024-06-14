@@ -1,0 +1,95 @@
+<?encoding = "UTF-8" standalone = "no"?>
+<Tabuleiro>
+    <!-- Caminho 0: início do tabuleiro -->
+    <Caminho>
+        <Espaco tipo="EXTREMIDADE">
+            <desc>Inicio</desc>
+        </Espaco>
+        <Espaco tipo="GANHAR_P_NETWORKING">
+            <desc>Formatura do ensino médio com 80 pessoas</desc>
+            <bonusNetworking>80</bonusNetworking>
+        </Espaco>
+        <Espaco tipo="DINHEIRO">
+            <desc>Início das aulas, gaste 200 com materiais novos</desc>
+            <qtd>-200</qtd>
+        </Espaco>
+    </Caminho>
+    <!-- Caminho 1: caminho do dinheiro -->
+    <Caminho>
+        <Espaco tipo="RECEBER_OFERTA_RENDA">
+            <desc>Você pensa em fazer serviços como freelancer</desc>
+            <fonteDeRenda>FREELANCER</fonteDeRenda>
+        </Espaco>
+        <Espaco tipo="RECEBER_OFERTA_RENDA">
+            <desc>Proposta de estágio no laboratório de física</desc>
+            <fonteDeRenda>ESTAGIO</fonteDeRenda>
+        </Espaco>
+        <Espaco tipo="DINHEIRO">
+            <desc>Ganhou uma rifa da Veterinária, receba 150</desc>
+            <qtd>150</qtd>
+        </Espaco>
+        <Espaco tipo="ESTUDO">
+            <desc>Estudo na biblioteca</desc>
+        </Espaco>
+        <Espaco tipo="RECEBER_OFERTA_GRUPO_GERAL">
+            <desc>Surgiu a oportunidade de entrar em uma atividade estudantil</desc>
+            <!-- TODO: Completar depois -->
+        </Espaco>
+        <Espaco tipo="RECEBER_OFERTA_RENDA">
+            <desc>Proposta de emprego da empresa do seu primo de segundo grau</desc>
+            <fonteDeRenda>EMPREGO</fonteDeRenda>
+        </Espaco>
+        <Espaco tipo="RECEBER_OFERTA_RENDA">
+            <desc>Proposta de assistência à docência de um professor da Geografia</desc>
+            <fonteDeRenda>ASSISTENCIA_A_DOCENCIA</fonteDeRenda>
+        </Espaco>
+        <Espaco tipo="RECEBER_OFERTA_RENDA">
+            <desc>Você teve uma ideia inovadora de empreendedorismo</desc>
+            <fonteDeRenda>EMPREENDIMENTO</fonteDeRenda>
+        </Espaco>
+    </Caminho>
+    <!-- Caminho 2: caminho das atividades estudantis e networking -->
+    <Caminho>
+        <Espaco tipo="GANHAR_P_NETWORKING">
+            <desc>Foi na recepção dos calouros do curso, conheceu 60 pessoas</desc>
+            <bonusNetworking>60</bonusNetworking>
+        </Espaco>
+        <Espaco tipo="GANHAR_P_NETWORKING">
+            <desc>Festa da Biologia, conversou com 25 pessoas</desc>
+            <bonusNetworking>25</bonusNetworking>
+        </Espaco>
+        <Espaco tipo="RECEBER_OFERTA_GRUPO_CONJUNTO">
+            <desc>Você pensa em participar do seletivo de uma Liga Acadêmica</desc>
+            <!-- TODO: Completar depois -->
+        </Espaco>
+        <Espaco tipo="RECEBER_OFERTA_GRUPO">
+            <desc>Você está pensando em entrar para a Empresa Júnior do seu curso</desc>
+            <grupo>EMPRESA_JUNIOR</grupo>
+        </Espaco>
+        <Espaco tipo="RECEBER_OFERTA_GRUPO_CONJUNTO">
+            <desc>Chamaram você para entrar para a Atlética do seu curso</desc>
+            <!-- TODO: Completar depois -->
+        </Espaco>
+        <Espaco tipo="RECEBER_OFERTA_RENDA">
+            <desc>Vaga de meio-período na loja do seu cunhado</desc>
+            <fonteDeRenda>MEIO_PERIODO</fonteDeRenda>
+        </Espaco>
+        <Espaco tipo="RECEBER_OFERTA_GRUPO_CONJUNTO">
+            <desc>Estão convidando calouros para entrar no Centro Acadêmico</desc>
+            <!-- TODO: Completar depois -->
+        </Espaco>
+        <Espaco tipo="RECEBER_OFERTA_GRUPO">
+            <desc>Você e seus amigos tiveram uma ideia de projeto de extensão</desc>
+            <grupo>PROJETO_EXTENSAO</grupo>
+        </Espaco>
+        <Espaco tipo="GANHAR_P_NETWORKING">
+            <desc>Seu grupo de estudos de matemática de 15 pessoas se aproximou de você</desc>
+            <bonusNetworking>15</bonusNetworking>
+        </Espaco>
+    </Caminho>
+    <!-- Caminho 3: após a primeira bifurcação -->
+    <Caminho>
+        <Espaco>
+        </Espaco>
+    </Caminho>
+</Tabuleiro>
