@@ -18,7 +18,7 @@
     <!-- Caminho 1: caminho do dinheiro -->
     <caminho>
         <espaco tipo="RECEBER_OFERTA_RENDA">
-            <desc>Você pensa em fazer serviços como freelancer</desc>
+            <desc>Você pensa em fazer serviços de design como freelancer</desc>
             <fonteDeRenda>FREELANCER</fonteDeRenda>
         </espaco>
         <espaco tipo="RECEBER_OFERTA_RENDA">

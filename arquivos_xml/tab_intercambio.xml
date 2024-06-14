@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<!-- Arquivo com espaços do intercâmbio -->
+<caminhos>
+    <caminho>
+        <espaco tipo="ESTUDO">
+            <desc>Estudos intensivos de inglês e francês</desc>
+        </espaco>   
+        <espaco tipo="P_OPORTUNIDADES">
+            <desc>Palestra sobre oportunidades futuras no Canadá, +1200 pontos de oportunidades</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="GANHAR_P_NETWORKING">
+            <desc>Você tirou o dia para conversar com outros 100 alunos intercambistas</desc>
+            <bonusNetworking>100</bonusNetworking>
+        </espaco>
+        <espaco tipo="GANHAR_P_NETWORKING">
+            <desc>Excursão até as Cataratas do Niágara com 50 outras pessoas</desc>
+            <bonusNetworking>50</bonusNetworking>
+        </espaco>
+        <espaco tipo="P_OPORTUNIDADES">
+            <desc>Se perdeu indo para uma entrevista, -150 pontos de oportunidade</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="DINHEIRO">
+            <desc>Fez um estágio durante o inverno e recebeu 3200</desc>
+            <qtd>3200<qtd>
+        </espaco>
+        <espaco tipo="DINHEIRO">
+            <desc>Você perdeu suas roupas de frio, gaste 500 com novas</desc>
+            <qtd>-500<qtd>
+        </espaco>
+        <espaco tipo="DINHEIRO">
+            <desc>Sua faculdade finalmente pagou os 1200 da sua passagem aérea</desc>
+            <qtd>1200<qtd>
+        </espaco>
+        <espaco tipo="P_OPORTUNIDADES">
+            <desc>Enviou currículo para empresas locais, +150 pontos de oportunidade</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="DINHEIRO">
+            <desc>Você comeu fora muitas vezes, pague 400</desc>
+            <qtd>-400<qtd>
+        </espaco>
+        <espaco tipo="ESTUDO">
+            <desc>Estudos para provas finais do intercâmbio</desc>
+        </espaco> 
+        <espaco tipo="GANHAR_P_NETWORKING">
+            <desc>Festa de despedida da sua sala, conversou com 50 pessoas</desc>
+            <bonusNetworking>50</bonusNetworking>
+        </espaco>
+    <caminho>
+</caminhos>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<!-- Arquivo com espaços logo após a segunda bifurcação e espaços da terceira bifurcação do tabuleiro -->
+<caminhos>
+    <!-- Caminho 7: sequência normal do tabuleiro -->
+    <caminho>
+        <espaco tipo="RECEBER_OFERTA_GRUPO">
+            <desc>A Atlética do seu curso abriu um time do seu esporte favorito</desc>
+            <grupo>ATLETICA_ESPORTES</grupo>
+        </espaco>
+        <espaco tipo="CASA_DO_AZAR">
+            <desc>Casa do azar: rode 1d10 e se tirar 1 ou 2 você terá que sair da sua entidade estudantil</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="GANHAR_P_NETWORKING_COM_MAIOR_DADO">
+            <desc>Desafie um jogador a uma competição de dança em uma festa, quem rolar o maior dado vai impressionar 30 pessoas</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="DINHEIRO">
+            <desc>Gastou 150 em energéticos e cafeína</desc>
+            <qtd>-150<qtd>
+        </espaco>
+        <espaco tipo="RECEBER_OFERTA_GRUPO">
+            <desc>Chamaram você para um projeto de extensão no centro da cidade</desc>
+            <grupo>PROJETO_EXTENSAO</grupo>
+        </espaco>
+        <espaco tipo="DINHEIRO">
+            <desc>A TV da sua mãe quebrou, ajude ela a pagar emprestando 500</desc>
+            <qtd>-500<qtd>
+        </espaco>
+        <espaco tipo="ESTUDO">
+            <desc>Atrasou em meia hora o fim da aula tirando dúvidas com o professor</desc>
+        </espaco>
+        <espaco tipo="OPORTUNIDADE_DE_INTERCAMBIO">
+            <desc>Bolsa de intercâmbio no Canadá: você pode ir se tiver estudado 2x e pagar 1000 pela burocracia imigratória</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="DINHEIRO">
+            <desc>Achou uma moeda de 1 no chão da biblioteca</desc>
+            <qtd>1<qtd>
+        </espaco>
+        <espaco tipo="ROLAR_DADO_DE_NOVO">
+            <desc>Motivação súbita, role o dado de novo</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="RECEBER_OFERTA_GRUPO">
+            <desc>Surgiu uma vaga para a representação discente do seu curso</desc>
+            <grupo>REP_DISCENTE</grupo>
+        </espaco>
+        <espaco tipo="GANHAR_P_NETWORKING">
+            <desc>Tarde de vôlei com 15 pessoas</desc>
+            <bonusNetworking>15</bonusNetworking>
+        </espaco>
+        <espaco tipo="PERDER_RENDA">
+            <desc>Perca sua fonte de renda se não for bolsa-auxílio</desc>
+        </espaco>
+        <espaco tipo="REMUNERACAO">
+            <desc>REMUNERAÇÃO</desc>
+        </espaco>
+        <espaco tipo="PROMOCAO_LOJA">
+            <desc>Promoção relâmpago na Lojinha do Destino</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="LIMPAR_DIVIDA">
+            <desc>Limpe seu nome se você estiver em dívida</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="DINHEIRO">
+            <desc>Primeiro lugar em uma meia maratona na sua faculdade, receba 700</desc>
+            <qtd>700<qtd>
+        </espaco>
+        <espaco tipo="ESTUDO">
+            <desc>livros relatórios projetos trabalhos resumos revisões estudos estudos estudos</desc>
+        </espaco>
+        <espaco tipo="PERDER_GRUPO">
+            <desc>Por falta de tempo, você precisou sair da sua atividade extracurricular</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="GANHAR_P_NETWORKING">
+            <desc>Prática de parkour com 25 pessoas</desc>
+            <bonusNetworking>25</bonusNetworking>
+        </espaco>
+        <espaco tipo="GANHAR_P_NETWORKING">
+            <desc>Foi em um churrasco feito pela Atlética com 40 pessoas</desc>
+            <bonusNetworking>40</bonusNetworking>
+        </espaco>
+        <espaco tipo="ESCOLHER_JOGADOR_PARA_VOLTAR">
+            <desc>Você emprestou anotações erradas a um jogador e ele precisou voltar 5 casas para estudar o conteúdo corretamente</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="DINHEIRO_DE_JOGADOR">
+            <desc>Você está em apuros financeiros, peça 300 emprestados de um jogador</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="GANHAR_P_NETWORKING">
+            <desc>Foi em um giro das profissões com 30 profissionais da sua área</desc>
+            <bonusNetworking>30</bonusNetworking>
+        </espaco>
+        <espaco tipo="GANHAR_P_NETWORKING">
+            <desc>Participou da recepção dos 60 calouros do seu curso</desc>
+            <bonusNetworking>60</bonusNetworking>
+        </espaco>
+        <espaco tipo="PERDER_RODADA">
+            <desc>Seu cachorro comeu seu relatório, perca a rodada refazendo</desc>
+        </espaco>
+        <espaco tipo="REMUNERACAO">
+            <desc>REMUNERAÇÃO</desc>
+        </espaco>
+        <espaco tipo="DINHEIRO">
+            <desc>Vendeu arte na praia e ganhou 180</desc>
+            <qtd>180<qtd>
+        </espaco>
+        <espaco tipo="RECEBER_OFERTA_GRUPO_GERAL">
+            <desc>Oportunidade de entrar em uma entidade estudantil</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="ESTUDO">
+            <desc>virou a noite estudando</desc>
+        </espaco>
+    </caminho>
+    <!-- Caminho 8: bifurcação A, para cima no tabuleiro -->
+    <caminho>
+        <espaco tipo="RECEBER_OFERTA_RENDA">
+            <desc>Proposta de estágio do sobrinho do pai do seu amigo</desc>
+            <fonteDeRenda>ESTAGIO</fonteDeRenda>
+        </espaco>
+        <espaco tipo="RECEBER_OFERTA_GRUPO_CONJUNTO">
+            <desc>Você pensa em entrar para a Atlética do seu curso</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="RECEBER_OFERTA_RENDA">
+            <desc>Oferta de emprego em uma empresa unicórnio</desc>
+            <fonteDeRenda>EMPREGO</fonteDeRenda>
+        </espaco>
+        <espaco tipo="RECEBER_OFERTA_GRUPO_CONJUNTO">
+            <desc>Chamaram você para participar do Centro Acadêmico do seu curso</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+    </caminho>
+    <!-- Caminho 9: bifurcação B, para a direita -->
+    <caminho>
+        <espaco tipo="RECEBER_OFERTA_GRUPO_CONJUNTO">
+            <desc>Você pensa em participar do seletivo de uma Liga Acadêmica</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="RECEBER_OFERTA_RENDA">
+            <desc>Você viu o anúncio de uma vaga de meio-período perfeita para você</desc>
+            <fonteDeRenda>MEIO_PERIODO</fonteDeRenda>
+        </espaco>
+        <espaco tipo="ESTUDO_PARA_IC">
+            <desc>Se já tiver caído em duas casas de estudos, você pode aceitar uma proposta de IC do seu professor</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="RECEBER_OFERTA_RENDA">
+            <desc>Você pensa em fazer serviços de programação como freelancer</desc>
+            <fonteDeRenda>FREELANCER</fonteDeRenda>
+        </espaco>
+    </caminho>
+</caminhos>

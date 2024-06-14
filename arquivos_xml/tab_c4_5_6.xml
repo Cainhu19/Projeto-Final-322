@@ -168,6 +168,58 @@
     </caminho>
     <!-- Caminho 5: bifurcação B, para a esquerda no tabuleiro -->
     <caminho>
-
+        <espaco tipo="GANHAR_P_NETWORKING">
+            <desc>Foi na festa de recepção dos novos calouros, conversou com os 60 calouros</desc>
+            <bonusNetworking>60</bonusNetworking>
+        </espaco>
+        <espaco tipo="PAGAR_PARA_ESTUDO">
+            <desc>Pague um curso online de 150 para estudar um conteúdo de nicho<desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="RECEBER_OFERTA_GRUPO_CONJUNTO">
+            <desc>O Centro Acadêmico do seu curso está chamando novos membros</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="RECEBER_OFERTA_EMPREGO_SE_P_NETWORKING_SUFICIENTE">
+            <desc>Se seus pontos networking forem iguais ou maiores que 150, um colega te indica para uma vaga de emprego onde ele trabalha</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="GANHAR_P_NETWORKING">
+            <desc>Participou de um torneio de futebol beneficente com outras 120 pessoas</desc>
+            <bonusNetworking>120</bonusNetworking>
+        </espaco>
+        <espaco tipo="RECEBER_OFERTA_RENDA_GERAL">
+            <desc>O pai do amigo da sua irmã tem uma proposta para você</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="ESTUDO">
+            <desc>Fez mapas mentais para reter conteúdo</desc>
+        </espaco>
+        <espaco tipo="GANHAR_P_NETWORKING">
+            <desc>Organizou uma feira de origamis em que participaram 30 pessoas</desc>
+            <bonusNetworking>30</bonusNetworking>
+        </espaco>
+        <espaco tipo="GANHAR_P_NETWORKING">
+            <desc>Festa de Halloween da Odontologia, conheceu 75 pessoas</desc>
+            <bonusNetworking>75</bonusNetworking>
+        </espaco>
+        <espaco tipo="DINHEIRO_POR_P_NETWORKING">
+            <desc>É seu aniversário! Ganhe 10 de presente para cada 10 pontos de networking</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="CAMPEONATO_ATLETICA">
+            <desc>Campeonato da Atlética</desc>
+            <!-- TODO: Completar depois -->
+        </espaco>
+        <espaco tipo="REMUNERACAO">
+            <desc>REMUNERAÇÃO</desc>
+        </espaco>
+        <espaco tipo="GANHAR_P_NETWORKING">
+            <desc>Sua performance teatral no auditório da faculdade te deu 200 seguidores nas redes sociais</desc>
+            <bonusNetworking>200</bonusNetworking>
+        </espaco>
+        <espaco tipo="ESPACO_49B">
+            <desc>Se não tiver estudado, você foi mal em uma prova e deve voltar até o espaço 36b para estudar mais</desc>
+        </espaco>
     </caminho>
 </caminhos>

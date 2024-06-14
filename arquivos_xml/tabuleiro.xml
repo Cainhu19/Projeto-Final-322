@@ -2,4 +2,6 @@
 <tabuleiro>
     <arqCaminhos>arquivos_xml/tab_c1_2_3.xml</arqCaminhos>
     <arqCaminhos>arquivos_xml/tab_c4_5_6.xml</arqCaminhos>
+    <arqCaminhos>arquivos_xml/tab_c7_8_9.xml</arqCaminhos>
+    <arqCaminhos>arquivos_xml/tab_intercambio.xml</arqCaminhos>
 </tabuleiro>
