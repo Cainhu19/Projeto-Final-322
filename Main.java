@@ -92,8 +92,14 @@ public class Main {
                 // tabuleiro.adicionarCaminho(bifurcacaoA1);
                 // tabuleiro.adicionarCaminho(bifurcacaoB1);
 
-                LerEspacos lerEspacos = new LerEspacos();
-                lerEspacos.lerArquivo("arquivos_xml/tabuleiro_1.xml");
+                try {
+                    LerEspacos leitor = new LerEspacos();
+                    leitor.lerArquivo("arquivos_xml/tabuleiro.xml");
+
+                // Caso haja exceções na leitura do tabuleiro, será impressa uma stack trace para localização do erro
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
                 Jogo jogo = Jogo.getInstance(jogadores);
                 jogo.loopDeJogo();
