@@ -7,22 +7,31 @@ import logica.GerenciadorDeGrupos;
 import logica.Grupo;
 import logica.Jogador;
 
-public class EspacoOportunidade extends Espaco {
+/**
+ * Classe de espaços em que o jogador recebe uma oferta, seja ela de fonte de renda ou de um grupo.
+ */
+public class EspacoOferta extends Espaco {
     private Grupo grupo;
     private FonteDeRenda fonteDeRenda;
 
-    // Citar uso de polimorfismo nos construtores
-    public EspacoOportunidade(String descricao, Grupo grupo) {
+    //TODO: Citar uso de polimorfismo nos construtores
+    // Construtor para a oferta de uma fonte de renda
+    public EspacoOferta(String descricao, FonteDeRenda fonteDeRenda) {
         super(descricao);
-        this.grupo = grupo;
-    }
-
-    public EspacoOportunidade(String descricao, FonteDeRenda fonteDeRenda) {
-        super(descricao);
+        this.grupo = null;
         this.fonteDeRenda = fonteDeRenda;
     }
 
-    // TODO: revisar esse método
+    // Construtor para a oferta de um grupo
+    public EspacoOferta(String descricao, Grupo grupo) {
+        super(descricao);
+        this.grupo = grupo;
+        this.fonteDeRenda = null;
+    }
+
+    
+
+    //TODO: revisar esse método
     @Override
     public void acao(Jogador jogador) {
         // Oportunidade de ter uma fonte de renda/ocupação
@@ -50,7 +59,7 @@ public class EspacoOportunidade extends Espaco {
                 }
             }
 
-            // Oportunidade de entrar num grupo
+        // Oportunidade de entrar num grupo
         } else if (grupo != null) {
             if (grupo.isOcupado()) {
                 if (jogador.getGrupo() != null && !jogador.getGrupo().equals(grupo)) {
