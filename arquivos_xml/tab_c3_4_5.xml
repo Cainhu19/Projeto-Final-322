@@ -13,7 +13,7 @@
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>Gastou 60 em filme e shopping com os amigos</desc>
-            <qtd>-60<qtd>
+            <qtd>-60</qtd>
         </espaco>
         <espaco tipo="RECEBER_OFERTA_GRUPO_GERAL">
             <desc>Seu veterano convidou você a entrar na entidade estudantil dele</desc>
@@ -46,7 +46,7 @@
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>Vendeu computador antigo e recebeu 1100</desc>
-            <qtd>1100<qtd>
+            <qtd>1100</qtd>
         </espaco>
         <espaco tipo="ESTUDO">
             <desc>Fez resumos com lettering bonito</desc>
@@ -60,7 +60,7 @@
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>Atrasou devolução de livros da biblioteca, pague 30</desc>
-            <qtd>-30<qtd>
+            <qtd>-30</qtd>
         </espaco>
         <espaco tipo="ESPECIFICO" id="DINHEIRO_EM_FUNCAO_DE_DADO">
             <desc>Venceu aposta com os amigos, cada jogador te deve 10 vezes o valor de um 1d10 rodado</desc>
@@ -86,7 +86,7 @@
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>Prêmio de excelência estudantil, receba 2000</desc>
-            <qtd>2000<qtd>
+            <qtd>2000</qtd>
         </espaco>
         <espaco tipo="REMUNERACAO">
             <desc>REMUNERAÇÃO</desc>
@@ -123,11 +123,11 @@
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>Pague 100 pelos custos dos materiais de uma maquete</desc>
-            <qtd>-100<qtd>
+            <qtd>-100</qtd>
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>Achou uma nota de 50 na rua</desc>
-            <qtd>50<qtd>
+            <qtd>50</qtd>
         </espaco>
         <espaco tipo="RECEBER_OFERTA_RENDA_ESPECIFICA">
             <desc>Oportunidade de estágio na empresa da sua tia-avó</desc>
@@ -156,14 +156,14 @@
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>Pague 300 pelos ingressos de um show que você queria muito ir</desc>
-            <qtd>-300<qtd>
+            <qtd>-300</qtd>
         </espaco>
         <espaco tipo="ESTUDO">
             <desc>Você, de fato, assistiu ao documentário que o professor recomendou</desc>
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>Receba 150 por uma comissão artística a um colega</desc>
-            <qtd>150<qtd>
+            <qtd>150</qtd>
         </espaco>
     </caminho>
     <!-- Caminho 5: bifurcação B, para a esquerda no tabuleiro -->
@@ -173,7 +173,7 @@
             <bonusNetworking>60</bonusNetworking>
         </espaco>
         <espaco tipo="ESPECIFICO" id="PAGAR_PARA_ESTUDO">
-            <desc>Pague um curso online de 150 para estudar um conteúdo de nicho<desc>
+            <desc>Pague um curso online de 150 para estudar um conteúdo de nicho</desc>
             <!-- TODO: Completar depois -->
         </espaco>
         <espaco tipo="RECEBER_OFERTA_GRUPO_CONJUNTO">

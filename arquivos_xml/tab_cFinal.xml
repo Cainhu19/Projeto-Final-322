@@ -42,7 +42,7 @@
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>Sua avó está muito orgulhosa de sua trajetória e deu 100 de presente a você</desc>
-            <qtd>100<qtd>
+            <qtd>100</qtd>
         </espaco>
         <espaco tipo="EXTREMIDADE">
             <desc>FESTA DE FORMATURA</desc>

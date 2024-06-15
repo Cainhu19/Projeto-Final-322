@@ -17,7 +17,7 @@
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>Gastou 150 em energéticos e cafeína</desc>
-            <qtd>-150<qtd>
+            <qtd>-150</qtd>
         </espaco>
         <espaco tipo="RECEBER_OFERTA_GRUPO_ESPECIFICO">
             <desc>Chamaram você para um projeto de extensão no centro da cidade</desc>
@@ -25,7 +25,7 @@
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>A TV da sua mãe quebrou, ajude ela a pagar emprestando 500</desc>
-            <qtd>-500<qtd>
+            <qtd>-500</qtd>
         </espaco>
         <espaco tipo="ESTUDO">
             <desc>Atrasou em meia hora o fim da aula tirando dúvidas com o professor</desc>
@@ -36,7 +36,7 @@
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>Achou uma moeda de 1 no chão da biblioteca</desc>
-            <qtd>1<qtd>
+            <qtd>1</qtd>
         </espaco>
         <espaco tipo="ROLAR_DADO_DE_NOVO">
             <desc>Motivação súbita, role o dado de novo</desc>
@@ -66,7 +66,7 @@
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>Primeiro lugar em uma meia maratona na sua faculdade, receba 700</desc>
-            <qtd>700<qtd>
+            <qtd>700</qtd>
         </espaco>
         <espaco tipo="ESTUDO">
             <desc>livros relatórios projetos trabalhos resumos revisões estudos estudos estudos</desc>
@@ -107,7 +107,7 @@
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>Vendeu arte na praia e ganhou 180</desc>
-            <qtd>180<qtd>
+            <qtd>180</qtd>
         </espaco>
         <espaco tipo="RECEBER_OFERTA_GRUPO_GERAL">
             <desc>Oportunidade de entrar em uma entidade estudantil</desc>

@@ -20,7 +20,7 @@
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>Seus cadernos e livros molharam de café, gaste 400 para repor seus materiais</desc>
-            <qtd>-400<qtd>
+            <qtd>-400</qtd>
         </espaco>
         <espaco tipo="GANHAR_P_NETWORKING">
             <desc>Alguns amigos divulgaram seus desenhos nas redes sociais e eles atingiram 30 pessoas nas redes sociais</desc>

@@ -23,15 +23,15 @@
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>Fez um estágio durante o inverno e recebeu 3200</desc>
-            <qtd>3200<qtd>
+            <qtd>3200</qtd>
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>Você perdeu suas roupas de frio, gaste 500 com novas</desc>
-            <qtd>-500<qtd>
+            <qtd>-500</qtd>
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>Sua faculdade finalmente pagou os 1200 da sua passagem aérea</desc>
-            <qtd>1200<qtd>
+            <qtd>1200</qtd>
         </espaco>
         <espaco tipo="P_OPORTUNIDADES">
             <desc>Enviou currículo para empresas locais, +150 pontos de oportunidade</desc>
@@ -39,7 +39,7 @@
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>Você comeu fora muitas vezes, pague 400</desc>
-            <qtd>-400<qtd>
+            <qtd>-400</qtd>
         </espaco>
         <espaco tipo="ESTUDO">
             <desc>Estudos para provas finais do intercâmbio</desc>
@@ -48,5 +48,5 @@
             <desc>Festa de despedida da sua sala, conversou com 50 pessoas</desc>
             <bonusNetworking>50</bonusNetworking>
         </espaco>
-    <caminho>
+    </caminho>
 </caminhos>
