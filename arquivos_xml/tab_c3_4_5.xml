@@ -51,7 +51,7 @@
         <espaco tipo="ESTUDO">
             <desc>Fez resumos com lettering bonito</desc>
         </espaco>
-        <espaco tipo="PAGAR_COM_OUTRO_JOGADOR">
+        <espaco tipo="ESPECIFICO" id="PAGAR_COM_OUTRO_JOGADOR">
             <desc>Escolha um jogador para rachar uma pizza de 120 com você</desc>
             <!-- TODO: Completar depois -->
         </espaco>
@@ -62,7 +62,7 @@
             <desc>Atrasou devolução de livros da biblioteca, pague 30</desc>
             <qtd>-30<qtd>
         </espaco>
-        <espaco tipo="DINHEIRO_EM_FUNCAO_DE_DADO">
+        <espaco tipo="ESPECIFICO" id="DINHEIRO_EM_FUNCAO_DE_DADO">
             <desc>Venceu aposta com os amigos, cada jogador te deve 10 vezes o valor de um 1d10 rodado</desc>
         </espaco>
         <espaco tipo="GANHAR_P_NETWORKING">
@@ -72,7 +72,7 @@
         <espaco tipo="ESTUDO">
             <desc>Estudou com provas anteriores</desc>
         </espaco>
-        <espaco tipo="PAGAR_PARA_P_NETWORKING">
+        <espaco tipo="ESPECIFICO" id="PAGAR_PARA_P_NETWORKING">
             <desc>Pague 120 reais para ir na viagem de férias com 80 pessoas do seu curso</desc>
             <!-- TODO: Completar depois -->
         </espaco>
@@ -102,7 +102,7 @@
             <desc>Talvez haja vaga na Empresa Júnior do seu curso</desc>
             <grupo>EMPRESA_JUNIOR</grupo>
         </espaco>
-        <espaco tipo="DINHEIRO_SE_TIVER_RENDA_ESPECIFICA">
+        <espaco tipo="ESPECIFICO" id="DINHEIRO_SE_TIVER_RENDA_ESPECIFICA">
             <desc>Ações de pequenas empresas estão em alta, receba 4000 se tiver um empreendimento</desc>
             <!-- TODO: Completar depois -->
         </espaco>
@@ -172,7 +172,7 @@
             <desc>Foi na festa de recepção dos novos calouros, conversou com os 60 calouros</desc>
             <bonusNetworking>60</bonusNetworking>
         </espaco>
-        <espaco tipo="PAGAR_PARA_ESTUDO">
+        <espaco tipo="ESPECIFICO" id="PAGAR_PARA_ESTUDO">
             <desc>Pague um curso online de 150 para estudar um conteúdo de nicho<desc>
             <!-- TODO: Completar depois -->
         </espaco>
@@ -180,7 +180,7 @@
             <desc>O Centro Acadêmico do seu curso está chamando novos membros</desc>
             <!-- TODO: Completar depois -->
         </espaco>
-        <espaco tipo="RECEBER_OFERTA_EMPREGO_SE_P_NETWORKING_SUFICIENTE">
+        <espaco tipo="ESPECIFICO" id="RECEBER_OFERTA_EMPREGO_SE_P_NETWORKING_SUFICIENTE">
             <desc>Se seus pontos networking forem iguais ou maiores que 150, um colega te indica para uma vaga de emprego onde ele trabalha</desc>
             <!-- TODO: Completar depois -->
         </espaco>
@@ -203,11 +203,11 @@
             <desc>Festa de Halloween da Odontologia, conheceu 75 pessoas</desc>
             <bonusNetworking>75</bonusNetworking>
         </espaco>
-        <espaco tipo="DINHEIRO_POR_P_NETWORKING">
+        <espaco tipo="ESPECIFICO" id="DINHEIRO_POR_P_NETWORKING">
             <desc>É seu aniversário! Ganhe 10 de presente para cada 10 pontos de networking</desc>
             <!-- TODO: Completar depois -->
         </espaco>
-        <espaco tipo="CAMPEONATO_ATLETICA">
+        <espaco tipo="ESPECIFICO" id="CAMPEONATO_ATLETICA">
             <desc>Campeonato da Atlética</desc>
             <!-- TODO: Completar depois -->
         </espaco>
@@ -218,7 +218,7 @@
             <desc>Sua performance teatral no auditório da faculdade te deu 200 seguidores nas redes sociais</desc>
             <bonusNetworking>200</bonusNetworking>
         </espaco>
-        <espaco tipo="ESPACO_49B">
+        <espaco tipo="ESPECIFICO" id="VOLTAR_SE_NAO_TIVER_ESTUDO">
             <desc>Se não tiver estudado, você foi mal em uma prova e deve voltar até o espaço 36b para estudar mais</desc>
         </espaco>
     </caminho>

@@ -1,6 +1,7 @@
-package logica.tabuleiro;
+package logica.tabuleiro.espacos;
 
-import logica.*;
+import logica.Jogador;
+import logica.tabuleiro.Espaco;
 
 public class EspacoPerdeRodada extends Espaco {
     public EspacoPerdeRodada(String descricao) {

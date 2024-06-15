@@ -1,11 +1,7 @@
-package logica.tabuleiro;
+package logica.tabuleiro.espacos;
 
-import logica.Entrada;
-import logica.FonteDeRenda;
-import logica.GerenciadorDeFontes;
-import logica.GerenciadorDeGrupos;
-import logica.Grupo;
-import logica.Jogador;
+import logica.*;
+import logica.tabuleiro.Espaco;
 
 /**
  * Classe de espaços em que o jogador recebe uma oferta, seja ela de fonte de renda ou de um grupo.

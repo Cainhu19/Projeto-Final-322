@@ -7,11 +7,11 @@
             <desc>A Atlética do seu curso abriu um time do seu esporte favorito</desc>
             <grupo>ATLETICA_ESPORTES</grupo>
         </espaco>
-        <espaco tipo="CASA_DO_AZAR">
+        <espaco tipo="ESPECIFICO" id="CASA_DO_AZAR">
             <desc>Casa do azar: rode 1d10 e se tirar 1 ou 2 você terá que sair da sua entidade estudantil</desc>
             <!-- TODO: Completar depois -->
         </espaco>
-        <espaco tipo="GANHAR_P_NETWORKING_COM_MAIOR_DADO">
+        <espaco tipo="ESPECIFICO" id="GANHAR_P_NETWORKING_COM_MAIOR_DADO">
             <desc>Desafie um jogador a uma competição de dança em uma festa, quem rolar o maior dado vai impressionar 30 pessoas</desc>
             <!-- TODO: Completar depois -->
         </espaco>
@@ -30,7 +30,7 @@
         <espaco tipo="ESTUDO">
             <desc>Atrasou em meia hora o fim da aula tirando dúvidas com o professor</desc>
         </espaco>
-        <espaco tipo="OPORTUNIDADE_DE_INTERCAMBIO">
+        <espaco tipo="ESPECIFICO" id="OPORTUNIDADE_DE_INTERCAMBIO">
             <desc>Bolsa de intercâmbio no Canadá: você pode ir se tiver estudado 2x e pagar 1000 pela burocracia imigratória</desc>
             <!-- TODO: Completar depois -->
         </espaco>
@@ -50,13 +50,13 @@
             <desc>Tarde de vôlei com 15 pessoas</desc>
             <bonusNetworking>15</bonusNetworking>
         </espaco>
-        <espaco tipo="PERDER_RENDA">
+        <espaco tipo="ESPECIFICO" id="PERDER_RENDA">
             <desc>Perca sua fonte de renda se não for bolsa-auxílio</desc>
         </espaco>
         <espaco tipo="REMUNERACAO">
             <desc>REMUNERAÇÃO</desc>
         </espaco>
-        <espaco tipo="PROMOCAO_LOJA">
+        <espaco tipo="ESPECIFICO" id="PROMOCAO_LOJA">
             <desc>Promoção relâmpago na Lojinha do Destino</desc>
             <!-- TODO: Completar depois -->
         </espaco>
@@ -71,7 +71,7 @@
         <espaco tipo="ESTUDO">
             <desc>livros relatórios projetos trabalhos resumos revisões estudos estudos estudos</desc>
         </espaco>
-        <espaco tipo="PERDER_GRUPO">
+        <espaco tipo="ESPECIFICO" id="PERDER_GRUPO">
             <desc>Por falta de tempo, você precisou sair da sua atividade extracurricular</desc>
             <!-- TODO: Completar depois -->
         </espaco>
@@ -83,7 +83,7 @@
             <desc>Foi em um churrasco feito pela Atlética com 40 pessoas</desc>
             <bonusNetworking>40</bonusNetworking>
         </espaco>
-        <espaco tipo="ESCOLHER_JOGADOR_PARA_VOLTAR">
+        <espaco tipo="ESPECIFICO" id="ESCOLHER_JOGADOR_PARA_VOLTAR">
             <desc>Você emprestou anotações erradas a um jogador e ele precisou voltar 5 casas para estudar o conteúdo corretamente</desc>
             <!-- TODO: Completar depois -->
         </espaco>

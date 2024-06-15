@@ -1,6 +1,7 @@
 package arquivos_leitura;
 
 import logica.tabuleiro.*;
+import logica.tabuleiro.espacos.EspacoFactory;
 
 import java.io.File;
 import java.util.LinkedList;

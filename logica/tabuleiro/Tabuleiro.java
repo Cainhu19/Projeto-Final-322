@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import logica.Entrada;
 import logica.FonteDeRenda;
 import logica.Jogador;
+import logica.tabuleiro.espacos.EspacoRemuneracao;
 
 public class Tabuleiro {
     private static Tabuleiro tabuleiroInstance;

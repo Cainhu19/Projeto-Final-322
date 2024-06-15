@@ -1,8 +1,9 @@
-package logica.tabuleiro;
+package logica.tabuleiro.espacos;
 
 import logica.FonteDeRenda;
 import logica.GerenciadorDeFontes;
 import logica.Jogador;
+import logica.tabuleiro.Espaco;
 
 public class EspacoPerdeRenda extends Espaco {
 

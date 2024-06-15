@@ -47,7 +47,7 @@
     </caminho>
     <!-- Caminho 11: bifurcação B, para a direita no tabuleiro -->
     <caminho>
-        <espaco tipo="ESPACO_96B">
+        <espaco tipo="ESPECIFICO" id="SAIR_GRUPO_GANHAR_P_OPORTUNIDADES">
             <desc>Se você está em uma entidade estudantil, você acaba de sair dela deixando um ótimo legado, ganhando +250 pontos de oportunidade por isso</desc>
             <!-- TODO: Completar depois -->
         </espaco>

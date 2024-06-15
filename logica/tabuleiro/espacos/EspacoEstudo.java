@@ -1,6 +1,7 @@
-package logica.tabuleiro;
+package logica.tabuleiro.espacos;
 
 import logica.Jogador;
+import logica.tabuleiro.Espaco;
 
 public class EspacoEstudo extends Espaco {
     public EspacoEstudo(String descricao) {
