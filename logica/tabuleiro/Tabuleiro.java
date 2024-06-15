@@ -10,9 +10,11 @@ import logica.tabuleiro.espacos.EspacoRemuneracao;
 public class Tabuleiro {
     private static Tabuleiro tabuleiroInstance;
     private LinkedList<Caminho> caminhos;
+    private int qtdJogadoresCaridade; // armazena quantos jogadores passaram pela casa de caridade
 
     private Tabuleiro() {
         this.caminhos = new LinkedList<Caminho>();
+        this.qtdJogadoresCaridade = 0;
     }
 
     public static Tabuleiro getInstance() {
@@ -28,6 +30,14 @@ public class Tabuleiro {
 
     public int getNumeroCaminhos() {
         return caminhos.size();
+    }
+
+    public int getQtdJogadoresCaridade() {
+        return qtdJogadoresCaridade;
+    }
+
+    public void incrementarQtdJogadoresCaridade() {
+        qtdJogadoresCaridade++;
     }
 
      // TODO: ajustar a lógica dos três métodos de movimentação abaixo pq acho que ficou bem gambiarra
@@ -81,7 +91,8 @@ public class Tabuleiro {
     private void executarEspacosObrigatorios(Jogador jogador, int caminho,  int espacoInicial, int limite) {
         for (int i = espacoInicial; i < limite; i++) {
             Espaco espacoIntermediario = caminhos.get(caminho).getEspacos().get(i);
-            if (espacoIntermediario instanceof EspacoRemuneracao) {
+            // Verifica se o espaço é um espaço de remuneração ou a casa da caridade
+            if (espacoIntermediario instanceof EspacoRemuneracao || caminho == 12 && i == 1) {
                 espacoIntermediario.acao(jogador);
             }
         }

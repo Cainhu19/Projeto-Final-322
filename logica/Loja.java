@@ -9,6 +9,14 @@ public class Loja {
     private static Dado[] dadosAVenda;
     private static int[] precosDosDados;
 
+    public static Dado[] getDadosAVenda() {
+        return dadosAVenda;
+    }
+
+    public static int[] getPrecosDosDados() {
+        return precosDosDados;
+    }
+
     /**
      * Avisa ao jogador j que ele não pode comprar um dado da loja -- porque ele já possui um dado comprado e precisa usá-lo antes.
      */

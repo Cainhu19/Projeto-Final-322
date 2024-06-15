@@ -32,7 +32,7 @@ public class EspacoOferta extends Espaco {
     public void acao(Jogador jogador) {
         // Oportunidade de ter uma fonte de renda/ocupação
         if (fonteDeRenda != null) {
-            if (!GerenciadorDeFontes.disponivel(fonteDeRenda) || jogador.getFonteDeRenda() != null && jogador.getFonteDeRenda().equals(fonteDeRenda)) {
+            if (!GerenciadorDeFontes.disponivel(fonteDeRenda)) {
                 if (jogador.getFonteDeRenda() != null && !jogador.getFonteDeRenda().equals(fonteDeRenda)) {
                     System.out.printf("A fonte de renda %s já está sendo ocupada por um jogador.\n",
                             fonteDeRenda.getNome());

@@ -22,6 +22,10 @@ public class Jogo {
         return jogoInstance;
     }
 
+    public static LinkedList<Jogador> getJogadores() {
+        return jogoInstance.jogadores;
+    }
+
     public void loopDeJogo() {
         int jogadorAtual = 0;
         boolean continuarJogo = true;
