@@ -9,7 +9,6 @@ import logica.tabuleiro.Espaco;
 public class EspacoOfertaGeral extends Espaco {
     private boolean escolheGrupo;   // true: sorteia grupo para o jogador escolher, false: sorteia fonte de renda
 
-    // Construtor para sortear um grupo
     public EspacoOfertaGeral(String descricao, boolean escolheGrupo) {
         super(descricao);
         this.escolheGrupo = escolheGrupo;

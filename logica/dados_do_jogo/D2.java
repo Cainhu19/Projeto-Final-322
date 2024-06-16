@@ -7,7 +7,7 @@ import java.util.Random;
  * 
  * Suas faces podem ter valores que divergem dos valores 1-2 usuais.
  */
-public class D2 {
+public class D2 extends Dado {
     private int[] valores;
 
     public D2(int v0, int v1) {

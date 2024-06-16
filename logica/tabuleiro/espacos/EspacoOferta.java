@@ -87,7 +87,7 @@ public class EspacoOferta extends Espaco {
             Grupo primeiroGrupo = conjuntoDeGrupos.getGrupos().get(0);
             Grupo segundoGrupo = conjuntoDeGrupos.getGrupos().get(1);
             if (!GerenciadorDeGrupos.disponivel(primeiroGrupo) && !GerenciadorDeGrupos.disponivel(segundoGrupo)) {
-                if (jogador.getGrupo() != null && !jogador.getGrupo().equals(primeiroGrupo) || !jogador.getGrupo().equals(segundoGrupo)) {
+                if (jogador.getGrupo() != null && (!jogador.getGrupo().equals(primeiroGrupo) || !jogador.getGrupo().equals(segundoGrupo))) {
                     System.out.printf("Dois jogadores já ocupam %s.\n", conjuntoDeGrupos.getNome());
                 } else {
                     System.out.printf("Você já faz parte de %s! (%s)\n", conjuntoDeGrupos.getNome(), jogador.getGrupo().getNome());

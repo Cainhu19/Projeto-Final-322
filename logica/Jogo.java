@@ -26,6 +26,42 @@ public class Jogo {
         return jogoInstance.jogadores;
     }
 
+    /**
+     * Método para lidar com a interação da loja do jogo.
+     * 
+     * @param jogador jogador atual que está vendo a loja.
+     */
+    private void lojaAberta(Jogador jogador) {
+        boolean lojaAberta = true;
+        Loja.mostrarDadosDisponiveis();
+        System.out.println("Escolha um dado para comprar (digite o número) ou 0 para fechar a loja:");
+        while (lojaAberta) {
+            int dadoEscolhidoLoja = Entrada.respostaInt();
+            if (dadoEscolhidoLoja > 0 && dadoEscolhidoLoja <= Loja.getDadosAVenda().length) {
+                Loja.compra(jogador, dadoEscolhidoLoja - 1);
+            } else if (dadoEscolhidoLoja == 0) {
+                lojaAberta = false;
+                System.out.println("Fechando a loja...");
+            } else {
+                System.out.println("Escolha inválida. Tente novamente.");
+            }
+        }
+    }
+
+    /**
+     * Método para lidar com a jogada de um dado por parte do jogador.
+     * 
+     * @param jogador jogador atual que jogou o dado.
+     * @param resultado resultado obtido no lançamento do dado.
+     */
+    private void jogarDado(Jogador jogador, int resultado) {
+        System.out.printf("%s jogou o dado: %d\n", jogador.getNome(), resultado);
+        tabuleiro.moverJogador(jogador, resultado);
+    }
+
+    /**
+     * Método principal que controla o loop do jogo.
+     */
     public void loopDeJogo() {
         int jogadorAtual = 0;
         int[] fim = new int[]{12, 12};
@@ -36,26 +72,63 @@ public class Jogo {
                 System.out.println(jogador.getNome() + " não pode jogar essa rodada.");
                 jogador.setPerdeuProxRodada(false);
                 jogadorAtual = (jogadorAtual + 1) % jogadores.size();
-            } else {
-                int resultadoDado = jogador.resultadoDado(0);
-                System.out.printf("Jogador %s joga o dado: %d\n", jogador.getNome(), resultadoDado);
-                tabuleiro.moverJogador(jogador, resultadoDado);
-                if (jogador.getPosicao().equals(fim)) {
-                    System.out.println("Você chegou ao fim do tabuleiro!");
-                    jogadores.remove(jogadorAtual);
-                    jogadorAtual = (jogadorAtual + 1) % jogadores.size();
-                    continue;
-                }
-                System.out.println("Digite 'sair' para sair");
-                if (Entrada.continuarJogo()) {
-                    jogadores.remove(jogadorAtual);
-                    if (jogadores.size() <= 1) {
-                        continuarJogo = false;
-                        break;
+                continue;
+            }
+
+            System.out.printf("%s, escolha uma ação:\n", jogador.getNome());
+            System.out.println("1. Jogar um D10 comum");
+            if (jogador.getGrupo() != null) {
+                System.out.println("2. Jogar o dado especial do seu grupo");
+            }
+            if (jogador.possuiDadoComprado()) {
+                System.out.println("3. Jogar o dado comprado na loja");
+            }
+            System.out.println("L. Abrir a loja");
+            String escolha = Entrada.respostaString();
+
+            switch (escolha.toLowerCase()) {
+                case "1":
+                    jogarDado(jogador, jogador.resultadoDado(0));
+                    break;
+                case "2":
+                    if (jogador.getGrupo() != null) {
+                        jogarDado(jogador, jogador.resultadoDado(1));
+                    } else {
+                        System.out.println("Opção inválida. Tente novamente.");
                     }
-                } else {
-                    jogadorAtual = (jogadorAtual + 1) % jogadores.size();
+                    break;
+                case "3":
+                    if (jogador.possuiDadoComprado()) {
+                        jogarDado(jogador, jogador.resultadoDado(2));
+                    } else {
+                        System.out.println("Opção inválida. Tente novamente.");
+                    }
+                    break;
+                case "l":
+                    lojaAberta(jogador);
+                    jogadorAtual = (jogadorAtual - 1) % jogadores.size(); // Ajuste para manter o mesmo jogador atual
+                    break;
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
+                    break;
+            }
+
+            if (jogador.getPosicao().equals(fim)) {
+                System.out.println("Você chegou ao fim do tabuleiro!");
+                jogadores.remove(jogadorAtual);
+                jogadorAtual = (jogadorAtual + 1) % jogadores.size();
+                continue;
+            }
+
+            System.out.println("Digite 'sair' para sair");
+            if (Entrada.continuarJogo()) {
+                jogadores.remove(jogadorAtual);
+                if (jogadores.size() <= 1) {
+                    continuarJogo = false;
+                    break;
                 }
+            } else {
+                jogadorAtual = (jogadorAtual + 1) % jogadores.size();
             }
         }
         Entrada.fecharScanner();
