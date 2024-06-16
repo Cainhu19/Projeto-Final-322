@@ -133,6 +133,7 @@ public class Loja {
         int escolha = Entrada.respostaInt();
         if (escolha != 0) {
             compra(j, escolha); //TODO: isso aqui pressupõe entrada bem formatada, na GUI pode haver um jeito melhor
+
         }
         System.out.println("Fim da promoção relâmpago da Lojinha do Destino!");
         fimDaPromocao();
