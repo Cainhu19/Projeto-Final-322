@@ -188,7 +188,8 @@ public class EspacoEspecifico extends Espaco {
             
             case "PROMOCAO_LOJA":
                 // Espaço 69 (promoção relâmpago na Lojinha do Destino: tudo com 50% de desconto (para quem parar aqui e apenas quando parar aqui))
-                //TODO: implementar loja
+                Loja.promocaoRelampago(jogador);
+                break;
 
             case "PERDER_GRUPO":
                 // Espaço 73 (por falta de tempo, você precisou sair da sua entidade estudantil)
@@ -205,10 +206,19 @@ public class EspacoEspecifico extends Espaco {
                 System.out.printf("%s voltou 5 casas.\n", jogadorComAnotacoes.getNome());
                 break;
             
-            //case "DINHEIRO_DE_JOGADOR":
+            case "DINHEIRO_DE_JOGADOR":
                 // Espaço 77 (você está em apuros financeiros, peça 300 emprestados de um jogador)
-                //TODO
-                //break;
+                Jogador jogadorQueEmpresta = escolherOutroJogador(jogador);
+                if (jogadorQueEmpresta.getDinheiro() < 300) {
+                    System.out.printf("%s ajudou %s como pôde, emprestando todo o seu dinheiro (%d) por uma boa causa.", jogadorQueEmpresta.getNome(), jogador.getNome(), jogadorQueEmpresta.getDinheiro());
+                    jogador.ajustarDinheiro(jogadorQueEmpresta.getDinheiro());
+                    jogadorQueEmpresta.ajustarDinheiro(-jogadorQueEmpresta.getDinheiro());
+                } else {
+                    System.out.printf("%s ajudou %s emprestando 300.", jogadorQueEmpresta.getNome(), jogador.getNome());
+                    jogador.ajustarDinheiro(300);
+                    jogadorQueEmpresta.ajustarDinheiro(-300);
+                }
+                break;
             
             case "SAIR_GRUPO_GANHAR_P_OPORTUNIDADES":
                 /**
