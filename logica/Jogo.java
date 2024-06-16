@@ -26,6 +26,10 @@ public class Jogo {
         return jogoInstance.jogadores;
     }
 
+    public Tabuleiro getTabuleiro() {
+        return tabuleiro;
+    }
+
     public void loopDeJogo() {
         int jogadorAtual = 0;
         int[] fim = new int[]{12, 12};
@@ -37,13 +41,13 @@ public class Jogo {
                 jogador.setPerdeuProxRodada(false);
                 jogadorAtual = (jogadorAtual + 1) % jogadores.size();
             } else {
-                int resultadoDado = jogador.resultadoDado(0);
+                int resultadoDado = jogador.resultadoDado(0); //TODO: implementar escolha de dado
                 System.out.printf("Jogador %s joga o dado: %d\n", jogador.getNome(), resultadoDado);
                 tabuleiro.moverJogador(jogador, resultadoDado);
                 if (jogador.getPosicao().equals(fim)) {
                     System.out.println("Você chegou ao fim do tabuleiro!");
-                    jogadores.remove(jogadorAtual);
                     jogadorAtual = (jogadorAtual + 1) % jogadores.size();
+                    jogadores.remove(jogadorAtual); //TODO: verificar se essa mudança de linhas está certa (talvez embaixo também precise dessa mudança)
                     continue;
                 }
                 System.out.println("Digite 'sair' para sair");

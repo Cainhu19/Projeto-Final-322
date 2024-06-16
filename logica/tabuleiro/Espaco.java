@@ -2,6 +2,10 @@ package logica.tabuleiro;
 
 import logica.Jogador;
 
+/**
+ * Classe abstrata da qual todos os espaços do tabuleiro herdam.
+ * //TODO: confirmar essa docstring
+ */
 public abstract class Espaco {
     protected String descricao;
 

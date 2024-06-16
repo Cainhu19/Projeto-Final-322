@@ -137,6 +137,7 @@ public class Jogador {
      * Retorna o resultado da ação de rodar o dado especial comprado do jogador.
      */
     private int resultadoDadoComprado() {
+        dados[2] = null; // dado usado sai do inventário do jogador
         return dados[2].rodar(1);
     }
 

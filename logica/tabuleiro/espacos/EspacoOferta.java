@@ -8,32 +8,32 @@ import logica.tabuleiro.Espaco;
  */
 public class EspacoOferta extends Espaco {
     private Grupo grupo;
+    private GrupoConjunto grupoConjunto;
     private FonteDeRenda fonteDeRenda;
-    private ConjuntoDeGrupos conjuntoDeGrupos;
 
     //TODO: Citar uso de polimorfismo nos construtores
     // Construtor para a oferta de uma fonte de renda
     public EspacoOferta(String descricao, FonteDeRenda fonteDeRenda) {
         super(descricao);
         this.grupo = null;
+        this.grupoConjunto = null;
         this.fonteDeRenda = fonteDeRenda;
-        this.conjuntoDeGrupos = null;
     }
 
     // Construtor para a oferta de um grupo
     public EspacoOferta(String descricao, Grupo grupo) {
         super(descricao);
         this.grupo = grupo;
+        this.grupoConjunto = null;
         this.fonteDeRenda = null;
-        this.conjuntoDeGrupos = null;
     }
 
     // Construtor para a oferta de um conjunto de grupos
-    public EspacoOferta(String descricao, ConjuntoDeGrupos conjunto) {
+    public EspacoOferta(String descricao, GrupoConjunto conjunto) {
         super(descricao);
         this.grupo = null;
+        this.grupoConjunto = conjunto;
         this.fonteDeRenda = null;
-        this.conjuntoDeGrupos = conjunto;
     }
 
     //TODO: revisar esse método
@@ -83,14 +83,14 @@ public class EspacoOferta extends Espaco {
             }
 
         // Oportunidade de entrar em um grupo que faz parte de um conjunto (Atlética, C.A., Liga Acadêmica)
-        } else if (conjuntoDeGrupos != null) {
-            Grupo primeiroGrupo = conjuntoDeGrupos.getGrupos().get(0);
-            Grupo segundoGrupo = conjuntoDeGrupos.getGrupos().get(1);
+        } else if (grupoConjunto != null) {
+            Grupo primeiroGrupo = grupoConjunto.getGrupos().get(0);
+            Grupo segundoGrupo = grupoConjunto.getGrupos().get(1);
             if (!GerenciadorDeGrupos.disponivel(primeiroGrupo) && !GerenciadorDeGrupos.disponivel(segundoGrupo)) {
                 if (jogador.getGrupo() != null && !jogador.getGrupo().equals(primeiroGrupo) || !jogador.getGrupo().equals(segundoGrupo)) {
-                    System.out.printf("Dois jogadores já ocupam %s.\n", conjuntoDeGrupos.getNome());
+                    System.out.printf("Dois jogadores já ocupam %s.\n", grupoConjunto.getNome());
                 } else {
-                    System.out.printf("Você já faz parte de %s! (%s)\n", conjuntoDeGrupos.getNome(), jogador.getGrupo().getNome());
+                    System.out.printf("Você já faz parte de %s! (%s)\n", grupoConjunto.getNome(), jogador.getGrupo().getNome());
                 }
             } else {
                 imprimeDescricao();
