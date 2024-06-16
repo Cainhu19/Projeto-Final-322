@@ -93,7 +93,7 @@ public class EspacoOferta extends Espaco {
                     System.out.printf("Você já faz parte de %s! (%s)\n", grupoConjunto.getNome(), jogador.getGrupo().getNome());
                 }
             } else {
-                imprimeDescricao();
+                imprimirDescricao(descricao);
                 if (Entrada.respostaString().equals("s")) {
                     if (GerenciadorDeGrupos.disponivel(primeiroGrupo)) {
                         GerenciadorDeGrupos.ocupar(primeiroGrupo, jogador);

@@ -18,6 +18,9 @@ public class Jogador {
     private int dinheiro;
     private int pontosOportunidade;
     private int pontosNetworking;
+    private double multiplicadorDinheiro;
+    private double multiplicadorOportunidade;
+    private double multiplicadorNetworking;
     private int[] posicao;
     private LinkedList<Integer> bifurcacoesPercorridas;
     private int vezesEstudo;
@@ -34,6 +37,9 @@ public class Jogador {
         this.dinheiro = 500;
         this.pontosOportunidade = 0;
         this.pontosNetworking = 0;
+        this.multiplicadorDinheiro = 0.001;
+        this.multiplicadorOportunidade = 1;
+        this.multiplicadorNetworking = 0.3;
         this.posicao = new int[2];
         posicao[0] = 0; // Caminho
         posicao[1] = 0; // Espaço (dentro do caminho)
@@ -68,6 +74,18 @@ public class Jogador {
 
     public int getPontosNetworking() {
         return pontosNetworking;
+    }
+
+    public double getMultiplicadorDinheiro() {
+        return multiplicadorDinheiro;
+    }
+
+    public double getMultiplicadorOportunidade() {
+        return multiplicadorOportunidade;
+    }
+
+    public double getMultiplicadorNetworking() {
+        return multiplicadorNetworking;
     }
 
     public int[] getPosicao() {
@@ -109,6 +127,17 @@ public class Jogador {
 
     public void setPontosNetworking(int pontosNetworking) {
         this.pontosNetworking = pontosNetworking;
+    }
+    public void setMultiplicadorDinheiro(double multiplicadorDinheiro) {
+        this.multiplicadorDinheiro = multiplicadorDinheiro;
+    }
+
+    public void setMultiplicadorOportunidade(double multiplicadorOportunidade) {
+        this.multiplicadorOportunidade = multiplicadorOportunidade;
+    }
+
+    public void setMultiplicadorNetworking(double multiplicadorNetworking) {
+        this.multiplicadorNetworking = multiplicadorNetworking;
     }
 
     public void setPosicao(int[] pos) {
@@ -167,8 +196,8 @@ public class Jogador {
     /**
      * Calcula a pontuação do jogador ao decorrer do jogo.
      */
-    public int calcularPontuacao() {
-        return (dinheiro / 1000) + pontosOportunidade + (pontosNetworking / 3);
+    public double calcularPontuacao() {
+        return dinheiro * multiplicadorDinheiro + pontosOportunidade * multiplicadorOportunidade + pontosNetworking * multiplicadorNetworking;
     }
 
     /**

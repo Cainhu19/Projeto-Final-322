@@ -16,7 +16,7 @@ public class EspacoOfertaGeral extends Espaco {
 
     @Override
     public void acao(Jogador jogador) {
-        imprimeDescricao();
+        imprimirDescricao(descricao);
         if (Entrada.respostaString().equals("s")) {
             Random rand = new Random();
             if (escolheGrupo) {

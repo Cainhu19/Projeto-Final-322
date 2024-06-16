@@ -18,7 +18,7 @@ public class EspacoOportunidade extends Espaco {
 
     @Override
     public void acao(Jogador jogador) {
-        imprimeDescricao();
+        imprimirDescricao(descricao);
         // Tipo P_OPORTUNIDADES_SE_ESTIVER_EM_GRUPO: se o espaço requer que o jogador esteja em um grupo para receber pontos
         if (receberPontosSeEstiverEmGrupo) {
             if (jogador.getGrupo() == null) {
