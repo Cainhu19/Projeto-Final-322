@@ -1,6 +1,8 @@
 package logica;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -60,6 +62,21 @@ public class GerenciadorDeFontes {
             fontes.put(fonteDeRenda, null);
             fonteDeRenda.setOcupada(false);
         }
+    }
+
+    /**
+     * Retorna uma lista das fontes de renda que estão disponíveis.
+     * 
+     * @return lista das fontes de renda disponíveis.
+     */
+    public static List<FonteDeRenda> getFontesDisponiveis() {
+        List<FonteDeRenda> fontesDisponiveis = new ArrayList<>();
+        for (Map.Entry<FonteDeRenda, Jogador> entry : fontes.entrySet()) {
+            if (entry.getValue() == null) {
+                fontesDisponiveis.add(entry.getKey());
+            }
+        }
+        return fontesDisponiveis;
     }
 }
 

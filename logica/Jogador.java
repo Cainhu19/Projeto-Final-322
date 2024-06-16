@@ -190,7 +190,7 @@ public class Jogador {
         pontosNetworking += pontos;
     }
 
-    public void adicionarPontosOportunidade(int pontos) {
+    public void ajustarPontosOportunidade(int pontos) {
         pontosOportunidade += pontos;
     }
 

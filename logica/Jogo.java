@@ -28,6 +28,7 @@ public class Jogo {
 
     public void loopDeJogo() {
         int jogadorAtual = 0;
+        int[] fim = new int[]{12, 12};
         boolean continuarJogo = true;
         while (continuarJogo) {
             Jogador jogador = jogadores.get(jogadorAtual);
@@ -39,7 +40,12 @@ public class Jogo {
                 int resultadoDado = jogador.resultadoDado(0);
                 System.out.printf("Jogador %s joga o dado: %d\n", jogador.getNome(), resultadoDado);
                 tabuleiro.moverJogador(jogador, resultadoDado);
-
+                if (jogador.getPosicao().equals(fim)) {
+                    System.out.println("Você chegou ao fim do tabuleiro!");
+                    jogadores.remove(jogadorAtual);
+                    jogadorAtual = (jogadorAtual + 1) % jogadores.size();
+                    continue;
+                }
                 System.out.println("Digite 'sair' para sair");
                 if (Entrada.continuarJogo()) {
                     jogadores.remove(jogadorAtual);

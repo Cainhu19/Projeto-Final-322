@@ -75,7 +75,7 @@ public class EspacoEspecifico extends Espaco {
             case "ESTUDO_PARA_P_OPORTUNIDADES":
                 // Espaço 109 (se tiver estudado 5x, se forme com honras acadêmicas e receba +400 pontos de oportunidades acadêmicas futuras)
                 if (jogador.getVezesEstudo() >= 5) {
-                    jogador.adicionarPontosOportunidade(400);
+                    jogador.ajustarPontosOportunidade(400);
                     System.out.println("Você recebeu 400 pontos de oportunidade!");
                     break;
                 }
@@ -141,7 +141,7 @@ public class EspacoEspecifico extends Espaco {
                 for (int i = 0; i < Jogo.getJogadores().size(); i++) {
                     Jogador jogadorExaminado = Jogo.getJogadores().get(i);
                     if (jogadorExaminado.getGrupo().equals(Grupo.ATLETICA_ESPORTES) || jogadorExaminado.getGrupo().equals(Grupo.ATLETICA_EVENTOS)) {
-                            jogadorExaminado.adicionarPontosOportunidade(50);
+                            jogadorExaminado.ajustarPontosOportunidade(50);
                             System.out.printf("%s ganhou 50 pontos de oportunidade!\n", jogadorExaminado.getNome());
                         }
                     }
@@ -243,7 +243,7 @@ public class EspacoEspecifico extends Espaco {
              */ 
             if (jogador.getGrupo() != null) {
                 GerenciadorDeGrupos.liberar(jogador.getGrupo());
-                jogador.adicionarPontosOportunidade(250);
+                jogador.ajustarPontosOportunidade(250);
                 System.out.println("Você saiu da entidade e ganhou 250 pontos de oportunidade.");
                 break;
             }

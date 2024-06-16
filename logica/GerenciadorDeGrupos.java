@@ -1,6 +1,8 @@
 package logica;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -41,4 +43,18 @@ public class GerenciadorDeGrupos {
         }
     }
 
+    /**
+     * Retorna uma lista dos grupos que estão disponíveis.
+     * 
+     * @return lista dos grupos disponíveis.
+     */
+    public static List<Grupo> getGruposDisponiveis() {
+        List<Grupo> gruposDisponiveis = new ArrayList<>();
+        for (Map.Entry<Grupo, Jogador> entry : grupos.entrySet()) {
+            if (entry.getValue() == null) {
+                gruposDisponiveis.add(entry.getKey());
+            }
+        }
+        return gruposDisponiveis;
+    }
 }

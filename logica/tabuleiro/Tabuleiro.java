@@ -115,7 +115,7 @@ public class Tabuleiro {
         int novoEspaco = espacoAtual + quantidade;  // novo espaço do jogador após se mover
         
         if (quantidade > 0 && jogador.getGrupo() != null) {   
-            jogador.adicionarPontosOportunidade(quantidade);
+            jogador.ajustarPontosOportunidade(quantidade);
         }
         // Jogador avança um caminho
         int caminhosAvancados = 0;

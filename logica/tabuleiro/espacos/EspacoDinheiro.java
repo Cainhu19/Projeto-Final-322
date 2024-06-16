@@ -11,12 +11,6 @@ public class EspacoDinheiro extends Espaco {
         this.quantidade = quantidade;
     }
 
-    public EspacoDinheiro(String descricao, int quantidade, Jogador jogador) {
-        super(descricao);
-        this.quantidade = quantidade;
-
-    }
-
     @Override
     public void acao(Jogador jogador) { // Usado tanto para ganhar quanto gastar dinheiro
         imprimirDescricao(descricao);

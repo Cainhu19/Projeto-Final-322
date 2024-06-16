@@ -2,6 +2,7 @@ package logica.tabuleiro.espacos;
 
 import org.w3c.dom.Element;
 
+import logica.ConjuntoDeGrupos;
 import logica.FonteDeRenda;
 import logica.Grupo;
 import logica.tabuleiro.*;
@@ -36,23 +37,29 @@ public class EspacoFactory {
                 FonteDeRenda fonteDeRenda = FonteDeRenda.valueOf(espacoElement.getElementsByTagName("fonteDeRenda").item(0).getTextContent());
                 return new EspacoOferta(desc, fonteDeRenda);
 
-            // case "RECEBER_OFERTA_RENDA_GERAL": // 2 espaços
+            case "RECEBER_OFERTA_RENDA_GERAL": // 2 espaços
+                return new EspacoOfertaGeral(desc, false);
 
             case "REMUNERACAO": // 8 espaços
                 return new EspacoRemuneracao();
             
-            // case "RECEBER_OFERTA_GRUPO_CONJUNTO" // 8 espaços
-                
+            case "RECEBER_OFERTA_GRUPO_CONJUNTO": // 8 espaços
+                ConjuntoDeGrupos conjunto = ConjuntoDeGrupos.valueOf(espacoElement.getElementsByTagName("conjunto").item(0).getTextContent());
+                return new EspacoOferta(desc, conjunto);
+
             case "RECEBER_OFERTA_GRUPO_ESPECIFICO": // 7 espaços
                 Grupo grupo = Grupo.valueOf(espacoElement.getElementsByTagName("grupo").item(0).getTextContent());
                 return new EspacoOferta(desc, grupo);
             
-            // case "RECEBER_OFERTA_GRUPO_GERAL" // 6 espaços
+            case "RECEBER_OFERTA_GRUPO_GERAL": // 6 espaços
+                return new EspacoOfertaGeral(desc, true);
                                 
             case "PERDER_RODADA": // 4 espaços
                 return new EspacoPerdeRodada(desc);
             
-            // case "P_OPORTUNIDADES": // 3 espaços, todos no intercâmbio
+            case "P_OPORTUNIDADES": // 3 espaços, todos no intercâmbio
+                int pontosOportunidade = Integer.parseInt(espacoElement.getElementsByTagName("qtd").item(0).getTextContent());
+                return new EspacoOportunidade(desc, pontosOportunidade);
 
             // case "LIMPAR_DIVIDA": // 2 espaços
 
@@ -62,7 +69,8 @@ public class EspacoFactory {
 
             // case "ROLAR_DADO_DE_NOVO": // 2 espaços
 
-            // case "EXTREMIDADE": // 2 espaços
+            case "EXTREMIDADE": // 2 espaços
+                return new EspacoExtremidade(desc);
                 
             default:
                 throw new IllegalArgumentException("Tipo não reconhecido de espaço: " + tipo);
