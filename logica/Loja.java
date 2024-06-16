@@ -103,4 +103,39 @@ public class Loja {
             System.out.printf("%d- %s (preço: %d)\n", i + 1, descricaoDado(i), precosDosDados[i]);
         }
     }
+
+    /**
+     * Divide o preço de todos os dados da loja pela metade.
+     */
+    private static void lojaEmPromocao() {
+        for (int i = 0; i < 5; i++) {
+            precosDosDados[i] /= 2;
+        }
+    }
+
+    /**
+     * Multiplica o preço de todos os dados da loja por dois.
+     */
+    private static void fimDaPromocao() {
+        for (int i = 0; i < 5; i++) {
+            precosDosDados[i] *= 2;
+        }
+    }
+
+    /**
+     * Gerencia a ação do espaço da promoção relâmpago da loja.
+     */
+    public static void promocaoRelampago(Jogador j) {
+        lojaEmPromocao();
+        mostrarDadosDisponiveis();
+        System.out.println("Você deseja comprar algum dado? Se sim, digite o número do dado desejado; se não, digite 0.");
+        System.out.println("Atenção: a promoção acaba no fim de sua rodada!");
+        int escolha = Entrada.respostaInt();
+        if (escolha != 0) {
+            compra(j, escolha); //TODO: isso aqui pressupõe entrada bem formatada, na GUI pode haver um jeito melhor
+
+        }
+        System.out.println("Fim da promoção relâmpago da Lojinha do Destino!");
+        fimDaPromocao();
+    }
 }

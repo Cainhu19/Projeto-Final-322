@@ -7,7 +7,7 @@
         </espaco>   
         <espaco tipo="P_OPORTUNIDADES">
             <desc>Palestra sobre oportunidades futuras no Canadá, +1200 pontos de oportunidades</desc>
-            <!-- TODO: Completar depois -->
+            <qtd>1200</qtd>
         </espaco>
         <espaco tipo="GANHAR_P_NETWORKING">
             <desc>Você tirou o dia para conversar com outros 100 alunos intercambistas</desc>
@@ -19,7 +19,7 @@
         </espaco>
         <espaco tipo="P_OPORTUNIDADES">
             <desc>Se perdeu indo para uma entrevista, -150 pontos de oportunidade</desc>
-            <!-- TODO: Completar depois -->
+            <qtd>-150</qtd>
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>Fez um estágio durante o inverno e recebeu 3200</desc>
@@ -35,7 +35,7 @@
         </espaco>
         <espaco tipo="P_OPORTUNIDADES">
             <desc>Enviou currículo para empresas locais, +150 pontos de oportunidade</desc>
-            <!-- TODO: Completar depois -->
+            <qtd>150</qtd>
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>Você comeu fora muitas vezes, pague 400</desc>

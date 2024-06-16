@@ -34,7 +34,6 @@
         </espaco>
         <espaco tipo="RECEBER_OFERTA_GRUPO_GERAL">
             <desc>Surgiu a oportunidade de entrar em uma atividade estudantil</desc>
-            <!-- TODO: Completar depois -->
         </espaco>
         <espaco tipo="RECEBER_OFERTA_RENDA_ESPECIFICA">
             <desc>Proposta de emprego da empresa do seu primo de segundo grau</desc>
@@ -61,7 +60,7 @@
         </espaco>
         <espaco tipo="RECEBER_OFERTA_GRUPO_CONJUNTO">
             <desc>Você pensa em participar do seletivo de uma Liga Acadêmica</desc>
-            <!-- TODO: Completar depois -->
+            <conjunto>LIGA_ACADEMICA</conjunto>
         </espaco>
         <espaco tipo="RECEBER_OFERTA_GRUPO_ESPECIFICO">
             <desc>Você está pensando em entrar para a Empresa Júnior do seu curso</desc>
@@ -69,7 +68,7 @@
         </espaco>
         <espaco tipo="RECEBER_OFERTA_GRUPO_CONJUNTO">
             <desc>Chamaram você para entrar para a Atlética do seu curso</desc>
-            <!-- TODO: Completar depois -->
+            <conjunto>ATLETICA</conjunto>
         </espaco>
         <espaco tipo="RECEBER_OFERTA_RENDA_ESPECIFICA">
             <desc>Vaga de meio-período na loja do seu cunhado</desc>
@@ -77,7 +76,7 @@
         </espaco>
         <espaco tipo="RECEBER_OFERTA_GRUPO_CONJUNTO">
             <desc>Estão convidando calouros para entrar no Centro Acadêmico</desc>
-            <!-- TODO: Completar depois -->
+            <conjunto>C_A</conjunto>
         </espaco>
         <espaco tipo="RECEBER_OFERTA_GRUPO_ESPECIFICO">
             <desc>Você e seus amigos tiveram uma ideia de projeto de extensão</desc>

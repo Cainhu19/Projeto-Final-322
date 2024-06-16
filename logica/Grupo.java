@@ -3,7 +3,7 @@ package logica;
 import logica.dados_do_jogo.*;
 
 /**
- * Classe que representa os grupos (entidades, ligas etc.) dos quais um jogador
+ * Enum que representa os grupos (entidades, ligas etc.) dos quais um jogador
  * pode fazer parte.
  * 
  * Possui atributos de nome, o dado especial que vem de bônus,

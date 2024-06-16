@@ -12,12 +12,15 @@ public class EspacoDinheiro extends Espaco {
     }
 
     @Override
-    public void acao(Jogador jogador) { // Usado tanto para ganhar quanto gastar dinheiro
+    public void acao(Jogador jogador) { // Usado para ganhar dinheiro, perder dinheiro e limpar dívida quando quantidade = 0 
         imprimirDescricao(descricao);
         if (quantidade > 0) {
             System.out.printf("(+%d na sua conta)\n", quantidade);
-        } else {
+        } else if (quantidade < 0) {
             System.out.printf("(%d na sua conta)\n", quantidade);
+        } else if (jogador.getDinheiro() < 0) {
+            System.out.println("Suas dívidas foram quitadas! Seu saldo é agora de 0.\n");
+            jogador.setDinheiro(0);
         }
         jogador.ajustarDinheiro(quantidade);
     }

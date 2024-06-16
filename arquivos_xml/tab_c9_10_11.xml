@@ -5,7 +5,7 @@
     <caminho>
         <espaco tipo="P_OPORTUNIDADES_SE_ESTIVER_EM_GRUPO">
             <desc>Convenção anual da sua área; se estiver fazendo uma atividade extracurricular, vá com seus colegas e receba 300 pontos de oportunidades</desc>
-            <!-- TODO: Completar depois -->
+            <qtd>300</qtd>
         </espaco>
         <espaco tipo="GANHAR_P_NETWORKING">
             <desc>Amigo de um amigo te chamou para o cinema com 10 pessoas</desc>
@@ -49,11 +49,10 @@
     <caminho>
         <espaco tipo="ESPECIFICO" id="SAIR_GRUPO_GANHAR_P_OPORTUNIDADES">
             <desc>Se você está em uma entidade estudantil, você acaba de sair dela deixando um ótimo legado, ganhando +250 pontos de oportunidade por isso</desc>
-            <!-- TODO: Completar depois -->
         </espaco>
-        <espaco tipo="LIMPAR_DIVIDA">
+        <espaco tipo="DINHEIRO">
             <desc>Quitou suas dívidas</desc>
-            <!-- TODO: Completar depois -->
+            <qtd>0</qtd>
         </espaco>
         <espaco tipo="RECEBER_OFERTA_RENDA_ESPECIFICA">
             <desc>Proposta de emprego da sobrinha do seu vizinho</desc>
@@ -63,9 +62,8 @@
             <desc>Criou um canal no YouTube que viralizou, conseguindo 1000 inscritos</desc>
             <bonusNetworking>1000</bonusNetworking>
         </espaco>
-        <espaco tipo="TENTAR_ROUBAR_P_OPORTUNIDADES">
+        <espaco tipo="ESPECIFICO" id="TENTAR_ROUBAR_P_OPORTUNIDADES">
             <desc>Tente copiar os passos de uma pessoa e se destacar mais que ela: se conseguir, ganhe 100 pontos de oportunidade da pessoa, se não, perca 100 pontos para ela</desc>
-            <!-- TODO: Completar depois -->
         </espaco>
     </caminho>
 </caminhos>

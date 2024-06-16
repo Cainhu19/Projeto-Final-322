@@ -2,7 +2,7 @@ package logica.tabuleiro.espacos;
 
 import org.w3c.dom.Element;
 
-import logica.ConjuntoDeGrupos;
+import logica.GrupoConjunto;
 import logica.FonteDeRenda;
 import logica.Grupo;
 import logica.tabuleiro.*;
@@ -16,13 +16,13 @@ public class EspacoFactory {
         String desc = espacoElement.getElementsByTagName("desc").item(0).getTextContent();
 
         // Criação de espaço verificando caso a caso.
-        // No switch, os casos estão quase ordenados por recorrência da maior para a menor, às vezes agrupados fora de ordem para melhor .legibilidade
+        // No switch, os casos estão quase ordenados por recorrência da maior para a menor, às vezes agrupados fora de ordem para melhor legibilidade.
         switch (tipo) {
             case "GANHAR_P_NETWORKING": // 31 espaços
                 int bonusNetworking = Integer.parseInt(espacoElement.getElementsByTagName("bonusNetworking").item(0).getTextContent());
                 return new EspacoNetworking(desc, bonusNetworking);
 
-            case "DINHEIRO": // 21 espaços
+            case "DINHEIRO": // 23 espaços
                 int qtd = Integer.parseInt(espacoElement.getElementsByTagName("qtd").item(0).getTextContent());
                 return new EspacoDinheiro(desc, qtd);
 
@@ -44,7 +44,7 @@ public class EspacoFactory {
                 return new EspacoRemuneracao();
             
             case "RECEBER_OFERTA_GRUPO_CONJUNTO": // 8 espaços
-                ConjuntoDeGrupos conjunto = ConjuntoDeGrupos.valueOf(espacoElement.getElementsByTagName("conjunto").item(0).getTextContent());
+                GrupoConjunto conjunto = GrupoConjunto.valueOf(espacoElement.getElementsByTagName("conjunto").item(0).getTextContent());
                 return new EspacoOferta(desc, conjunto);
 
             case "RECEBER_OFERTA_GRUPO_ESPECIFICO": // 7 espaços
@@ -59,15 +59,16 @@ public class EspacoFactory {
             
             case "P_OPORTUNIDADES": // 3 espaços, todos no intercâmbio
                 int pontosOportunidade = Integer.parseInt(espacoElement.getElementsByTagName("qtd").item(0).getTextContent());
-                return new EspacoOportunidade(desc, pontosOportunidade);
+                return new EspacoOportunidade(desc, pontosOportunidade, false);
 
-            // case "LIMPAR_DIVIDA": // 2 espaços
+            case "P_OPORTUNIDADES_SE_ESTIVER_EM_GRUPO": // 2 espaços
+                int pontosOportunidadeSeEstiverEmGrupo = Integer.parseInt(espacoElement.getElementsByTagName("qtd").item(0).getTextContent());
+                return new EspacoOportunidade(desc, pontosOportunidadeSeEstiverEmGrupo, true);
 
-            // case "ESTUDO_PARA_IC": // 2 espaços
-
-            // case "P_OPORTUNIDADES_SE_ESTIVER_EM_GRUPO": // 2 espaços
-
-            // case "ROLAR_DADO_DE_NOVO": // 2 espaços
+            case "ESTUDO_PARA_IC": // 2 espaços
+                Grupo grupoOfertado = Grupo.valueOf(espacoElement.getElementsByTagName("grupo").item(0).getTextContent());
+                int vezesEstudos = Integer.parseInt(espacoElement.getElementsByTagName("vezesEstudos").item(0).getTextContent());
+                return new EspacoEstudoParaOferta(desc, grupoOfertado, vezesEstudos);
 
             case "EXTREMIDADE": // 2 espaços
                 return new EspacoExtremidade(desc);

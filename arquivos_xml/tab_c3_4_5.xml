@@ -9,7 +9,6 @@
         </espaco>
         <espaco tipo="RECEBER_OFERTA_GRUPO_GERAL">
             <desc>Oportunidade de entrar em uma entidade estudantil</desc>
-            <!-- TODO: Completar depois -->
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>Gastou 60 em filme e shopping com os amigos</desc>
@@ -17,7 +16,6 @@
         </espaco>
         <espaco tipo="RECEBER_OFERTA_GRUPO_GERAL">
             <desc>Seu veterano convidou você a entrar na entidade estudantil dele</desc>
-            <!-- TODO: Completar depois -->
         </espaco>
         <espaco tipo="GANHAR_P_NETWORKING">
             <desc>Noite de karaoke em um grupo de 30 pessoas</desc>
@@ -38,7 +36,6 @@
         </espaco>
         <espaco tipo="RECEBER_OFERTA_GRUPO_GERAL">
             <desc>Mais uma oportunidade de entrar em uma entidade estudantil</desc>
-            <!-- TODO: Completar depois -->
         </espaco>
         <espaco tipo="GANHAR_P_NETWORKING">
             <desc>Foi em uma feira de profissões com 100 outras pessoas</desc>
@@ -53,7 +50,6 @@
         </espaco>
         <espaco tipo="ESPECIFICO" id="PAGAR_COM_OUTRO_JOGADOR">
             <desc>Escolha um jogador para rachar uma pizza de 120 com você</desc>
-            <!-- TODO: Completar depois -->
         </espaco>
         <espaco tipo="RECEBER_OFERTA_RENDA_GERAL">
             <desc>Um escritório local viu seu currículo e tem uma proposta</desc>
@@ -74,15 +70,14 @@
         </espaco>
         <espaco tipo="ESPECIFICO" id="PAGAR_PARA_P_NETWORKING">
             <desc>Pague 120 reais para ir na viagem de férias com 80 pessoas do seu curso</desc>
-            <!-- TODO: Completar depois -->
         </espaco>
         <espaco tipo="RECEBER_OFERTA_GRUPO_GERAL">
             <desc>Você pode entrar de fininho em uma entidade estudantil de última hora</desc>
-            <!-- TODO: Completar depois -->
         </espaco>
         <espaco tipo="ESTUDO_PARA_IC">
             <desc>Se já tiver caído em uma casa de estudos, você pode aceitar uma oferta de IC do seu professor</desc>
-            <!-- TODO: Completar depois -->
+            <grupo>INICIACAO_CIENTIFICA</grupo>
+            <vezesEstudos>1</vezesEstudos>
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>Prêmio de excelência estudantil, receba 2000</desc>
@@ -104,14 +99,13 @@
         </espaco>
         <espaco tipo="ESPECIFICO" id="DINHEIRO_SE_TIVER_RENDA_ESPECIFICA">
             <desc>Ações de pequenas empresas estão em alta, receba 4000 se tiver um empreendimento</desc>
-            <!-- TODO: Completar depois -->
         </espaco>
         <espaco tipo="ESTUDO">
             <desc>Estudo na monitoria de uma matéria difícil</desc>
         </espaco>
         <espaco tipo="RECEBER_OFERTA_GRUPO_CONJUNTO">
             <desc>Você pensa em participar do seletivo de uma Liga Acadêmica</desc>
-            <!-- TODO: Completar depois -->
+            <conjunto>LIGA_ACADEMICA</conjunto>
         </espaco>
         <espaco tipo="RECEBER_OFERTA_RENDA_ESPECIFICA">
             <desc>Abriu uma vaga de meio-período na sua área perto de casa</desc>
@@ -141,14 +135,13 @@
         </espaco>
         <espaco tipo="P_OPORTUNIDADES_SE_ESTIVER_EM_GRUPO">
             <desc>Feira das entidades estudantis; se você estiver fazendo uma atividade extracurricular, vá para lá ganhe 200 pontos de oportunidades</desc>
-            <!-- TODO: Completar depois -->
+            <qtd>200</qtd>
         </espaco>
         <espaco tipo="PERDER_RODADA">
             <desc>Crise existencial sobre se você está fazendo o curso certo, perca uma rodada</desc>
         </espaco>
-        <espaco tipo="ROLAR_DADO_DE_NOVO">
+        <espaco tipo="ESPECIFICO" id="ROLAR_DADO_DE_NOVO">
             <desc>Tempo com a família revigorou suas energias, role o dado de novo</desc>
-            <!-- TODO: Completar depois -->
         </espaco>
         <espaco tipo="GANHAR_P_NETWORKING">
             <desc>Tempo de socialização no prédio das biológicas com 15 pessoas novas</desc>
@@ -174,15 +167,13 @@
         </espaco>
         <espaco tipo="ESPECIFICO" id="PAGAR_PARA_ESTUDO">
             <desc>Pague um curso online de 150 para estudar um conteúdo de nicho</desc>
-            <!-- TODO: Completar depois -->
         </espaco>
         <espaco tipo="RECEBER_OFERTA_GRUPO_CONJUNTO">
             <desc>O Centro Acadêmico do seu curso está chamando novos membros</desc>
-            <!-- TODO: Completar depois -->
+            <conjunto>C_A</conjunto>
         </espaco>
         <espaco tipo="ESPECIFICO" id="RECEBER_OFERTA_EMPREGO_SE_P_NETWORKING_SUFICIENTE">
             <desc>Se seus pontos networking forem iguais ou maiores que 150, um colega te indica para uma vaga de emprego onde ele trabalha</desc>
-            <!-- TODO: Completar depois -->
         </espaco>
         <espaco tipo="GANHAR_P_NETWORKING">
             <desc>Participou de um torneio de futebol beneficente com outras 120 pessoas</desc>
@@ -190,7 +181,6 @@
         </espaco>
         <espaco tipo="RECEBER_OFERTA_RENDA_GERAL">
             <desc>O pai do amigo da sua irmã tem uma proposta para você</desc>
-            <!-- TODO: Completar depois -->
         </espaco>
         <espaco tipo="ESTUDO">
             <desc>Fez mapas mentais para reter conteúdo</desc>
@@ -205,11 +195,9 @@
         </espaco>
         <espaco tipo="ESPECIFICO" id="DINHEIRO_POR_P_NETWORKING">
             <desc>É seu aniversário! Ganhe 10 de presente para cada 10 pontos de networking</desc>
-            <!-- TODO: Completar depois -->
         </espaco>
         <espaco tipo="ESPECIFICO" id="CAMPEONATO_ATLETICA">
             <desc>Campeonato da Atlética</desc>
-            <!-- TODO: Completar depois -->
         </espaco>
         <espaco tipo="REMUNERACAO">
             <desc>REMUNERAÇÃO</desc>

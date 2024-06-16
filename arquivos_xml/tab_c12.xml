@@ -9,7 +9,6 @@
         </espaco>
         <espaco tipo="ESPECIFICO" id="CASA_DA_CARIDADE">
             <desc>CASA DA CARIDADE</desc>
-            <!-- TODO: Completar depois -->
         </espaco>
         <espaco tipo="GANHAR_P_NETWORKING">
             <desc>Festa da Química, conversou com 45 pessoas</desc>
@@ -34,11 +33,9 @@
         </espaco>
         <espaco tipo="ESPECIFICO" id="ESTUDO_PARA_P_OPORTUNIDADES">
             <desc>Se você tiver estudado pelo menos 5 vezes, se forme com honras acadêmicas e receba 400 pontos de oportunidades acadêmicas futuras</desc>
-            <!-- TODO: Completar depois -->
         </espaco>
         <espaco tipo="ESPECIFICO" id="P_NETWORKING_EM_FUNCAO_DE_DADO">
             <desc>Cole grau com número de pessoas igual a 6 vezes o número de um 1d10</desc>
-            <!-- TODO: Completar depois -->
         </espaco>
         <espaco tipo="DINHEIRO">
             <desc>Sua avó está muito orgulhosa de sua trajetória e deu 100 de presente a você</desc>

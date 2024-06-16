@@ -42,12 +42,12 @@ public class Tabuleiro {
 
      // TODO: ajustar a lógica dos três métodos de movimentação abaixo pq acho que ficou bem gambiarra
     /**
-     * Verifica se o jogador entrou em uma bifurcação. Se for múltiplo de 3 - 1 (1, 4, 7...) retorna true. 
+     * Verifica se o jogador entrou em uma bifurcação. Se for múltiplo de 3 + 1 (1, 4, 7...) e não for o intercâmbio retorna true. 
      * 
      * @param caminho índice do caminho.
      */
     private boolean jogadorEntrouEmBifurcacao(int caminho) {
-        return (caminho - 1) % 3 == 0;
+        return (caminho - 1) % 3 == 0 && caminho != 13; // Exclui o caminho equivalente ao intercâmbio
     }
 
     /**
@@ -59,21 +59,23 @@ public class Tabuleiro {
      * @return
      */
     private int jogadorEscolheBifurcacao(Jogador jogador, int caminho) {
-        System.out.println("Você chegou em uma bifurcação. Qual caminho deseja seguir?");
+        System.out.println("Você chegou em uma bifurcação. Qual caminho deseja seguir? (digite 1 ou 2)");
         if (caminho == 1) {
-            System.out.println("1. Socialização");
-            System.out.println("2. Estudos");
+            System.out.println("1. Focar em dinheiro");
+            System.out.println("2. Focar em socialização e oportunidades");
         }
-        if (caminho == 4) {
-            System.out.println("1. Caminho do networking");
-            System.out.println("2. Caminho do aprimoramento profissional");
-        }
-        // adicionar outras bifurcações
         int escolha = Entrada.respostaInt();
         switch(escolha) {
             case 1:
+                if (caminho == 1) {
+                    jogador.setMultiplicadorDinheiro(0.002);
+                }
                 return caminho;
             case 2:
+                if (caminho == 1) {
+                    jogador.setMultiplicadorOportunidade(2);
+                    jogador.setMultiplicadorNetworking(0.7);
+                }
                 return caminho + 1;
             // alguma coisa no caso default (tratar exceção de escolha inválida??)
         }
@@ -128,6 +130,13 @@ public class Tabuleiro {
             }
             novoEspaco -= espacosCaminhoAtual;
             caminhoAtual++;
+            // Verifica se entrou no caminho do intercâmbio a partir do último caminho do tabuleiro normal e corrige a posição para o fim do tabuleiro
+            if (caminhoAtual == 13) { 
+                caminhoAtual--;
+                novoEspaco = caminhos.get(caminhoAtual).getNumeroEspacos() - 1;
+                espacoAtual = novoEspaco;
+                break;
+            }
             // Verifica todos os espaços entre espacoAtual - 1 e espacosCaminhoAtual para ver se tem um espaço obrigatório
             // True se ele entrar numa bifurcação pela primeira vez (vai sempre entrar pela bifurcação A primeiro)
             if (jogadorEntrouEmBifurcacao(caminhoAtual) && !jogador.getBifurcacoesPercorridas().contains(caminhoAtual) && 
@@ -146,12 +155,12 @@ public class Tabuleiro {
                 System.out.printf("A universidade decidiu lhe dar uma bolsa-auxílio! (%d de remuneração)\n", FonteDeRenda.BOLSA_AUXILIO.getRenda());
             }
             espacosCaminhoAtual = caminhos.get(caminhoAtual).getNumeroEspacos();
-            if (caminhoAtual >= caminhos.size()) {  // Verifica se chegou no final do tabuleiro
-                caminhoAtual = caminhos.size() - 1;
-                novoEspaco = espacosCaminhoAtual - 1;
-                break;
-            }
+            if (caminhoAtual >= caminhos.size()) {  // Verifica se chegou no final do tabuleiro (último espaço do intercâmbio)
+                caminhoAtual = 9;
+                novoEspaco = 4;
+                espacoAtual = novoEspaco;
             caminhosAvancados++;
+            }
         }
 
         // Jogador volta um caminho
@@ -177,7 +186,7 @@ public class Tabuleiro {
             } else {
                 executarEspacosObrigatorios(jogador, caminhoAtual, espacoAtual + 1, novoEspaco);
             }
-            caminhos.get(caminhoAtual).getEspacos().get(novoEspaco).acao(jogador);    
+            caminhos.get(caminhoAtual).getEspacos().get(novoEspaco).acao(jogador);
         }
     }
 

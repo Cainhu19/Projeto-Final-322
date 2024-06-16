@@ -26,6 +26,12 @@ public class Jogo {
         return jogoInstance.jogadores;
     }
 
+
+    public Tabuleiro getTabuleiro() {
+        return tabuleiro;
+    }
+
+
     /**
      * Método para lidar com a interação da loja do jogo.
      * 
@@ -115,8 +121,8 @@ public class Jogo {
 
             if (jogador.getPosicao().equals(fim)) {
                 System.out.println("Você chegou ao fim do tabuleiro!");
-                jogadores.remove(jogadorAtual);
                 jogadorAtual = (jogadorAtual + 1) % jogadores.size();
+                jogadores.remove(jogadorAtual);
                 continue;
             }
 
