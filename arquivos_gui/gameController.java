@@ -25,7 +25,6 @@ public class gameController implements Initializable {
         gameCanvas.heightProperty().bind(gameAnchor.heightProperty());
         imgTabuleiro.fitHeightProperty().bind(gameCanvas.heightProperty());
         imgTabuleiro.fitWidthProperty().bind(gameCanvas.widthProperty());
-
     }
 
     @Override

@@ -26,11 +26,9 @@ public class Jogo {
         return jogoInstance.jogadores;
     }
 
-
     public Tabuleiro getTabuleiro() {
         return tabuleiro;
     }
-
 
     /**
      * Método para lidar com a interação da loja do jogo.
@@ -57,7 +55,7 @@ public class Jogo {
     /**
      * Método para lidar com a jogada de um dado por parte do jogador.
      * 
-     * @param jogador jogador atual que jogou o dado.
+     * @param jogador   jogador atual que jogou o dado.
      * @param resultado resultado obtido no lançamento do dado.
      */
     private void jogarDado(Jogador jogador, int resultado) {
@@ -70,7 +68,7 @@ public class Jogo {
      */
     public void loopDeJogo() {
         int jogadorAtual = 0;
-        int[] fim = new int[]{12, 12};
+        int[] fim = new int[] { 12, 12 };
         boolean continuarJogo = true;
         while (continuarJogo) {
             Jogador jogador = jogadores.get(jogadorAtual);

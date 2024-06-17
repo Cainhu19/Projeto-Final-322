@@ -9,7 +9,6 @@ import javafx.stage.Stage;
 import logica.*;
 
 public class Main extends Application {
-
     public static void main(String args[]) {
         launch(args);
         Jogador j1 = new Jogador("Caio");
