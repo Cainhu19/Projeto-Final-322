@@ -2,6 +2,9 @@
 <!-- Arquivo com espaços do intercâmbio -->
 <caminhos>
     <caminho>
+        <espaco tipo="EXTREMIDADE">
+            <desc>Início do intercâmbio</desc>
+        </espaco>
         <espaco tipo="ESTUDO">
             <desc>Estudos intensivos de inglês e francês</desc>
         </espaco>   
