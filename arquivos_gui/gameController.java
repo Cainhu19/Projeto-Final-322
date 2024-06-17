@@ -5,9 +5,9 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 
 public class gameController implements Initializable {
 
@@ -15,21 +15,15 @@ public class gameController implements Initializable {
     private AnchorPane gameAnchor;
 
     @FXML
-    private Canvas gameCanvas;
+    private HBox hBox;
 
     @FXML
     private ImageView imgTabuleiro;
 
-    private void iniciaCanvas() {
-        gameCanvas.widthProperty().bind(gameAnchor.widthProperty());
-        gameCanvas.heightProperty().bind(gameAnchor.heightProperty());
-        imgTabuleiro.fitHeightProperty().bind(gameCanvas.heightProperty());
-        imgTabuleiro.fitWidthProperty().bind(gameCanvas.widthProperty());
-    }
-
     @Override
-    public void initialize(URL arg0, ResourceBundle arg1) {
-        iniciaCanvas();
+    public void initialize(URL location, ResourceBundle resources) {
+        imgTabuleiro.fitHeightProperty().bind(hBox.heightProperty());
+
     }
 
 }
