@@ -1,6 +1,9 @@
 package arquivos_gui;
 
 import java.io.IOException;
+import java.util.LinkedList;
+
+import arquivos_leitura.LerEspacos;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +12,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import logica.Jogador;
+import logica.Jogo;
 
 public class sceneController {
     private Stage stage;

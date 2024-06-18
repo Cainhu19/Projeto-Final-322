@@ -17,36 +17,10 @@ public class Main extends Application {
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-            Jogador j1 = new Jogador("Caio");
-            Jogador j2 = new Jogador("Henrique");
-            Jogador j3 = new Jogador("Giulliano");
-            LinkedList<Jogador> jogadores = new LinkedList<>();
-            jogadores.add(j1);
-            jogadores.add(j2);
-            jogadores.add(j3);
-            try {
-                LerEspacos leitor = new LerEspacos();
-                leitor.lerArquivo("arquivos_xml/tabuleiro.xml");
-
-                // Caso haja exceções na leitura do tabuleiro, será impressa uma stack trace
-                // para localização do erro
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            Jogo jogo = Jogo.getInstance(jogadores);
-            inciaJogo(jogo);
-
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-    }
-
-    private void inciaJogo(Jogo jogo) {
-        new Thread(() -> {
-            jogo.loopDeJogo();
-        }).start();
     }
 
     public static void main(String args[]) {
