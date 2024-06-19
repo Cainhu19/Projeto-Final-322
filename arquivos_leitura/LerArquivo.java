@@ -1,5 +1,5 @@
 package arquivos_leitura;
 
-public interface I_Arquivo {
+public interface LerArquivo {
     public void lerArquivo(String path);
 }

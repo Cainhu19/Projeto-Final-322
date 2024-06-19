@@ -1,11 +1,21 @@
-package logica.tabuleiro.espacos;
+package logica.tabuleiro;
 
 import org.w3c.dom.Element;
 
 import logica.GrupoConjunto;
+import logica.tabuleiro.espacos.EspacoDinheiro;
+import logica.tabuleiro.espacos.EspacoEspecifico;
+import logica.tabuleiro.espacos.EspacoEstudo;
+import logica.tabuleiro.espacos.EspacoEstudoParaOferta;
+import logica.tabuleiro.espacos.EspacoExtremidade;
+import logica.tabuleiro.espacos.EspacoNetworking;
+import logica.tabuleiro.espacos.EspacoOferta;
+import logica.tabuleiro.espacos.EspacoOfertaGeral;
+import logica.tabuleiro.espacos.EspacoOportunidade;
+import logica.tabuleiro.espacos.EspacoPerdeRodada;
+import logica.tabuleiro.espacos.EspacoRemuneracao;
 import logica.FonteDeRenda;
 import logica.Grupo;
-import logica.tabuleiro.*;
 
 /**
  * Classe que gerencia criação de espaços conforme seu tipo e ação a ser feita.

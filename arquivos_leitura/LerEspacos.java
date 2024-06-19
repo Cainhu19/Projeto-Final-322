@@ -1,7 +1,6 @@
 package arquivos_leitura;
 
 import logica.tabuleiro.*;
-import logica.tabuleiro.espacos.EspacoFactory;
 
 import java.io.File;
 import java.util.LinkedList;
@@ -14,7 +13,7 @@ import org.w3c.dom.NodeList;
 /**
  * Realiza a inicialização do tabuleiro ao ler o arquivo XML dos espaços.
  */
-public class LerEspacos implements I_Arquivo {
+public class LerEspacos implements LerArquivo {
     /**
      * Método mestre de leitura arquivo do tabuleiro.
      * @param pathTabuleiro caminho até o arquivo XML que contém outros arquivos XML com conjuntos de 3 caminhos cada.

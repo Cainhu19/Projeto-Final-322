@@ -4,7 +4,7 @@ import logica.Jogador;
 import logica.tabuleiro.Espaco;
 
 public class EspacoExtremidade extends Espaco {
-    protected EspacoExtremidade(String descricao) {
+    public EspacoExtremidade(String descricao) {
         super(descricao);
     }
 
