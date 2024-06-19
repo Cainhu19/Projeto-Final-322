@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
 <AnchorPane fx:id="gameAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="634.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arquivos_gui.gameController">
    <children>
       <HBox fx:id="hBox" layoutX="-6.0" layoutY="1.0" prefHeight="400.0" prefWidth="640.0">
          <children>
-            <ImageView fx:id="imgTabuleiro" fitHeight="404.0" fitWidth="278.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgTabuleiro" fitHeight="404.0" fitWidth="267.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@tabuleiro.seco.jpg" />
                </image>
             </ImageView>
-            <Label fx:id="label" prefHeight="77.0" prefWidth="290.0" text="Label" />
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="labelTerminal" prefHeight="77.0" prefWidth="290.0" text="Label" />
+                  <TextField fx:id="inputTerminal" />
+                  <HBox fx:id="hBoxIcones" prefHeight="100.0" prefWidth="200.0" />
+                  <Label fx:id="labelDescricao" text="Label" />
+               </children>
+            </VBox>
          </children>
       </HBox>
    </children>
