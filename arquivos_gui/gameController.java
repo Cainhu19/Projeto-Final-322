@@ -36,8 +36,6 @@ public class gameController implements Initializable {
     @FXML
     private TextField fieldTerminal;
 
-    private String acao;
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Jogo jogo = Jogo.getInstance(Jogo.getJogadores());
@@ -45,7 +43,6 @@ public class gameController implements Initializable {
     }
 
     public void escolhaDeAcao(Jogo jogo) {
-        acao = "";
         String texto = Jogo.getJogadores().get(jogo.getJogadorAtual()).getNome() + " escolha uma ação";
         if (Jogo.getJogadores().get(jogo.getJogadorAtual()).getGrupo() != null) {
             texto += "\n2. Jogar o dado especial do seu grupo";
@@ -55,8 +52,5 @@ public class gameController implements Initializable {
         }
         labelTerminal.setText(texto);
 
-        if (acao != "") {
-            labelTerminal.setText("viado de bosta");
-        }
     }
 }
