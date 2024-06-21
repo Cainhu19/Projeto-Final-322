@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<tabuleiro>
+    <arqCaminhos>src/main/resources/com/arquivos_xml/tab_c0_1_2.xml</arqCaminhos>
+    <arqCaminhos>src/main/resources/com/arquivos_xml/tab_c3_4_5.xml</arqCaminhos>
+    <arqCaminhos>src/main/resources/com/arquivos_xml/tab_c6_7_8.xml</arqCaminhos>
+    <arqCaminhos>src/main/resources/com/arquivos_xml/tab_c9_10_11.xml</arqCaminhos>
+    <arqCaminhos>src/main/resources/com/arquivos_xml/tab_c12.xml</arqCaminhos>
+    <arqCaminhos>src/main/resources/com/arquivos_xml/tab_intercambio.xml</arqCaminhos>
+</tabuleiro>
