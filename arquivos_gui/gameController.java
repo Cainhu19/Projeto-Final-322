@@ -40,25 +40,23 @@ public class gameController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        fieldTerminal.addEventHandler(KeyEvent.KEY_TYPED, );
-        // Jogo jogo = Jogo.getInstance(Jogo.getJogadores());
-        // escolhaDeAcao(jogo);
+        Jogo jogo = Jogo.getInstance(Jogo.getJogadores());
+        escolhaDeAcao(jogo);
     }
 
     public void escolhaDeAcao(Jogo jogo) {
-        // acao = "";
-        // String texto = Jogo.getJogadores().get(jogo.getJogadorAtual()).getNome() + "
-        // escolha uma ação";
-        // if (Jogo.getJogadores().get(jogo.getJogadorAtual()).getGrupo() != null) {
-        // texto += "\n2. Jogar o dado especial do seu grupo";
-        // }
-        // if (Jogo.getJogadores().get(jogo.getJogadorAtual()).possuiDadoComprado()) {
-        // texto += "\n3. Jogar o dado comprado na loja";
-        // }
-        // labelTerminal.setText(texto);
+        acao = "";
+        String texto = Jogo.getJogadores().get(jogo.getJogadorAtual()).getNome() + " escolha uma ação";
+        if (Jogo.getJogadores().get(jogo.getJogadorAtual()).getGrupo() != null) {
+            texto += "\n2. Jogar o dado especial do seu grupo";
+        }
+        if (Jogo.getJogadores().get(jogo.getJogadorAtual()).possuiDadoComprado()) {
+            texto += "\n3. Jogar o dado comprado na loja";
+        }
+        labelTerminal.setText(texto);
 
-        // if (acao != "") {
-        // labelTerminal.setText("viado de bosta");
-        // }
+        if (acao != "") {
+            labelTerminal.setText("viado de bosta");
+        }
     }
 }
