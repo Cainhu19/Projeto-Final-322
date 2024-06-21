@@ -8,10 +8,12 @@ public class Jogo {
     private static Jogo jogoInstance;
     private LinkedList<Jogador> jogadores;
     private Tabuleiro tabuleiro;
+    private int jogadorAtual;
 
     private Jogo(LinkedList<Jogador> jogadores) {
         this.jogadores = jogadores;
         this.tabuleiro = Tabuleiro.getInstance();
+        this.jogadorAtual = 0;
     }
 
     public static Jogo getInstance(LinkedList<Jogador> jogadores) {
@@ -28,6 +30,10 @@ public class Jogo {
 
     public Tabuleiro getTabuleiro() {
         return tabuleiro;
+    }
+
+    public int getJogadorAtual() {
+        return jogadorAtual;
     }
 
     /**

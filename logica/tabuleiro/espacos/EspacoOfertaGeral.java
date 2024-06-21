@@ -7,11 +7,11 @@ import logica.*;
 import logica.tabuleiro.Espaco;
 
 public class EspacoOfertaGeral extends Espaco {
-    private boolean escolheGrupo;   // true: sorteia grupo para o jogador escolher, false: sorteia fonte de renda
+    private boolean ehOfertaGrupo; // true: sorteia grupo para o jogador escolher, false: sorteia fonte de renda
 
-    public EspacoOfertaGeral(String descricao, boolean escolheGrupo) {
+    public EspacoOfertaGeral(String descricao, boolean ehOfertaGrupo) {
         super(descricao);
-        this.escolheGrupo = escolheGrupo;
+        this.ehOfertaGrupo = ehOfertaGrupo;
     }
 
     @Override
@@ -19,7 +19,7 @@ public class EspacoOfertaGeral extends Espaco {
         imprimirDescricao(descricao);
         if (Entrada.respostaString().equals("s")) {
             Random rand = new Random();
-            if (escolheGrupo) {
+            if (ehOfertaGrupo) {
                 List<Grupo> gruposDisponiveis = GerenciadorDeGrupos.getGruposDisponiveis();
                 Grupo grupo = gruposDisponiveis.get(rand.nextInt(gruposDisponiveis.size()));
                 GerenciadorDeGrupos.ocupar(grupo, jogador);
