@@ -128,6 +128,7 @@ public class Jogador {
     public void setPontosNetworking(int pontosNetworking) {
         this.pontosNetworking = pontosNetworking;
     }
+
     public void setMultiplicadorDinheiro(double multiplicadorDinheiro) {
         this.multiplicadorDinheiro = multiplicadorDinheiro;
     }
@@ -181,14 +182,14 @@ public class Jogador {
     /**
      * Roda o dado de acordo com a escolha do jogador e retorna o resultado.
      * 
-     * @param escolha indica qual dado o jogador quer utilizar (1: dado comprado, 2:
+     * @param escolha indica qual dado o jogador quer utilizar (2: dado comprado, 1:
      *                dado especial, nenhum dos dois: dado normal).
      */
     public int resultadoDado(int escolha) {
-        if (escolha == 1 && possuiDadoComprado())
-            return resultadoDadoComprado();
-        else if (escolha == 2)
+        if (escolha == 1)
             return resultadoDadoEspecial();
+        else if (escolha == 2)
+            return resultadoDadoComprado();
         else
             return resultadoDadoNormal();
     }
@@ -197,7 +198,8 @@ public class Jogador {
      * Calcula a pontuação do jogador ao decorrer do jogo.
      */
     public double calcularPontuacao() {
-        return dinheiro * multiplicadorDinheiro + pontosOportunidade * multiplicadorOportunidade + pontosNetworking * multiplicadorNetworking;
+        return dinheiro * multiplicadorDinheiro + pontosOportunidade * multiplicadorOportunidade
+                + pontosNetworking * multiplicadorNetworking;
     }
 
     /**

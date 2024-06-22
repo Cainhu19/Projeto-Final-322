@@ -65,12 +65,15 @@ public class Jogo {
     /**
      * Método para lidar com a jogada de um dado por parte do jogador.
      * 
-     * @param jogador   jogador atual que jogou o dado.
-     * @param resultado resultado obtido no lançamento do dado.
+     * @param jogador  jogador que jogou o dado.
+     * @param tipoDado tipo do Dado que será lançado pelo jogador (Normal, do grupo
+     *                 ou comprado).
      */
-    public void jogarDado(Jogador jogador, int resultado) {
-        System.out.printf("%s jogou o dado: %d\n", jogador.getNome(), resultado);
+    public String jogarDado(Jogador jogador, int tipoDado) {
+        int resultado = jogador.resultadoDado(tipoDado);
+        String msg = jogador.getNome() + " jogou o dado" + "\nResultado: " + resultado;
         tabuleiro.moverJogador(jogador, resultado);
+        return msg;
     }
 
     /**

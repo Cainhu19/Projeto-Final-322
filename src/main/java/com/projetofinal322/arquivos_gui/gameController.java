@@ -5,7 +5,6 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
@@ -53,17 +52,32 @@ public class gameController implements Initializable {
     private void handleGameAnchor(KeyEvent keyEvent) {
         Jogo jogo = Jogo.getInstance(Jogo.getJogadores());
         Jogador jogadorAtual = Jogo.getJogadores().get(jogo.getJogadorAtual());
-        String texto;
+        String texto = "";
         if (turno == 0) {
             switch (keyEvent.getCode().toString()) {
                 case "DIGIT1":
-                    texto = jogadorAtual.getNome() + " jogou o dado" + "\nResultado: " + jogadorAtual.resultadoDado(0);
+                    texto = jogo.jogarDado(jogadorAtual, 0);
                     labelTerminal.setText(texto);
                     turno++;
+                    break;
+                case "DIGIT2":
+                    if (jogadorAtual.getGrupo() != null) {
+                        texto = jogo.jogarDado(jogadorAtual, 1);
+                        labelTerminal.setText(texto);
+                        turno++;
+                    }
+                    break;
+                case "DIGIT3":
+                    if (jogadorAtual.possuiDadoComprado()) {
+                        texto = jogo.jogarDado(jogadorAtual, 2);
+                        labelTerminal.setText(texto);
+                        turno++;
+                    }
                     break;
                 default:
                     break;
             }
+
         }
     }
 }
