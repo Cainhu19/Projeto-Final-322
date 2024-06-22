@@ -1,39 +1,40 @@
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\Tabuleiro.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\GerenciadorDeFontes.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\PrimaryController.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\arquivos_gui\gameController.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\dados_do_jogo\D4.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\Caminho.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\Entrada.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\arquivos_leitura\LerArquivo.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\Espaco.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoPerdeRodada.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\dados_do_jogo\D2.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\dados_do_jogo\D8.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoEstudoParaOferta.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoExtremidade.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\GrupoConjunto.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoNetworking.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\Jogador.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\arquivos_gui\scene1Controller.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\dados_do_jogo\D10.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoEspecifico.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\App.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\Jogo.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\dados_do_jogo\D6.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\GerenciadorDeGrupos.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\Main.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoOfertaGeral.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoDinheiro.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoRemuneracao.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\SecondaryController.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoEstudo.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\arquivos_leitura\LerEspacos.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\Grupo.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\Loja.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\EspacoFactory.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\FonteDeRenda.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\dados_do_jogo\Dado.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoOferta.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoPerdeRenda.java
-C:\Users\giull\OneDrive\Área de Trabalho\Unicamp\2024-1S\MC322\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoOportunidade.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoDinheiro.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoEstudo.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\PrimaryController.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\dados_do_jogo\D4.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoOportunidade.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoExtremidade.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\Tabuleiro.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\Loja.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\SecondaryController.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoEspecifico.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoPerdeRodada.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\EspacoFactory.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\GerenciadorDeFontes.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\App.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\Caminho.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\dados_do_jogo\D10.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\dados_do_jogo\D8.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\Espaco.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\arquivos_leitura\LerEspacos.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\dados_do_jogo\D2.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\Jogador.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\dados_do_jogo\Dado.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\GerenciadorDeGrupos.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoPerdeRenda.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\module-info.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\Grupo.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoOferta.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\FonteDeRenda.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoNetworking.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\arquivos_leitura\LerArquivo.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\dados_do_jogo\D6.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoRemuneracao.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\GrupoConjunto.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoOfertaGeral.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\arquivos_gui\scene1Controller.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\Jogo.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\tabuleiro\espacos\EspacoEstudoParaOferta.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\Main.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\arquivos_gui\gameController.java
+C:\Users\silva\git\Projeto-Final-322\src\main\java\com\projetofinal322\logica\Entrada.java

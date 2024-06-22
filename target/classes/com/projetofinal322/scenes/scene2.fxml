@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="gameAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1000.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projetofinal322.arquivos_gui.gameController">
+   <children>
+      <ImageView fx:id="imgTabuleiro" fitHeight="720.0" fitWidth="518.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@tabuleiro.acabado.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="labelTerminal" layoutX="510.0" prefHeight="180.0" prefWidth="490.0" stylesheets="@styles.css">
+         <font>
+            <Font name="Comic Sans MS" size="20.0" />
+         </font>
+      </Label>
+      <FlowPane hgap="6.0" layoutX="509.0" layoutY="223.0" prefHeight="300.0" prefWidth="492.0" vgap="10.0">
+         <children>
+            <ImageView fitHeight="145.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="145.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="145.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="145.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="145.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="145.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </FlowPane>
+      <Label fx:id="labelInfos" layoutX="510.0" layoutY="529.0" prefHeight="191.0" prefWidth="490.0">
+         <font>
+            <Font name="Comic Sans MS" size="20.0" />
+         </font></Label>
+      <TextField fx:id="fieldTerminal" layoutX="681.0" layoutY="187.0" />
+   </children>
+</AnchorPane>

@@ -43,7 +43,7 @@ public class scene1Controller {
             }
             Collections.shuffle(jogadores, new Random());
             Jogo.getInstance(jogadores);
-            root = FXMLLoader.load(getClass().getResource("scene2.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/com/projetofinal322/scenes/scene2.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);

@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/com/projetofinal322/fxml/scene1.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/com/projetofinal322/scenes/scene1.fxml"));
             stage.setTitle("Jogo da Vida Universitário");
             stage.getIcons().add(new Image(getClass().getResourceAsStream("/com/projetofinal322/images/icon.png")));
             Scene scene = new Scene(root);
@@ -20,7 +20,6 @@ public class Main extends Application {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     public static void main(String args[]) {
