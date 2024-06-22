@@ -36,6 +36,10 @@ public class Jogo {
         return jogadorAtual;
     }
 
+    public void setJogadorAtual(int jogadorAtual) {
+        this.jogadorAtual = jogadorAtual;
+    }
+
     /**
      * Método para lidar com a interação da loja do jogo.
      * 
