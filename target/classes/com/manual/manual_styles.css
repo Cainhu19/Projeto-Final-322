@@ -26,14 +26,14 @@ code {
 }
 
 img {
-    width: 250px;
-    height: 380px;
+    width: 340px;
+    height: 480px;
 }
 
 .caixa {
     position: relative;
     width: 100%; 
-    height: 100%; 
+    height: 110%; 
     display: flex; 
     flex-direction: column;
     justify-content: center; 
@@ -96,4 +96,8 @@ img {
 
 #violeta {
     color: violet;
+}
+
+#laranja {
+    color: orange;
 }
