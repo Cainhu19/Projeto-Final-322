@@ -1,0 +1,11 @@
+.root{
+    background-color: #3F51B5;
+    -fx-background-color: #3F51B5;
+}
+
+#labelTerminal, #labelInfos{
+    border-width: 2;
+    -fx-border-width: 2;
+    border-color: white;
+    -fx-border-color: white;
+}

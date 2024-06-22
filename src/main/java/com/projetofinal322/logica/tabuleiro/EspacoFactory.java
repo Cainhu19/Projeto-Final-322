@@ -2,20 +2,9 @@ package com.projetofinal322.logica.tabuleiro;
 
 import org.w3c.dom.Element;
 
-import com.projetofinal322.logica.GrupoConjunto;
-import com.projetofinal322.logica.tabuleiro.espacos.EspacoDinheiro;
-import com.projetofinal322.logica.tabuleiro.espacos.EspacoEspecifico;
-import com.projetofinal322.logica.tabuleiro.espacos.EspacoEstudo;
-import com.projetofinal322.logica.tabuleiro.espacos.EspacoEstudoParaOferta;
-import com.projetofinal322.logica.tabuleiro.espacos.EspacoExtremidade;
-import com.projetofinal322.logica.tabuleiro.espacos.EspacoNetworking;
-import com.projetofinal322.logica.tabuleiro.espacos.EspacoOferta;
-import com.projetofinal322.logica.tabuleiro.espacos.EspacoOfertaGeral;
-import com.projetofinal322.logica.tabuleiro.espacos.EspacoOportunidade;
-import com.projetofinal322.logica.tabuleiro.espacos.EspacoPerdeRodada;
-import com.projetofinal322.logica.tabuleiro.espacos.EspacoRemuneracao;
-import com.projetofinal322.logica.FonteDeRenda;
-import com.projetofinal322.logica.Grupo;
+import com.projetofinal322.logica.*;
+import com.projetofinal322.logica.tabuleiro.espacos.*;
+
 
 /**
  * Classe que gerencia criação de espaços conforme seu tipo e ação a ser feita.

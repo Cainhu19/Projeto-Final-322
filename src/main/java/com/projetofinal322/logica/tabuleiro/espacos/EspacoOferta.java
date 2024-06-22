@@ -11,7 +11,6 @@ public class EspacoOferta extends Espaco {
     private GrupoConjunto grupoConjunto;
     private FonteDeRenda fonteDeRenda;
 
-    //TODO: Citar uso de polimorfismo nos construtores
     // Construtor para a oferta de uma fonte de renda
     public EspacoOferta(String descricao, FonteDeRenda fonteDeRenda) {
         super(descricao);
