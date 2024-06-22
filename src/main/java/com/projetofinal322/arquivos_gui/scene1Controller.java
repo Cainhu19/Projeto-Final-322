@@ -15,6 +15,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+
+import com.projetofinal322.arquivos_leitura.LerEspacos;
 import com.projetofinal322.logica.Jogador;
 import com.projetofinal322.logica.Jogo;
 
@@ -42,6 +44,15 @@ public class scene1Controller {
                 jogadores.add(jogador);
             }
             Collections.shuffle(jogadores, new Random());
+            try {
+                LerEspacos leitor = new LerEspacos();
+                leitor.lerArquivo("src\\main\\resources\\com\\arquivos_xml\\tabuleiro.xml");
+
+                // Caso haja exceções na leitura do tabuleiro, será impressa uma stack trace
+                // para localização do erro
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             Jogo.getInstance(jogadores);
             root = FXMLLoader.load(getClass().getResource("/com/projetofinal322/scenes/scene2.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
