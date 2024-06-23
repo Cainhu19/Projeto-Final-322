@@ -13,7 +13,7 @@ public class Main extends Application {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/com/projetofinal322/scenes/scene1.fxml"));
             stage.setTitle("Jogo da Vida Universitário");
-            stage.getIcons().add(new Image(getClass().getResourceAsStream("/com/projetofinal322/images/icon.png")));
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/com/projetofinal322/images/favicon.png")));
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();

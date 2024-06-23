@@ -43,6 +43,8 @@ public class gameController implements Initializable {
     }
 
     public void escolhaDeAcao(Jogo jogo) {
+        String descricaoJogador = "Nome: " + Jogo.getJogadores().get(jogo.getJogadorAtual()).getNome() + "\nDinheiro: "
+                + Jogo.getJogadores().get(jogo.getJogadorAtual()).getDinheiro();
         String texto = Jogo.getJogadores().get(jogo.getJogadorAtual()).getNome() + " escolha uma ação";
         texto += "\n1. Jogar um D10 comum";
         if (Jogo.getJogadores().get(jogo.getJogadorAtual()).getGrupo() != null) {
@@ -52,8 +54,17 @@ public class gameController implements Initializable {
             texto += "\n3. Jogar o dado comprado na loja";
         }
         texto += "\nL. Abrir a loja";
+        texto += "\nM. Abrir o manual";
         labelTerminal.setText(texto);
 
+        if (Jogo.getJogadores().get(jogo.getJogadorAtual()).getGrupo() != null) {
+            descricaoJogador += "\n" + Jogo.getJogadores().get(jogo.getJogadorAtual()).getGrupo().getNome();
+        }
+        if (Jogo.getJogadores().get(jogo.getJogadorAtual()).getFonteDeRenda() != null) {
+            descricaoJogador += "\n" + Jogo.getJogadores().get(jogo.getJogadorAtual()).getFonteDeRenda().getNome();
+        }
+
+        labelInfos.setText(descricaoJogador);
     }
 
     private void handleGameAnchor(KeyEvent keyEvent) {
@@ -67,15 +78,16 @@ public class gameController implements Initializable {
                     resultadoDado = jogo.jogarDado(jogadorAtual, 0);
                     texto += resultadoDado;
                     labelTerminal.setText(texto);
-                    texto += moverJogador(jogadorAtual, resultadoDado);
+                    texto += moverJogador(jogadorAtual, resultadoDado) + "\n1. para passar a vez";
                     labelTerminal.setText(texto);
+
                     turno++;
                     break;
                 case "DIGIT2":
                     if (jogadorAtual.getGrupo() != null) {
                         resultadoDado = jogo.jogarDado(jogadorAtual, 1);
                         texto += resultadoDado;
-                        texto += moverJogador(jogadorAtual, resultadoDado);
+                        texto += moverJogador(jogadorAtual, resultadoDado) + "\n1. para passar a vez";
                         labelTerminal.setText(texto);
                         turno++;
                     }
@@ -84,13 +96,17 @@ public class gameController implements Initializable {
                     if (jogadorAtual.possuiDadoComprado()) {
                         resultadoDado = jogo.jogarDado(jogadorAtual, 2);
                         texto += resultadoDado;
-                        texto += moverJogador(jogadorAtual, resultadoDado);
+                        texto += moverJogador(jogadorAtual, resultadoDado) + "\n1. para passar a vez";
                         labelTerminal.setText(texto);
                         turno++;
                     }
                     break;
                 case "L":
                     jogo.lojaAberta(jogadorAtual);
+                    break;
+                case "M":
+                    abreManual();
+                    break;
                 default:
                     break;
             }
@@ -100,6 +116,9 @@ public class gameController implements Initializable {
                 case "L":
                     jogo.lojaAberta(jogadorAtual);
                     break;
+                case "M":
+                    abreManual();
+                    break;
                 case "DIGIT1":
                     turno = 0;
                     jogo.setJogadorAtual((jogo.getJogadorAtual() + 1) % Jogo.getJogadores().size());
@@ -108,6 +127,20 @@ public class gameController implements Initializable {
                     break;
             }
         }
+    }
+
+    private void abreManual() {
+
+        try {
+            // URL url = getClass().getResource("./resources\\com\\manual\\index.html");
+            // File file = new File(url.toURI());
+            // String absolutePath = file.getAbsolutePath();
+            // File htmlFile = new File(absolutePath);
+            // Desktop.getDesktop().browse(htmlFile.toURI());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     /**
