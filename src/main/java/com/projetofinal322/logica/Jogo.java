@@ -69,11 +69,8 @@ public class Jogo {
      * @param tipoDado tipo do Dado que será lançado pelo jogador (Normal, do grupo
      *                 ou comprado).
      */
-    public String jogarDado(Jogador jogador, int tipoDado) {
-        int resultado = jogador.resultadoDado(tipoDado);
-        String msg = jogador.getNome() + " jogou o dado" + "\nResultado: " + resultado;
-        tabuleiro.moverJogador(jogador, resultado);
-        return msg;
+    public int jogarDado(Jogador jogador, int tipoDado) {
+        return jogador.resultadoDado(tipoDado);
     }
 
     /**
