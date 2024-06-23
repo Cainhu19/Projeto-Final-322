@@ -73,7 +73,7 @@ img {
 }
 
 #bg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url("fundo_manual.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url("imagens/fundo_manual.jpg");
     position: fixed;
     top: 0;
     left: 0;

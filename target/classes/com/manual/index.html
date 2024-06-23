@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manual do Jogo</title>
     <link rel="stylesheet" href="manual_styles.css">
+    <link rel="icon" type="image/x-icon" href="imagens/favicon.png">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
 </head>
 <body>
@@ -19,7 +20,10 @@
         <hr style="border-style: dashed; border-width: 3px; color: white;">
         <div id="topo">2 a 6 jogadores <b>&#183;</b>&nbsp;&nbsp; Feito em Java por Caio Enzo, Giulliano Melo e Henrique Ribeiro <b>&#183;</b>&nbsp;&nbsp; Arte por Bruna Ruy</div>
     </div>
-    <div class="texto menor"> Repositório GitHub do jogo disponível <a href="https://github.com/Cainhu19/Projeto-Final-322.git">aqui</a> </div>
+    <div class="texto menor">
+        Repositório GitHub do jogo disponível <a href="https://github.com/Cainhu19/Projeto-Final-322.git">aqui</a><br>
+        A formatação desse manual fica melhor em telas maiores
+    </div>
 </div>
 
 
@@ -116,11 +120,11 @@
         [1] Rolar um 1d10 <br>
         [2] Rolar o dado especial de seu <span style="color: mediumblue"><i>grupo</i></span> <br>
         [3] Rolar o dado comprado da Lojinha do Destino <br>
-        [A-E] Comprar um dado da Lojinha do Destino <br>
+        [L] Consultar a Lojinha do Destino ==> (No terminal) [1-5] Comprar um dado da loja / [0] Sair da loja <br>
         [M] Abrir o manual do jogo no navegador (que você está lendo agora!) <br><br>
 
         Após o movimento, geralmente será feita a ação do espaço em que o jogador para automaticamente, com algumas exceções.
-        Em algumas ocasiões, o jogador deve escolher a bifurcação que ele quer seguir.
+        Em algumas ocasiões, o jogador deve escolher a bifurcação que ele quer seguir usando o terminal.
         Alguns espaços pedem para que o jogador escolha um adversário, o que pode ser feito com as teclas de número.
         Já outros pedem para rolar um dado novamente, e isso acontece após uma confirmação pelo jogador usando qualquer tecla.
         Há outras exceções mais específicas de cada espaço.
@@ -134,7 +138,7 @@
 
     <div class="caixa lado">
         <div class="texto menor esq">
-            <img src="intercambio.png" alt="Imagem do intercâmbio" style="height: 200px; width: 260px;">
+            <img src="imagens/intercambio.png" alt="Imagem do intercâmbio" style="height: 200px; width: 260px;">
         </div>
         <div class="texto menor esq">
             Há também uma parte isolada no tabuleiro, o <i>intercâmbio</i>! <br>
@@ -156,7 +160,7 @@
     <div class="texto"><h3 style="text-align: center;">LISTAGEM DE ESPAÇOS</h2></div>
 
     <div class="texto menor">
-        <img src="tabuleiro.jpg" alt="Tabuleiro">
+        <img src="imagens/tabuleiro.jpg" alt="Tabuleiro">
     </div>
 
     <div class="texto esq">
@@ -250,7 +254,7 @@
 43b - organizou uma feira de origamis em que participaram 30 pessoas<br>
 44b - festa de Halloween da Odontologia, conheceu 75 pessoas <br>
 45b - é seu aniversário! ganhe 10 de presente para cada 10 pontos de networking<br>
-46b - campeonato da Atlética<br>
+46b - campeonato da Atlética (todos que estão na Atlética ganham 50 pontos de oportunidades)<br>
 47b - REMUNERAÇÃO<br>
 48b - sua performance teatral no auditório da faculdade te deu 200 seguidores nas redes sociais<br>
 49b - se não tiver estudado, você foi mal em uma prova e deve voltar até o espaço 36b para estudar mais<br>
@@ -266,7 +270,7 @@
 59 - te chamaram para um projeto de extensão no centro da cidade<br>
 60 - a TV da sua mãe quebrou, ajude ela a pagar emprestando 500<br>
 61 - atrasou em meia hora o fim da aula tirando dúvidas com o professor<br>
-62 - bolsa de intercâmbio no Canadá: você pode ir se tiver estudado 2x e pagar 1000 pela burocracia imigratória [-> C1]<br>
+62 - bolsa de intercâmbio no Canadá: você pode ir se tiver estudado 2x e pagar 1000 pela burocracia imigratória [==> C1]<br>
 63 - achou uma moeda de 1 no chão da biblioteca<br>
 64 - motivação súbita, role o dado de novo<br>
 65 - surgiu uma vaga de representante discente<br>
@@ -337,7 +341,7 @@ ganhando +250 pontos de oportunidade por isso<br>
 
     <div class="texto esq">
 101 - apareceu no spotted e ganhou 45 seguidores nas redes sociais<br>
-102 - CASA DA CARIDADE<br>
+102 - CASA DA CARIDADE: todos que passam por aqui deixam 200; o último jogador a passar recebe o acumulado<br>
 103 - festa da Química, conversou com 45 pessoas<br>
 104 - festa da Educação Física, conheceu 80 pessoas<br>
 105 - REMUNERAÇÃO<br>
@@ -364,7 +368,7 @@ C8 - sua faculdade finalmente pagou os 1200 da sua passagem aérea<br>
 C9 - enviou currículo para empresas locais, +150 pontos de oportunidade<br>
 C10 - você comeu fora muitas vezes, pague 400<br>
 C11 - estudos para provas finais do intercâmbio<br>
-C12 - festa de despedida da sua sala, conversou com 50 pessoas [-> 92]<br>
+C12 - festa de despedida da sua sala, conversou com 50 pessoas [==> 92]<br>
     </div>
 </div>
 

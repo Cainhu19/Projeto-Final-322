@@ -3,7 +3,7 @@
 
 Esse repositório foi feito como projeto final da disciplina MC322 (Programação Orientada a Objetos) do IC/Unicamp do primeiro semestre de 2024.
 
-Criamos uma paródia de O Jogo da Vida com temática "vida universitária," alterando algumas regras para adaptar o jogo a esse contexto. As regras podem ser consultadas no [manual do jogo]() (link em construção) ou ao clicar M na tela principal do jogo. Além das regras, o manual possui a listagem dos espaços do tabuleiro do jogo.
+Criamos uma paródia de O Jogo da Vida com temática "vida universitária," alterando algumas regras para adaptar o jogo a esse contexto. As regras podem ser consultadas no [manual do jogo](https://cainhu19.github.io/Projeto-Final-322/) ou ao clicar M na tela principal do jogo. Além das regras, o manual possui a listagem dos espaços do tabuleiro do jogo.
 
 O jogo foi feito em Java, enquanto a interface gráfica foi feita usando JavaFX, ambos usando Maven como ferramenta de gestão de projeto.
 
@@ -18,7 +18,7 @@ O software foi desenvolvido por nós, mas a arte é de autoria de Bruna Ruy, est
 
 This repository was created as a final project for the first semester of 2024's MC322 (Object Oriented Programming) class at IC/Unicamp, Brazil.
 
-We created a parody of the game Life with a theme of "college life," modifying some rules to adapt the game to this theme. The rules can be consulted in the [game manual]() (link under construction) or by clicking M on the game's main screen. The manual also has the list of all the spaces of the board. As of June 2024, the game (and the manual) are available only in Portuguese. 
+We created a parody of the game Life with a theme of "college life," modifying some rules to adapt the game to this theme. The rules can be consulted in the [game manual](https://cainhu19.github.io/Projeto-Final-322/) or by clicking M on the game's main screen. The manual also has the list of all the spaces of the board. As of June 2024, the game (and the manual) are available only in Portuguese. 
 
 The game was made in Java, while the GUI was made with JavaFX, both using Maven as the project management tool.
 
