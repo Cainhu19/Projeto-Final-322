@@ -4,7 +4,8 @@ import com.projetofinal322.logica.*;
 import com.projetofinal322.logica.tabuleiro.Espaco;
 
 /**
- * Classe de espaços em que o jogador recebe uma oferta, seja ela de uma fonte de renda, de um grupo ou de um grupo de um conjunto dado.
+ * Classe de espaços em que o jogador recebe uma oferta, seja ela de uma fonte
+ * de renda, de um grupo ou de um grupo de um conjunto dado.
  */
 public class EspacoOferta extends Espaco {
     private Grupo grupo;
@@ -35,9 +36,10 @@ public class EspacoOferta extends Espaco {
         this.fonteDeRenda = null;
     }
 
-    //TODO: revisar esse método
+    // TODO: revisar esse método
     @Override
     public void acao(Jogador jogador) {
+        System.out.println(imprimirDescricao());
         // Oportunidade de ter uma fonte de renda/ocupação
         if (fonteDeRenda != null) {
             if (!GerenciadorDeFontes.disponivel(fonteDeRenda)) {
@@ -48,7 +50,6 @@ public class EspacoOferta extends Espaco {
                     System.out.printf("%s já é sua fonte de renda!\n", fonteDeRenda.getNome());
                 }
             } else {
-                imprimirDescricao(descricao);
                 if (Entrada.respostaString().equals("s")) {
                     if (fonteDeRenda.equals(FonteDeRenda.BOLSA_AUXILIO)) {
                         if (jogador.getFonteDeRenda() != null) {
@@ -63,7 +64,7 @@ public class EspacoOferta extends Espaco {
                 }
             }
 
-        // Oportunidade de entrar num grupo
+            // Oportunidade de entrar num grupo
         } else if (grupo != null) {
             if (grupo.isOcupado()) {
                 if (jogador.getGrupo() != null && !jogador.getGrupo().equals(grupo)) {
@@ -72,7 +73,6 @@ public class EspacoOferta extends Espaco {
                     System.out.printf("Você já faz parte de %s!\n", grupo.getNome());
                 }
             } else {
-                imprimirDescricao(descricao);
                 if (Entrada.respostaString().equals("s")) {
                     GerenciadorDeGrupos.ocupar(grupo, jogador);
                     jogador.adicionarPontosNetworking(grupo.getBonusNetworking());
@@ -81,29 +81,31 @@ public class EspacoOferta extends Espaco {
                 }
             }
 
-        // Oportunidade de entrar em um grupo que faz parte de um conjunto (Atlética, C.A., Liga Acadêmica)
+            // Oportunidade de entrar em um grupo que faz parte de um conjunto (Atlética,
+            // C.A., Liga Acadêmica)
         } else if (grupoConjunto != null) {
             Grupo primeiroGrupo = grupoConjunto.getGrupos().get(0);
             Grupo segundoGrupo = grupoConjunto.getGrupos().get(1);
             if (!GerenciadorDeGrupos.disponivel(primeiroGrupo) && !GerenciadorDeGrupos.disponivel(segundoGrupo)) {
-                if (jogador.getGrupo() != null && !jogador.getGrupo().equals(primeiroGrupo) || !jogador.getGrupo().equals(segundoGrupo)) {
+                if (jogador.getGrupo() != null && !jogador.getGrupo().equals(primeiroGrupo)
+                        || !jogador.getGrupo().equals(segundoGrupo)) {
                     System.out.printf("Dois jogadores já ocupam %s.\n", grupoConjunto.getNome());
                 } else {
-                    System.out.printf("Você já faz parte de %s! (%s)\n", grupoConjunto.getNome(), jogador.getGrupo().getNome());
+                    System.out.printf("Você já faz parte de %s! (%s)\n", grupoConjunto.getNome(),
+                            jogador.getGrupo().getNome());
                 }
             } else {
-                imprimirDescricao(descricao);
                 if (Entrada.respostaString().equals("s")) {
                     if (GerenciadorDeGrupos.disponivel(primeiroGrupo)) {
                         GerenciadorDeGrupos.ocupar(primeiroGrupo, jogador);
                         jogador.adicionarPontosNetworking(primeiroGrupo.getBonusNetworking());
                         System.out.printf("Novo grupo: %s. (+%d pontos de networking)\n", primeiroGrupo.getNome(),
-                        primeiroGrupo.getBonusNetworking());
+                                primeiroGrupo.getBonusNetworking());
                     } else {
                         GerenciadorDeGrupos.ocupar(segundoGrupo, jogador);
                         jogador.adicionarPontosNetworking(segundoGrupo.getBonusNetworking());
                         System.out.printf("Novo grupo: %s. (+%d pontos de networking)\n", segundoGrupo.getNome(),
-                        segundoGrupo.getBonusNetworking());
+                                segundoGrupo.getBonusNetworking());
                     }
                 }
             }

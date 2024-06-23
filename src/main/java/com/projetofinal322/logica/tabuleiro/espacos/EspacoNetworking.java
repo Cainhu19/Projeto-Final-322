@@ -13,7 +13,7 @@ public class EspacoNetworking extends Espaco {
 
     @Override
     public void acao(Jogador jogador) {
-        imprimirDescricao(descricao);
+        System.out.println(imprimirDescricao());
         System.out.printf("(+%d pontos de networking)\n", bonusNetworking);
         jogador.adicionarPontosNetworking(bonusNetworking);
     }

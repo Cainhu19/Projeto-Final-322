@@ -4,7 +4,8 @@ import com.projetofinal322.logica.Jogador;
 import com.projetofinal322.logica.tabuleiro.Espaco;
 
 /**
- * Classe de espaços que diretamente dão pontos de oportunidade ao jogador ou que dão pontos se o jogador estiver em um grupo.
+ * Classe de espaços que diretamente dão pontos de oportunidade ao jogador ou
+ * que dão pontos se o jogador estiver em um grupo.
  */
 public class EspacoOportunidade extends Espaco {
     private int pontosOportunidade;
@@ -18,8 +19,9 @@ public class EspacoOportunidade extends Espaco {
 
     @Override
     public void acao(Jogador jogador) {
-        imprimirDescricao(descricao);
-        // Tipo P_OPORTUNIDADES_SE_ESTIVER_EM_GRUPO: se o espaço requer que o jogador esteja em um grupo para receber pontos
+        System.out.println(imprimirDescricao());
+        // Tipo P_OPORTUNIDADES_SE_ESTIVER_EM_GRUPO: se o espaço requer que o jogador
+        // esteja em um grupo para receber pontos
         if (receberPontosSeEstiverEmGrupo) {
             if (jogador.getGrupo() == null) {
                 System.out.printf("%s não está em um grupo.\n", jogador.getNome());
@@ -27,7 +29,7 @@ public class EspacoOportunidade extends Espaco {
                 System.out.printf("(+%d pontos de oportunidade)\n", pontosOportunidade);
                 jogador.ajustarPontosOportunidade(pontosOportunidade);
             }
-        // Tipo P_OPORTUNIDADES: se o espaço dá (ou tira) pontos diretamente
+            // Tipo P_OPORTUNIDADES: se o espaço dá (ou tira) pontos diretamente
         } else {
             if (pontosOportunidade > 0) {
                 System.out.printf("(+%d pontos de oportunidade)\n", pontosOportunidade);
@@ -37,5 +39,5 @@ public class EspacoOportunidade extends Espaco {
             jogador.ajustarPontosOportunidade(pontosOportunidade);
         }
     }
-    
+
 }
