@@ -2,7 +2,6 @@ package com.projetofinal322.arquivos_gui;
 
 import java.net.URL;
 import java.util.LinkedList;
-import java.util.Random;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -74,25 +73,40 @@ public class gameController implements Initializable {
                     break;
                 case "DIGIT2":
                     if (jogadorAtual.getGrupo() != null) {
-                        texto += jogo.jogarDado(jogadorAtual, 1);
+                        resultadoDado = jogo.jogarDado(jogadorAtual, 1);
+                        texto += resultadoDado;
+                        texto += moverJogador(jogadorAtual, resultadoDado);
                         labelTerminal.setText(texto);
                         turno++;
                     }
                     break;
                 case "DIGIT3":
                     if (jogadorAtual.possuiDadoComprado()) {
-                        texto += jogo.jogarDado(jogadorAtual, 2);
+                        resultadoDado = jogo.jogarDado(jogadorAtual, 2);
+                        texto += resultadoDado;
+                        texto += moverJogador(jogadorAtual, resultadoDado);
                         labelTerminal.setText(texto);
                         turno++;
                     }
                     break;
-
                 case "L":
                     jogo.lojaAberta(jogadorAtual);
                 default:
                     break;
             }
 
+        } else if (turno == 1) {
+            switch (keyEvent.getCode().toString()) {
+                case "L":
+                    jogo.lojaAberta(jogadorAtual);
+                    break;
+                case "DIGIT1":
+                    turno = 0;
+                    jogo.setJogadorAtual((jogo.getJogadorAtual() + 1) % Jogo.getJogadores().size());
+                    escolhaDeAcao(jogo);
+                default:
+                    break;
+            }
         }
     }
 
