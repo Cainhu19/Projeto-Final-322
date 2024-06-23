@@ -4,7 +4,8 @@ import com.projetofinal322.logica.*;
 import com.projetofinal322.logica.tabuleiro.Espaco;
 
 /**
- * Classe de espaços em que o jogador recebe uma oferta de grupo se ele tiver parado em casas de estudo um determinado número de vezes.
+ * Classe de espaços em que o jogador recebe uma oferta de grupo se ele tiver
+ * parado em casas de estudo um determinado número de vezes.
  */
 public class EspacoEstudoParaOferta extends Espaco {
     private Grupo grupo;
@@ -18,6 +19,7 @@ public class EspacoEstudoParaOferta extends Espaco {
 
     @Override
     public void acao(Jogador jogador) {
+        System.out.println(imprimirDescricao()); // = 0
         if (jogador.getVezesEstudo() < vezesEstudo) {
             System.out.println("Você não estudou o suficiente para poder aceitar essa proposta.");
         } else {
@@ -28,7 +30,6 @@ public class EspacoEstudoParaOferta extends Espaco {
                     System.out.printf("Você já faz parte de %s!\n", grupo.getNome());
                 }
             } else {
-                imprimirDescricao(descricao);
                 if (Entrada.respostaString().equals("s")) {
                     GerenciadorDeGrupos.ocupar(grupo, jogador);
                     jogador.adicionarPontosNetworking(grupo.getBonusNetworking());

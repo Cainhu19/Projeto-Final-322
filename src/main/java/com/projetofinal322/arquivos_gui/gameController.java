@@ -2,7 +2,9 @@ package com.projetofinal322.arquivos_gui;
 
 import java.net.URL;
 import java.util.LinkedList;
+import java.util.Random;
 import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -29,8 +31,6 @@ public class gameController implements Initializable {
 
     @FXML
     private Label labelTerminal;
-
-    private LinkedList<Caminho> caminhos;
 
     private int turno;
 
@@ -61,10 +61,14 @@ public class gameController implements Initializable {
         Jogo jogo = Jogo.getInstance(Jogo.getJogadores());
         Jogador jogadorAtual = Jogo.getJogadores().get(jogo.getJogadorAtual());
         String texto = jogadorAtual.getNome() + " jogou o dado" + "\nResultado: ";
+        int resultadoDado;
         if (turno == 0) {
             switch (keyEvent.getCode().toString()) {
                 case "DIGIT1":
-                    texto += jogo.jogarDado(jogadorAtual, 0);
+                    resultadoDado = jogo.jogarDado(jogadorAtual, 0);
+                    texto += resultadoDado;
+                    labelTerminal.setText(texto);
+                    texto += moverJogador(jogadorAtual, resultadoDado);
                     labelTerminal.setText(texto);
                     turno++;
                     break;
@@ -82,6 +86,9 @@ public class gameController implements Initializable {
                         turno++;
                     }
                     break;
+
+                case "L":
+                    jogo.lojaAberta(jogadorAtual);
                 default:
                     break;
             }
@@ -96,15 +103,16 @@ public class gameController implements Initializable {
      * @param quantidade quantos espaços serão percorridos (positivo: jogador
      *                   avança; negativo: jogador volta)
      */
-    public void moverJogador(Jogador jogador, int quantidade) {
+    public String moverJogador(Jogador jogador, int quantidade) {
+        LinkedList<Caminho> caminhos = Jogo.getInstance(Jogo.getJogadores()).getTabuleiro().getCaminhos();
         if (quantidade == 0) { // Caso o jogador ande 0 espaços (fica parado / perde uma rodada)
-            System.out.println("Rodada perdida. Na próxima, já poderá voltar a andar.");
-            return;
+            return "Rodada perdida. Na próxima, já poderá voltar a andar.";
         }
         int caminhoAtual = jogador.getPosicao()[0];
         int espacoAtual = jogador.getPosicao()[1];
         int espacosCaminhoAtual = caminhos.get(caminhoAtual).getNumeroEspacos();
         int novoEspaco = espacoAtual + quantidade; // novo espaço do jogador após se mover
+        String descricaoDoEspaco = "\n";
 
         if (quantidade > 0 && jogador.getGrupo() != null) {
             jogador.ajustarPontosOportunidade(quantidade);
@@ -115,9 +123,10 @@ public class gameController implements Initializable {
             // Verifica e executa espaços obrigatórios entre o espaço atual e o fim do
             // caminho
             if (caminhosAvancados > 0) {
-                executarEspacosObrigatorios(jogador, caminhoAtual, 0, espacosCaminhoAtual);
+                descricaoDoEspaco += executarEspacosObrigatorios(jogador, caminhoAtual, 0, espacosCaminhoAtual);
             } else {
-                executarEspacosObrigatorios(jogador, caminhoAtual, espacoAtual + 1, espacosCaminhoAtual);
+                descricaoDoEspaco += executarEspacosObrigatorios(jogador, caminhoAtual, espacoAtual + 1,
+                        espacosCaminhoAtual);
             }
             novoEspaco -= espacosCaminhoAtual;
             caminhoAtual++;
@@ -173,7 +182,7 @@ public class gameController implements Initializable {
                     (caminhoAtual % 3 == 2 && jogador.getBifurcacoesPercorridas().contains(caminhoAtual - 1))) {
                 caminhoAtual--;
             }
-            if (caminhoAtual < 0) { // Verifica se voltou pro início do tabuleiro 
+            if (caminhoAtual < 0) { // Verifica se voltou pro início do tabuleiro
                 caminhoAtual = 0;
                 novoEspaco = 0;
                 break;
@@ -189,7 +198,9 @@ public class gameController implements Initializable {
                 executarEspacosObrigatorios(jogador, caminhoAtual, espacoAtual + 1, novoEspaco);
             }
             caminhos.get(caminhoAtual).getEspacos().get(novoEspaco).acao(jogador);
+            descricaoDoEspaco += caminhos.get(caminhoAtual).getEspacos().get(novoEspaco).imprimirDescricao();
         }
+        return descricaoDoEspaco;
     }
 
     /**
@@ -201,14 +212,18 @@ public class gameController implements Initializable {
      * @param espacoInicial espaço inicial do intervalo.
      * @param limite        limite do intervalo.
      */
-    private void executarEspacosObrigatorios(Jogador jogador, int caminho, int espacoInicial, int limite) {
+    private String executarEspacosObrigatorios(Jogador jogador, int caminho, int espacoInicial, int limite) {
+        LinkedList<Caminho> caminhos = Jogo.getInstance(Jogo.getJogadores()).getTabuleiro().getCaminhos();
+        String descricao = "";
         for (int i = espacoInicial; i < limite; i++) {
             Espaco espacoIntermediario = caminhos.get(caminho).getEspacos().get(i);
             // Verifica se o espaço é um espaço de remuneração ou a casa da caridade
             if (espacoIntermediario instanceof EspacoRemuneracao || caminho == 12 && i == 1) {
                 espacoIntermediario.acao(jogador);
+                descricao += espacoIntermediario.imprimirDescricao();
             }
         }
+        return descricao;
     }
 
     /**
@@ -232,17 +247,19 @@ public class gameController implements Initializable {
      * @return
      */
     private int jogadorEscolheBifurcacao(Jogador jogador, int caminho) {
-        System.out.println("Você chegou em uma bifurcação. Qual caminho deseja seguir? (digite 1 ou 2)");
+        System.out.println("Você chegou em uma bifurcação. ");
+
         if (caminho == 1) {
             System.out.println("1. Focar em dinheiro");
             System.out.println("2. Focar em socialização e oportunidades");
         }
         int escolha = Entrada.respostaInt();
         switch (escolha) {
-            case 1:
-                // Os multiplicadores por padrão já são os do caminho 1, então não há essa condicional aqui
+            case 0:
+                // Os multiplicadores por padrão já são os do caminho 1, então não há essa
+                // condicional aqui
                 return caminho;
-            case 2:
+            case 1:
                 if (caminho == 1) {
                     jogador.setMultiplicadorDinheiro(1.5);
                     jogador.setMultiplicadorOportunidade(3.5);

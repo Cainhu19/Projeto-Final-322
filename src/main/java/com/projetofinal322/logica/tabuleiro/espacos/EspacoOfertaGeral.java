@@ -7,10 +7,11 @@ import com.projetofinal322.logica.*;
 import com.projetofinal322.logica.tabuleiro.Espaco;
 
 /**
- * classe de espaços que oferecem algo (fonte de renda ou grupo) ao jogador da lista do que estiver disponível.
+ * classe de espaços que oferecem algo (fonte de renda ou grupo) ao jogador da
+ * lista do que estiver disponível.
  */
 public class EspacoOfertaGeral extends Espaco {
-    private boolean escolheGrupo;   // true: sorteia grupo para o jogador escolher, false: sorteia fonte de renda
+    private boolean escolheGrupo; // true: sorteia grupo para o jogador escolher, false: sorteia fonte de renda
 
     public EspacoOfertaGeral(String descricao, boolean escolheGrupo) {
         super(descricao);
@@ -19,7 +20,7 @@ public class EspacoOfertaGeral extends Espaco {
 
     @Override
     public void acao(Jogador jogador) {
-        imprimirDescricao(descricao);
+        System.out.println(imprimirDescricao());
         if (Entrada.respostaString().equals("s")) {
             Random rand = new Random();
             if (escolheGrupo) {

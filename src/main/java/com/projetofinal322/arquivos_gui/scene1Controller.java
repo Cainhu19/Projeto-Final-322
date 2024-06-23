@@ -43,22 +43,26 @@ public class scene1Controller {
                 Jogador jogador = new Jogador(string);
                 jogadores.add(jogador);
             }
-            Collections.shuffle(jogadores, new Random());
-            try {
-                LerEspacos leitor = new LerEspacos();
-                leitor.lerArquivo("src\\main\\resources\\com\\arquivos_xml\\tabuleiro.xml");
 
-                // Caso haja exceções na leitura do tabuleiro, será impressa uma stack trace
-                // para localização do erro
-            } catch (Exception e) {
-                e.printStackTrace();
+            if (jogadores.size() > 1 && jogadores.size() <= 6) {
+                Collections.shuffle(jogadores, new Random());
+                try {
+                    LerEspacos leitor = new LerEspacos();
+                    leitor.lerArquivo("src\\main\\resources\\com\\arquivos_xml\\tabuleiro.xml");
+
+                    // Caso haja exceções na leitura do tabuleiro, será impressa uma stack trace
+                    // para localização do erro
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                Jogo.getInstance(jogadores);
+                root = FXMLLoader.load(getClass().getResource("/com/projetofinal322/scenes/scene2.fxml"));
+                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+
             }
-            Jogo.getInstance(jogadores);
-            root = FXMLLoader.load(getClass().getResource("/com/projetofinal322/scenes/scene2.fxml"));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
 
         }
     }

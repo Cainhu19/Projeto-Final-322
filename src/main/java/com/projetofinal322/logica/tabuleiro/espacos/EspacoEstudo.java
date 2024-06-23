@@ -10,7 +10,7 @@ public class EspacoEstudo extends Espaco {
 
     @Override
     public void acao(Jogador jogador) {
-        imprimirDescricao(descricao);
+        System.out.println(imprimirDescricao());
         jogador.incrementarVezesEstudo();
     }
 }
