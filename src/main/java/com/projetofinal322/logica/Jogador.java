@@ -37,9 +37,10 @@ public class Jogador {
         this.dinheiro = 500;
         this.pontosOportunidade = 0;
         this.pontosNetworking = 0;
-        this.multiplicadorDinheiro = 0.001;
-        this.multiplicadorOportunidade = 1;
-        this.multiplicadorNetworking = 0.3;
+        // Pressupondo a escolha do caminho A, com foco em dinheiro
+        this.multiplicadorDinheiro = 5;
+        this.multiplicadorOportunidade = 2;
+        this.multiplicadorNetworking = 3;
         this.posicao = new int[2];
         posicao[0] = 0; // Caminho
         posicao[1] = 0; // Espaço (dentro do caminho)
@@ -198,8 +199,10 @@ public class Jogador {
      * Calcula a pontuação do jogador ao decorrer do jogo.
      */
     public double calcularPontuacao() {
-        return dinheiro * multiplicadorDinheiro + pontosOportunidade * multiplicadorOportunidade
-                + pontosNetworking * multiplicadorNetworking;
+        return ((dinheiro / 1000) * multiplicadorDinheiro +
+                pontosOportunidade * multiplicadorOportunidade +
+                pontosNetworking * multiplicadorNetworking) / 
+                (multiplicadorDinheiro + multiplicadorNetworking + multiplicadorOportunidade);
     }
 
     /**

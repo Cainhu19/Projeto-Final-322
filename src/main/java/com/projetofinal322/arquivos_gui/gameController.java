@@ -173,8 +173,7 @@ public class gameController implements Initializable {
                     (caminhoAtual % 3 == 2 && jogador.getBifurcacoesPercorridas().contains(caminhoAtual - 1))) {
                 caminhoAtual--;
             }
-            if (caminhoAtual < 0) { // Verifica se voltou pro início do tabuleiro (não sei se vai ser possível mas
-                                    // sla)
+            if (caminhoAtual < 0) { // Verifica se voltou pro início do tabuleiro 
                 caminhoAtual = 0;
                 novoEspaco = 0;
                 break;
@@ -241,14 +240,13 @@ public class gameController implements Initializable {
         int escolha = Entrada.respostaInt();
         switch (escolha) {
             case 1:
-                if (caminho == 1) {
-                    jogador.setMultiplicadorDinheiro(0.002);
-                }
+                // Os multiplicadores por padrão já são os do caminho 1, então não há essa condicional aqui
                 return caminho;
             case 2:
                 if (caminho == 1) {
-                    jogador.setMultiplicadorOportunidade(2);
-                    jogador.setMultiplicadorNetworking(0.7);
+                    jogador.setMultiplicadorDinheiro(1.5);
+                    jogador.setMultiplicadorOportunidade(3.5);
+                    jogador.setMultiplicadorNetworking(5);
                 }
                 return caminho + 1;
             // alguma coisa no caso default (tratar exceção de escolha inválida??)

@@ -5,11 +5,6 @@ import com.projetofinal322.logica.dados_do_jogo.*;
 /**
  * Enum que representa os grupos (entidades, ligas etc.) dos quais um jogador
  * pode fazer parte.
- * 
- * Possui atributos de nome, o dado especial que vem de bônus,
- * a quantidade de vezes que esse dado especial é rodado caso for escolhido
- * e um valor booleano para indicar se um jogador já possui a instância do
- * grupo.
  */
 public enum Grupo {
     ATLETICA_ESPORTES("Atlética, esportes", new D4(1, 2, 3, 4), 3),
@@ -33,7 +28,7 @@ public enum Grupo {
         this.nome = nome;
         this.dado = dado;
         this.qtdVezesDado = qtdVezesDado;
-        this.bonusNetworking = 30; // mudar de acordo com cada grupo dps
+        this.bonusNetworking = 20;
         this.ocupado = false;
     }
 

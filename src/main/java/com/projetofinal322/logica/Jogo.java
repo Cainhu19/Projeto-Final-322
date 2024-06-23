@@ -7,11 +7,13 @@ import com.projetofinal322.logica.tabuleiro.Tabuleiro;
 public class Jogo {
     private static Jogo jogoInstance;
     private LinkedList<Jogador> jogadores;
+    private LinkedList<Jogador> jogadoresQueAcabaram;
     private Tabuleiro tabuleiro;
     private int jogadorAtual;
 
     private Jogo(LinkedList<Jogador> jogadores) {
         this.jogadores = jogadores;
+        this.jogadoresQueAcabaram = new LinkedList<>();
         this.tabuleiro = Tabuleiro.getInstance();
         this.jogadorAtual = 0;
     }
@@ -26,6 +28,10 @@ public class Jogo {
 
     public static LinkedList<Jogador> getJogadores() {
         return jogoInstance.jogadores;
+    }
+
+    public LinkedList<Jogador> getJogadoresQueAcabaram() {
+        return jogadoresQueAcabaram;
     }
 
     public Tabuleiro getTabuleiro() {

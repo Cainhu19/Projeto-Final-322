@@ -1,5 +1,8 @@
 package com.projetofinal322.logica;
 
+/**
+ * Enum que representa as fontes de renda / ocupações que um jogador pode ter.
+ */
 public enum FonteDeRenda {
     BOLSA_AUXILIO("Bolsa-Auxílio", 500),
     ASSISTENCIA_A_DOCENCIA("Assistência à docência", 600),

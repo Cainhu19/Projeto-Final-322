@@ -3,6 +3,9 @@ package com.projetofinal322.logica;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Enum que representa os conjuntos de grupos que englobam dois grupos.
+ */
 public enum GrupoConjunto {
     ATLETICA("Atlética", Arrays.asList(Grupo.ATLETICA_ESPORTES, Grupo.ATLETICA_EVENTOS)),
     C_A("Centro Acadêmico", Arrays.asList(Grupo.C_A_DIRETORIA, Grupo.C_A_MARKETING)),

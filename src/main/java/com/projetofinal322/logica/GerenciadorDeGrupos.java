@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Classe que gerencia os grupos(Ligas/Entidades) disponíveis no jogo.
+ * Classe que gerencia os grupos (Ligas/Entidades) disponíveis no jogo.
  * Garante que cada grupo seja ocupado por apenas um jogador por vez.
  */
 public class GerenciadorDeGrupos {

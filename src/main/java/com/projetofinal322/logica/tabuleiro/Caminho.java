@@ -2,6 +2,9 @@ package com.projetofinal322.logica.tabuleiro;
 
 import java.util.LinkedList;
 
+/**
+ * Classe que representa um caminho no tabuleiro, isto é, um conjunto de espaços.
+ */
 public class Caminho {
     private LinkedList<Espaco> espacos;
 

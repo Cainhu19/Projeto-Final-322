@@ -4,7 +4,7 @@ import com.projetofinal322.logica.*;
 import com.projetofinal322.logica.tabuleiro.Espaco;
 
 /**
- * Classe de espaços em que o jogador recebe uma oferta, seja ela de fonte de renda ou de um grupo.
+ * Classe de espaços em que o jogador recebe uma oferta, seja ela de uma fonte de renda, de um grupo ou de um grupo de um conjunto dado.
  */
 public class EspacoOferta extends Espaco {
     private Grupo grupo;

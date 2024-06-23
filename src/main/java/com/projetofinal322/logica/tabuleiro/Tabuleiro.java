@@ -7,6 +7,9 @@ import com.projetofinal322.logica.FonteDeRenda;
 import com.projetofinal322.logica.Jogador;
 import com.projetofinal322.logica.tabuleiro.espacos.EspacoRemuneracao;
 
+/**
+ * Classe que representa o tabuleiro do jogo. Ele é tratado como Singleton.
+ */
 public class Tabuleiro {
     private static Tabuleiro tabuleiroInstance;
     private LinkedList<Caminho> caminhos;
