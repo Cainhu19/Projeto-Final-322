@@ -40,6 +40,7 @@ public class scene1Controller {
             String[] nomesSeparados = nomes.split(",");
             LinkedList<Jogador> jogadores = new LinkedList<Jogador>();
             for (String string : nomesSeparados) {
+                string = string.trim();
                 Jogador jogador = new Jogador(string);
                 jogadores.add(jogador);
             }

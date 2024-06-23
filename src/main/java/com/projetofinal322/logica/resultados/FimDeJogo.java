@@ -22,8 +22,9 @@ public class FimDeJogo {
     }
 
     /**
-     * Retorna true se o jogo não possui mais jogadores em sua lista, ou seja, se o jogo acabou.
-    */
+     * Retorna true se o jogo não possui mais jogadores em sua lista, ou seja, se o
+     * jogo acabou.
+     */
     public static boolean jogoAcabou() {
         return Jogo.getJogadores().size() == 0;
     }
@@ -32,7 +33,8 @@ public class FimDeJogo {
      * Gerencia o que acontece após o fim de um jogo.
      */
     public static void posJogo(Jogo jogo) {
-        // Associando a cada jogador sua pontuação em uma lista de pares e ordenando essa lista.
+        // Associando a cada jogador sua pontuação em uma lista de pares e ordenando
+        // essa lista.
         Map<Jogador, Double> pontuacoes = new HashMap<>();
         for (Jogador j : jogo.getJogadoresQueAcabaram()) {
             pontuacoes.put(j, j.calcularPontuacao());
@@ -55,6 +57,7 @@ public class FimDeJogo {
 
         classificacao = mapOrdenado;
 
-        //TODO: mapOrdenado aqui é uma lista de pares (jogador, pontos) começando com o 1o lugar, implementar na GUI de alguma forma
+        // TODO: mapOrdenado aqui é uma lista de pares (jogador, pontos) começando com o
+        // 1o lugar, implementar na GUI de alguma forma
     }
 }

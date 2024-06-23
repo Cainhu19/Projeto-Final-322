@@ -2,6 +2,7 @@ package com.projetofinal322.arquivos_gui;
 
 import java.net.URL;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -11,6 +12,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import com.projetofinal322.logica.Jogo;
+import com.projetofinal322.logica.resultados.FimDeJogo;
+import com.projetofinal322.logica.resultados.GravacaoResultados;
 import com.projetofinal322.logica.tabuleiro.Caminho;
 import com.projetofinal322.logica.tabuleiro.Espaco;
 import com.projetofinal322.logica.tabuleiro.espacos.EspacoRemuneracao;
@@ -120,9 +123,16 @@ public class gameController implements Initializable {
                     abreManual();
                     break;
                 case "DIGIT1":
-                    turno = 0;
-                    jogo.setJogadorAtual((jogo.getJogadorAtual() + 1) % Jogo.getJogadores().size());
-                    escolhaDeAcao(jogo);
+                    if (FimDeJogo.jogoAcabou()) {
+                        GravacaoResultados.gravarResultados();
+                        FimDeJogo.posJogo(jogo);
+                        texto = "Colocações: \n";
+                        Map<Jogador, Double> mapOrdenado = FimDeJogo.getClassificacao();
+                    } else {
+                        turno = 0;
+                        jogo.setJogadorAtual((jogo.getJogadorAtual() + 1) % Jogo.getJogadores().size());
+                        escolhaDeAcao(jogo);
+                    }
                 default:
                     break;
             }
