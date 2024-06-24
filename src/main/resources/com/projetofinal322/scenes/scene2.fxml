@@ -20,27 +20,27 @@
       </Label>
       <ImageView fitHeight="145.0" fitWidth="158.0" layoutX="605.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/D6Faces1.jpg" />
+            <Image url="@../images/dadoDe1.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="145.0" fitWidth="165.0" layoutX="772.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/D6Faces6.jpg" />
+            <Image url="@../images/dadoDe6.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="145.0" fitWidth="158.0" layoutX="690.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/D4.jpg" />
+            <Image url="@../images/dadoPares.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="145.0" fitWidth="158.0" layoutX="523.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/D8Fibonnacci.jpg" />
+            <Image url="@../images/dadoFibonacci.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="145.0" fitWidth="158.0" layoutX="847.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/Moeda.jpg" />
+            <Image url="@../images/dadoMoeda.png" />
          </image>
       </ImageView>
       <Label fx:id="labelInfos" layoutX="510.0" layoutY="529.0" prefHeight="191.0" prefWidth="490.0">

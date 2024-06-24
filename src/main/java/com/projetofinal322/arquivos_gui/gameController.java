@@ -130,7 +130,7 @@ public class gameController implements Initializable {
                     if (jogadorAtual.getGrupo() != null) {
                         resultadoDado = jogo.jogarDado(jogadorAtual, 1);
                         texto += resultadoDado;
-                        texto += moverJogador(jogadorAtual, resultadoDado) + "\n1. para passar a vez"
+                        texto += moverJogador(jogadorAtual, resultadoDado) + "\n1. Passar a vez"
                                 + "\nL. Abrir a loja" + "\nM. Abrir o manual";
                         labelTerminal.setText(texto);
                         turno++;
@@ -140,7 +140,7 @@ public class gameController implements Initializable {
                     if (jogadorAtual.possuiDadoComprado()) {
                         resultadoDado = jogo.jogarDado(jogadorAtual, 2);
                         texto += resultadoDado;
-                        texto += moverJogador(jogadorAtual, resultadoDado) + "\n1. para passar a vez"
+                        texto += moverJogador(jogadorAtual, resultadoDado) + "\n1. Passar a vez"
                                 + "\nL. Abrir a loja"
                                 + "\nM. Abrir o manual";
                         labelTerminal.setText(texto);
