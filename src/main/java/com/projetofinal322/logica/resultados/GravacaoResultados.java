@@ -16,7 +16,7 @@ public class GravacaoResultados {
     public static void gravarResultados() {
         LocalDateTime agora = LocalDateTime.now();
         
-        DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd, HH:mm:ss");
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd, HH-mm-ss");
         String dataEHoraFormatadas = agora.format(formato);
 
         Map<Jogador, Double> classificacao = FimDeJogo.getClassificacao();

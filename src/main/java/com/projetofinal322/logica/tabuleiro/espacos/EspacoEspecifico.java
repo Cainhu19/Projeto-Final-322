@@ -43,7 +43,7 @@ public class EspacoEspecifico extends Espaco {
                         vezes++;
                     }
                 }
-                System.out.printf("Você ganhou %d no total!", qtdDinheiro * vezes);
+                System.out.printf("Você ganhou %d no total!\n", qtdDinheiro * vezes);
                 break;
 
             case "PAGAR_PARA_P_NETWORKING":
@@ -108,7 +108,7 @@ public class EspacoEspecifico extends Espaco {
                 // networking)
                 int bonusDinheiro = (jogador.getPontosNetworking() / 10) * 10;
                 jogador.ajustarDinheiro(bonusDinheiro);
-                System.out.printf("Você recebeu %d na sua conta!", bonusDinheiro);
+                System.out.printf("Você recebeu %d na sua conta!\n", bonusDinheiro);
                 break;
 
             case "CAMPEONATO_ATLETICA":
@@ -128,14 +128,14 @@ public class EspacoEspecifico extends Espaco {
                 // até o espaço 36b para estudar mais)
                 if (jogador.getVezesEstudo() <= 0) {
                     jogador.setPosicao(new int[] { 5, 0 });
-                    System.out.println("Você voltou para o começo da bifurcação.\n");
+                    System.out.println("Você voltou para o começo da bifurcação.");
                 }
                 break;
 
             case "ROLAR_DADO_DE_NOVO":
                 // Espaços 50a e 64 (tempo com a família revigorou suas energias, role o dado de
                 // novo / motivação súbita, role o dado de novo)
-                int resultadoDois = jogador.resultadoDado(0); // TODO: implementar escolha de dado
+                int resultadoDois = jogador.resultadoDado(0);
                 System.out.printf("Jogador %s joga o dado: %d\n", jogador.getNome(), resultadoDois);
                 Jogo.getInstance(Jogo.getJogadores()).getTabuleiro().moverJogador(jogador, resultadoDois);
                 break;
@@ -167,11 +167,11 @@ public class EspacoEspecifico extends Espaco {
                 System.out.printf("%s tirou %d no dado.\n", jogadorDesafiado.getNome(), resultadoSegundoDado);
                 if (resultadoPrimeiroDado > resultadoSegundoDado) {
                     jogador.adicionarPontosNetworking(30);
-                    System.out.printf("%s ganhou 30 pontos de networking!", jogador.getNome());
+                    System.out.printf("%s ganhou 30 pontos de networking!\n", jogador.getNome());
                     break;
                 } else if (resultadoPrimeiroDado < resultadoSegundoDado) {
                     jogadorDesafiado.adicionarPontosNetworking(30);
-                    System.out.printf("%s ganhou 30 pontos de networking!", jogador.getNome());
+                    System.out.printf("%s ganhou 30 pontos de networking!\n", jogador.getNome());
                     break;
                 }
                 jogador.adicionarPontosNetworking(15);
@@ -229,12 +229,12 @@ public class EspacoEspecifico extends Espaco {
                 // jogador)
                 Jogador jogadorQueEmpresta = escolherOutroJogador(jogador);
                 if (jogadorQueEmpresta.getDinheiro() < 300) {
-                    System.out.printf("%s ajudou %s como pôde, emprestando todo o seu dinheiro (%d) por uma boa causa.",
+                    System.out.printf("%s ajudou %s como pôde, emprestando todo o seu dinheiro (%d) por uma boa causa.\n",
                             jogadorQueEmpresta.getNome(), jogador.getNome(), jogadorQueEmpresta.getDinheiro());
                     jogador.ajustarDinheiro(jogadorQueEmpresta.getDinheiro());
                     jogadorQueEmpresta.ajustarDinheiro(-jogadorQueEmpresta.getDinheiro());
                 } else {
-                    System.out.printf("%s ajudou %s emprestando 300.", jogadorQueEmpresta.getNome(), jogador.getNome());
+                    System.out.printf("%s ajudou %s emprestando 300.\n", jogadorQueEmpresta.getNome(), jogador.getNome());
                     jogador.ajustarDinheiro(300);
                     jogadorQueEmpresta.ajustarDinheiro(-300);
                 }
@@ -267,35 +267,34 @@ public class EspacoEspecifico extends Espaco {
                 if (resultadoDadoUm > resultadoDadoDois) {
                     jogador.ajustarPontosOportunidade(100);
                     jogadorCopiado.ajustarPontosOportunidade(-100);
-                    System.out.printf("%s copiou o que %s fazia e ganhou 100 pontos de oportunidades de %s!",
+                    System.out.printf("%s copiou o que %s fazia e ganhou 100 pontos de oportunidades de %s!\n",
                             jogador.getNome(), jogadorCopiado.getNome(), jogadorCopiado.getNome());
                     break;
                 } else if (resultadoDadoUm < resultadoDadoDois) {
                     jogador.ajustarPontosOportunidade(-100);
                     jogadorCopiado.ajustarPontosOportunidade(100);
                     System.out.printf(
-                            "%s passou vergonha tentando imitar %s e perdeu 100 pontos de oportunidades para %s!",
+                            "%s passou vergonha tentando imitar %s e perdeu 100 pontos de oportunidades para %s!\n",
                             jogador.getNome(), jogadorCopiado.getNome(), jogadorCopiado.getNome());
                     break;
                 }
                 jogador.ajustarPontosOportunidade(-50);
                 jogadorCopiado.ajustarPontosOportunidade(-50);
-                System.out.println(
-                        "Os dois jogadores se envolveram em uma polêmica e perderam 50 pontos de oportunidades cada!");
+                System.out.println("Os dois jogadores se envolveram em uma polêmica e perderam 50 pontos de oportunidades cada!");
                 break;
 
             case "CASA_DA_CARIDADE":
                 // Espaço 102 (CASA DA CARIDADE)
                 Tabuleiro.getInstance().incrementarQtdJogadoresCaridade();
                 int qtdJogadoresCaridade = Tabuleiro.getInstance().getQtdJogadoresCaridade();
-                if (qtdJogadoresCaridade < Jogo.getJogadores().size() - 1) {
+                if (qtdJogadoresCaridade < Jogo.getJogadores().size()) {
                     jogador.ajustarDinheiro(-200);
                     System.out.println("Você doou 200 para a caridade.");
                     break;
                 }
-                int qtdAcumulada = qtdJogadoresCaridade * 200;
+                int qtdAcumulada = (qtdJogadoresCaridade - 1) * 200;
                 jogador.ajustarDinheiro(qtdAcumulada);
-                System.out.printf("Você recebeu %d pela generosidade dos outros jogadores!", qtdAcumulada);
+                System.out.printf("Você recebeu %d pela generosidade dos outros jogadores!\n", qtdAcumulada);
                 break;
 
             case "ESTUDO_PARA_P_OPORTUNIDADES":

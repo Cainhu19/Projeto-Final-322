@@ -3,6 +3,7 @@ module com.projetofinal322 {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.xml;
+    requires java.desktop;
 
     opens com.projetofinal322 to javafx.fxml;
     opens com.projetofinal322.arquivos_gui to javafx.fxml;

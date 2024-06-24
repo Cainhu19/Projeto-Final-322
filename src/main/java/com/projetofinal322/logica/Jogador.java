@@ -115,7 +115,9 @@ public class Jogador {
 
     public void setGrupo(Grupo grupo) {
         this.grupo = grupo;
-        this.dados[1] = grupo.getDado();
+        if (grupo != null){
+            this.dados[1] = grupo.getDado();
+        }
     }
 
     public void setDinheiro(int dinheiro) {
@@ -168,8 +170,9 @@ public class Jogador {
      * Retorna o resultado da ação de rodar o dado especial comprado do jogador.
      */
     private int resultadoDadoComprado() {
+        int resultado = dados[2].rodar(1);
         dados[2] = null; // dado usado sai do inventário do jogador
-        return dados[2].rodar(1);
+        return resultado;
     }
 
     /**

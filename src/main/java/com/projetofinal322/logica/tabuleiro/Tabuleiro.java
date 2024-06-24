@@ -43,7 +43,6 @@ public class Tabuleiro {
         qtdJogadoresCaridade++;
     }
 
-     // TODO: ajustar a lógica dos três métodos de movimentação abaixo pq acho que ficou bem gambiarra
     /**
      * Verifica se o jogador entrou em uma bifurcação. Se for múltiplo de 3 + 1 (1, 4, 7...) e não for o intercâmbio retorna true. 
      * 

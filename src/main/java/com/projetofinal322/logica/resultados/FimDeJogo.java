@@ -56,8 +56,5 @@ public class FimDeJogo {
         }
 
         classificacao = mapOrdenado;
-
-        // TODO: mapOrdenado aqui é uma lista de pares (jogador, pontos) começando com o
-        // 1o lugar, implementar na GUI de alguma forma
     }
 }
