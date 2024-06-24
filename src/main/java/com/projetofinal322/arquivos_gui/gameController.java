@@ -57,7 +57,8 @@ public class gameController implements Initializable {
      * @param jogo instância do jogo.
      */
     public void escolhaDeAcao(Jogo jogo) {
-        String descricaoJogador = "\tJogador: " + Jogo.getJogadores().get(jogo.getJogadorAtual()).getNome() + "\n\tDinheiro: "
+        String descricaoJogador = "\tJogador: " + Jogo.getJogadores().get(jogo.getJogadorAtual()).getNome()
+                + "\n\tDinheiro: "
                 + Jogo.getJogadores().get(jogo.getJogadorAtual()).getDinheiro();
         String texto = "\t" + Jogo.getJogadores().get(jogo.getJogadorAtual()).getNome() + ", escolha uma ação";
         if (turno == 0) {
@@ -81,10 +82,12 @@ public class gameController implements Initializable {
         labelTerminal.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 16));
 
         if (Jogo.getJogadores().get(jogo.getJogadorAtual()).getGrupo() != null) {
-            descricaoJogador += "\n" + Jogo.getJogadores().get(jogo.getJogadorAtual()).getGrupo().getNome();
+            descricaoJogador += "\n" + "\t" + "Grupo: "
+                    + Jogo.getJogadores().get(jogo.getJogadorAtual()).getGrupo().getNome();
         }
         if (Jogo.getJogadores().get(jogo.getJogadorAtual()).getFonteDeRenda() != null) {
-            descricaoJogador += "\n" + Jogo.getJogadores().get(jogo.getJogadorAtual()).getFonteDeRenda().getNome();
+            descricaoJogador += "\n" + "\t" + "Fonte de renda: "
+                    + Jogo.getJogadores().get(jogo.getJogadorAtual()).getFonteDeRenda().getNome();
         }
 
         labelInfos.setText(descricaoJogador);
