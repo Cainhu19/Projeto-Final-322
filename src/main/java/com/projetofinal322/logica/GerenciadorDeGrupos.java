@@ -18,6 +18,13 @@ public class GerenciadorDeGrupos {
         }
     }
 
+    /**
+     * Verifica se um grupo está livre,
+     * ou seja disponível para ser ocupado
+     * 
+     * @param grupo grupo a ser verificado
+     * @return true caso o grupo esteja disponível, false caso contrário.
+     */
     public static boolean disponivel(Grupo grupo) {
         if (grupos.get(grupo) != null) {
             return false;
@@ -25,6 +32,13 @@ public class GerenciadorDeGrupos {
         return true;
     }
 
+    /**
+     * Ocupa um grupo escolhido por certo jogador,
+     * assim apenas um jogador pode fazer parte daquele grupo
+     * 
+     * @param grupo   grupo a ser ocupado.
+     * @param jogador jogador que vai ocupar o grupo.
+     */
     public static void ocupar(Grupo grupo, Jogador jogador) {
         if (jogador.getGrupo() != null && !jogador.getGrupo().equals(grupo)) {
             liberar(grupo);
@@ -34,6 +48,11 @@ public class GerenciadorDeGrupos {
         jogador.setGrupo(grupo);
     }
 
+    /**
+     * Libera um grupo que estava ocupado.
+     *
+     * @param grupo grupo a ser liberado.
+     */
     public static void liberar(Grupo grupo) {
         Jogador jogador = grupos.get(grupo);
         if (jogador != null) {

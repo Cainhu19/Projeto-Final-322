@@ -5,7 +5,8 @@ import java.util.Random;
 /**
  * Classe do dado normal do jogo com dez faces, um decaedro.
  * 
- * Suas faces podem ter valores que divergem dos valores 1-2-3-4-5-6-7-8-9-10 usuais.
+ * Suas faces podem ter valores que divergem dos valores 1-2-3-4-5-6-7-8-9-10
+ * usuais.
  */
 public class D10 extends Dado {
     private int[] valores;
@@ -28,6 +29,7 @@ public class D10 extends Dado {
      * Roda o dado e retorna o resultado de uma de suas faces.
      * 
      * @param vezes número de vezes que o dado é rodado.
+     * @return resultado do lançamento.
      */
     public int rodar(int vezes) {
         Random rand = new Random();

@@ -50,7 +50,7 @@ public class Jogo {
     }
 
     /**
-     * Método para lidar com a interação da loja do jogo.
+     * Método para lidar com a interação da loja do jogo com o jogador que a abriu.
      * 
      * @param jogador jogador atual que está vendo a loja.
      */
@@ -77,6 +77,8 @@ public class Jogo {
      * @param jogador  jogador que jogou o dado.
      * @param tipoDado tipo do Dado que será lançado pelo jogador (Normal, do grupo
      *                 ou comprado).
+     * 
+     * @return resultado do dado lançado.
      */
     public int jogarDado(Jogador jogador, int tipoDado) {
         return jogador.resultadoDado(tipoDado);

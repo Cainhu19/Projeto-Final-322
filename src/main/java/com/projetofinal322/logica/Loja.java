@@ -31,16 +31,20 @@ public class Loja {
     }
 
     /**
-     * Avisa ao jogador j que ele não pode comprar um dado da loja -- porque ele já
+     * Avisa ao jogador que ele não pode comprar um dado da loja -- porque ele já
      * possui um dado comprado e precisa usá-lo antes.
      */
-    private static void avisoVendaProibida(Jogador j) {
+    private static void avisoVendaProibida() {
         System.out.println("Você já possui um dado comprado da loja e não pode ter outro.");
     }
 
     /**
      * Entrega o dado comprado ao jogador que o comprou, o cobrando o preço
      * apropriado.
+     * 
+     * @param j     Jogador que comprou o dado.
+     * @param d     o Dado que foi comprado.
+     * @param preco o preço pago pelo dado.
      */
     private static void posVenda(Jogador j, Dado d, int preco) {
         Dado[] novosDados = j.getDados();
@@ -82,7 +86,7 @@ public class Loja {
      */
     public static void compra(Jogador j, int escolha) {
         if (j.possuiDadoComprado()) {
-            avisoVendaProibida(j);
+            avisoVendaProibida();
         } else if (j.getDinheiro() < precosDosDados[escolha]) {
             System.out.println("Você não tem dinheiro o suficiente para comprar o dado escolhido.");
         } else {
@@ -128,6 +132,8 @@ public class Loja {
 
     /**
      * Gerencia a ação do espaço da promoção relâmpago da loja.
+     * 
+     * @param j Jogador que usará a promoção
      */
     public static void promocaoRelampago(Jogador j) {
         lojaEmPromocao();

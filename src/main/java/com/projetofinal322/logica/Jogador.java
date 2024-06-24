@@ -30,6 +30,7 @@ public class Jogador {
         this.nome = nome;
         this.fonteDeRenda = null;
         this.dados = new Dado[3];
+        // O dado padrão para todos os jogadores é 1D10
         dados[0] = new D10(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         dados[1] = null;
         dados[2] = null;
@@ -115,7 +116,7 @@ public class Jogador {
 
     public void setGrupo(Grupo grupo) {
         this.grupo = grupo;
-        if (grupo != null){
+        if (grupo != null) {
             this.dados[1] = grupo.getDado();
         }
     }
@@ -154,6 +155,8 @@ public class Jogador {
 
     /**
      * Retorna o resultado da ação de rodar o dado normal (1d10).
+     * 
+     * @return resultado da ação de rodar o dado normal (1d10).
      */
     private int resultadoDadoNormal() {
         return dados[0].rodar(1);
@@ -161,6 +164,8 @@ public class Jogador {
 
     /**
      * Retorna o resultado da ação de rodar o dado especial do grupo do jogador.
+     * 
+     * @return resultado da ação de rodar o dado especial do grupo do jogador.
      */
     private int resultadoDadoEspecial() {
         return grupo.getDado().rodar(grupo.getQtdVezesDado());
@@ -168,6 +173,8 @@ public class Jogador {
 
     /**
      * Retorna o resultado da ação de rodar o dado especial comprado do jogador.
+     * 
+     * @return resultado da ação de rodar o dado especial comprado do jogador.
      */
     private int resultadoDadoComprado() {
         int resultado = dados[2].rodar(1);
@@ -178,6 +185,8 @@ public class Jogador {
     /**
      * Retorna verdadeiro se o jogador possui um dado comprado e falso caso
      * contrário.
+     * 
+     * @return true caso o jogador possua dado comprado.
      */
     public boolean possuiDadoComprado() {
         return dados[2] != null;
@@ -188,6 +197,8 @@ public class Jogador {
      * 
      * @param escolha indica qual dado o jogador quer utilizar (2: dado comprado, 1:
      *                dado especial, nenhum dos dois: dado normal).
+     * 
+     * @return o resultado do Dado lançado, a depender do seu tipo.
      */
     public int resultadoDado(int escolha) {
         if (escolha == 1)
@@ -200,11 +211,13 @@ public class Jogador {
 
     /**
      * Calcula a pontuação do jogador ao decorrer do jogo.
+     * 
+     * @return pontuação do Jogador.
      */
     public double calcularPontuacao() {
         return ((dinheiro / 1000) * multiplicadorDinheiro +
                 pontosOportunidade * multiplicadorOportunidade +
-                pontosNetworking * multiplicadorNetworking) / 
+                pontosNetworking * multiplicadorNetworking) /
                 (multiplicadorDinheiro + multiplicadorNetworking + multiplicadorOportunidade);
     }
 

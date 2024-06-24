@@ -47,16 +47,30 @@ public class gameController implements Initializable {
         escolhaDeAcao(jogo);
     }
 
+    /**
+     * Escolha inicial de ação dos jogadores,
+     * como escolher o tipo de dado, abrir a loja ou o manual do jogo.
+     * 
+     * @param jogo instância do jogo.
+     */
     public void escolhaDeAcao(Jogo jogo) {
         String descricaoJogador = "Nome: " + Jogo.getJogadores().get(jogo.getJogadorAtual()).getNome() + "\nDinheiro: "
                 + Jogo.getJogadores().get(jogo.getJogadorAtual()).getDinheiro();
         String texto = Jogo.getJogadores().get(jogo.getJogadorAtual()).getNome() + " escolha uma ação";
-        texto += "\n1. Jogar um D10 comum";
+        if (turno == 0) {
+            texto += "\n1. Jogar um D10 comum";
+        } else if (turno == 1) {
+            texto += "\n1. Passar a vez";
+        }
         if (Jogo.getJogadores().get(jogo.getJogadorAtual()).getGrupo() != null) {
-            texto += "\n2. Jogar o dado especial do seu grupo";
+            if (turno == 0) {
+                texto += "\n2. Jogar o dado especial do seu grupo";
+            }
         }
         if (Jogo.getJogadores().get(jogo.getJogadorAtual()).possuiDadoComprado()) {
-            texto += "\n3. Jogar o dado comprado na loja";
+            if (turno == 0) {
+                texto += "\n3. Jogar o dado comprado na loja";
+            }
         }
         texto += "\nL. Abrir a loja";
         texto += "\nM. Abrir o manual";
@@ -72,6 +86,15 @@ public class gameController implements Initializable {
         labelInfos.setText(descricaoJogador);
     }
 
+    /**
+     * Cuida das teclas funcionais do jogo, a depender do momento em que são
+     * pressionadas
+     * a variável turno serve para garantir que o jogador só possa escolher jogar os
+     * dados em
+     * um momento inicial
+     * mas após o lançamento dos dados ele só pode abrir a loja ou o manual
+     * 
+     */
     private void handleGameAnchor(KeyEvent keyEvent) {
         Jogo jogo = Jogo.getInstance(Jogo.getJogadores());
         if (FimDeJogo.jogoAcabou()) {
@@ -90,7 +113,8 @@ public class gameController implements Initializable {
                     resultadoDado = jogo.jogarDado(jogadorAtual, 0);
                     texto += resultadoDado;
                     labelTerminal.setText(texto);
-                    texto += moverJogador(jogadorAtual, resultadoDado) + "\n1. para passar a vez";
+                    texto += moverJogador(jogadorAtual, resultadoDado) + "\n1. Passar a vez" + "\nL. Abrir a loja"
+                            + "\nM. Abrir o manual";
                     labelTerminal.setText(texto);
 
                     turno++;
@@ -99,7 +123,8 @@ public class gameController implements Initializable {
                     if (jogadorAtual.getGrupo() != null) {
                         resultadoDado = jogo.jogarDado(jogadorAtual, 1);
                         texto += resultadoDado;
-                        texto += moverJogador(jogadorAtual, resultadoDado) + "\n1. para passar a vez";
+                        texto += moverJogador(jogadorAtual, resultadoDado) + "\n1. para passar a vez"
+                                + "\nL. Abrir a loja" + "\nM. Abrir o manual";
                         labelTerminal.setText(texto);
                         turno++;
                     }
@@ -108,7 +133,9 @@ public class gameController implements Initializable {
                     if (jogadorAtual.possuiDadoComprado()) {
                         resultadoDado = jogo.jogarDado(jogadorAtual, 2);
                         texto += resultadoDado;
-                        texto += moverJogador(jogadorAtual, resultadoDado) + "\n1. para passar a vez";
+                        texto += moverJogador(jogadorAtual, resultadoDado) + "\n1. para passar a vez"
+                                + "\nL. Abrir a loja"
+                                + "\nM. Abrir o manual";
                         labelTerminal.setText(texto);
                         turno++;
                     }
@@ -128,7 +155,8 @@ public class gameController implements Initializable {
             switch (keyEvent.getCode().toString()) {
                 case "L":
                     jogo.lojaAberta(jogadorAtual);
-                    escolhaDeAcao(jogo); // Atualiza as opções após fechar a loja (caso o jogador compre um dado)
+                    escolhaDeAcao(jogo); // Atualiza as opções após fechar a loja (caso o jogador
+                    // compre um dado)
                     break;
                 case "M":
                     abreManual();
@@ -154,6 +182,9 @@ public class gameController implements Initializable {
         }
     }
 
+    /**
+     * Abre o manual.
+     */
     private void abreManual() {
 
         try {
@@ -174,6 +205,7 @@ public class gameController implements Initializable {
      * @param jogador    jogador que vai se mover.
      * @param quantidade quantos espaços serão percorridos (positivo: jogador
      *                   avança; negativo: jogador volta)
+     * @return a descrição do espaço em que o jogador parou.
      */
     public String moverJogador(Jogador jogador, int quantidade) {
         LinkedList<Caminho> caminhos = Jogo.getInstance(Jogo.getJogadores()).getTabuleiro().getCaminhos();
@@ -185,7 +217,7 @@ public class gameController implements Initializable {
         int espacoAtual = jogador.getPosicao()[1];
         int espacosCaminhoAtual = caminhos.get(caminhoAtual).getNumeroEspacos();
         int novoEspaco = espacoAtual + quantidade; // novo espaço do jogador após se mover
-        String descricaoDoEspaco = "\n";
+        String descricaoDoEspaco = "";
 
         if (quantidade > 0 && jogador.getGrupo() != null) {
             jogador.ajustarPontosOportunidade(quantidade);
@@ -215,22 +247,25 @@ public class gameController implements Initializable {
             // ver se tem um espaço obrigatório
             // True se ele entrar numa bifurcação pela primeira vez (vai sempre entrar pela
             // bifurcação A primeiro)
-            if (jogadorEntrouEmBifurcacao(caminhoAtual) && !jogador.getBifurcacoesPercorridas().contains(caminhoAtual) &&
-                !jogador.getBifurcacoesPercorridas().contains(caminhoAtual + 1)) {
+            if (jogadorEntrouEmBifurcacao(caminhoAtual) && !jogador.getBifurcacoesPercorridas().contains(caminhoAtual)
+                    &&
+                    !jogador.getBifurcacoesPercorridas().contains(caminhoAtual + 1)) {
                 caminhoAtual = jogadorEscolheBifurcacao(jogador, caminhoAtual);
                 jogador.adicionarBifurcacaoPercorrida(caminhoAtual);
             }
             // True se caminhoAtual igualar ao da bifurcação A mas jogador decidiu percorrer
             // a B anteriormente (e vice-versa)
-            if (jogadorEntrouEmBifurcacao(caminhoAtual) && !jogador.getBifurcacoesPercorridas().contains(caminhoAtual) ||
-                (caminhoAtual % 3 == 2 && jogador.getBifurcacoesPercorridas().contains(caminhoAtual - 1))) {
+            if (jogadorEntrouEmBifurcacao(caminhoAtual) && !jogador.getBifurcacoesPercorridas().contains(caminhoAtual)
+                    ||
+                    (caminhoAtual % 3 == 2 && jogador.getBifurcacoesPercorridas().contains(caminhoAtual - 1))) {
                 caminhoAtual++;
             }
             // Verifica se saiu da primeira bifurcação sem uma fonte de renda
             if (caminhoAtual == 3 && jogador.getFonteDeRenda() == null) {
                 jogador.setFonteDeRenda(FonteDeRenda.BOLSA_AUXILIO);
-                descricaoDoEspaco += String.format("A universidade decidiu lhe dar uma bolsa-auxílio! (%d de remuneração)\n", 
-                                        FonteDeRenda.BOLSA_AUXILIO.getRenda());
+                descricaoDoEspaco += String.format(
+                        "A universidade decidiu lhe dar uma bolsa-auxílio! (%d de remuneração)\n",
+                        FonteDeRenda.BOLSA_AUXILIO.getRenda());
             }
             if (caminhoAtual >= caminhos.size()) { // Verifica se chegou no final do tabuleiro (último espaço do
                                                    // intercâmbio)
@@ -252,8 +287,9 @@ public class gameController implements Initializable {
             espacosCaminhoAtual = caminhos.get(caminhoAtual).getNumeroEspacos();
             // Verifica se o jogador entrou na bifurcação errada: se entrou, volta mais um
             // caminho (ou seja, B -> A ou A -> caminho normal)
-            if ((jogadorEntrouEmBifurcacao(caminhoAtual) && !jogador.getBifurcacoesPercorridas().contains(caminhoAtual)) ||
-                (caminhoAtual % 3 == 2 && jogador.getBifurcacoesPercorridas().contains(caminhoAtual - 1))) {
+            if ((jogadorEntrouEmBifurcacao(caminhoAtual) && !jogador.getBifurcacoesPercorridas().contains(caminhoAtual))
+                    ||
+                    (caminhoAtual % 3 == 2 && jogador.getBifurcacoesPercorridas().contains(caminhoAtual - 1))) {
                 caminhoAtual--;
             }
             if (caminhoAtual < 0) { // Verifica se voltou pro início do tabuleiro
@@ -264,7 +300,8 @@ public class gameController implements Initializable {
             novoEspaco += espacosCaminhoAtual;
         }
         jogador.setPosicao(new int[] { caminhoAtual, novoEspaco });
-        if (quantidade > 0) { // Só executa a ação do espaço se o jogador tiver avançado no tabuleiro, não voltado/ficado parado
+        if (quantidade > 0) { // Só executa a ação do espaço se o jogador tiver avançado no tabuleiro, não
+                              // voltado/ficado parado
             if (caminhosAvancados > 0) {
                 descricaoDoEspaco += executarEspacosObrigatorios(jogador, caminhoAtual, 0, novoEspaco);
             } else {
@@ -280,7 +317,7 @@ public class gameController implements Initializable {
             LinkedList<Jogador> jogadores = Jogo.getJogadores();
             jogadores.remove(jogador);
             jogo.getJogadoresQueAcabaram().add(jogador);
-            jogo.setJogadores(jogadores);  // Atualiza a lista de jogadores no jogo
+            jogo.setJogadores(jogadores); // Atualiza a lista de jogadores no jogo
             if (!FimDeJogo.jogoAcabou()) {
                 jogo.setJogadorAtual((jogo.getJogadorAtual() + 1) % Jogo.getJogadores().size());
             }
@@ -296,6 +333,7 @@ public class gameController implements Initializable {
      * @param caminho       caminho atual do jogador.
      * @param espacoInicial espaço inicial do intervalo.
      * @param limite        limite do intervalo.
+     * @return a descricao do espaço obrigatório em que o Jogador passou.
      */
     private String executarEspacosObrigatorios(Jogador jogador, int caminho, int espacoInicial, int limite) {
         LinkedList<Caminho> caminhos = Jogo.getInstance(Jogo.getJogadores()).getTabuleiro().getCaminhos();
@@ -316,6 +354,8 @@ public class gameController implements Initializable {
      * 4, 7...) e não for o intercâmbio retorna true.
      * 
      * @param caminho índice do caminho.
+     * @return true caso o jogador tenha entrado em uma bifurcação, false caso
+     *         contrário
      */
     private boolean jogadorEntrouEmBifurcacao(int caminho) {
         return (caminho - 1) % 3 == 0 && caminho != 13; // Exclui o caminho equivalente ao intercâmbio
@@ -329,7 +369,7 @@ public class gameController implements Initializable {
      * @param caminho caminho que determina qual bifurcação do tabuleiro o jogador
      *                entrou.
      * @param scan    scanner que lê a entrada, ou seja, a escolha do jogador.
-     * @return
+     * @return a bifurcação escolhida.
      */
     private int jogadorEscolheBifurcacao(Jogador jogador, int caminho) {
         System.out.println("Você chegou em uma bifurcação. ");

@@ -34,6 +34,13 @@ public class scene1Controller {
     @FXML
     private TextField textField;
 
+    /**
+     * 
+     * Função ativida ao clicar no botão
+     * e que resgata os nomes escritos em textField, e caso eles estejam de
+     * acordo
+     * com as regras, inicia o jogo
+     */
     public void trocarParaCena2(ActionEvent event) throws IOException {
         String nomes = textField.getText();
         if (nomes.length() != 0) {
