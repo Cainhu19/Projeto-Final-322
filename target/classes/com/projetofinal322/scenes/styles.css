@@ -1,6 +1,13 @@
 .root{
-    background-color: #3F51B5;
-    -fx-background-color: #3F51B5;
+    background-image: url("fundo.jpeg");
+    -fx-background-image: url("fundo.jpeg");
+    background-color: #844616;
+    -fx-background-color: #844616;
+    color: white;
+}
+
+.label{
+    -fx-text-fill: white;
 }
 
 #labelTerminal, #labelInfos{

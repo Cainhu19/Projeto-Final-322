@@ -13,6 +13,9 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+
 import com.projetofinal322.logica.Jogo;
 import com.projetofinal322.logica.resultados.FimDeJogo;
 import com.projetofinal322.logica.resultados.GravacaoResultados;
@@ -54,27 +57,28 @@ public class gameController implements Initializable {
      * @param jogo instância do jogo.
      */
     public void escolhaDeAcao(Jogo jogo) {
-        String descricaoJogador = "Nome: " + Jogo.getJogadores().get(jogo.getJogadorAtual()).getNome() + "\nDinheiro: "
+        String descricaoJogador = "\tJogador: " + Jogo.getJogadores().get(jogo.getJogadorAtual()).getNome() + "\n\tDinheiro: "
                 + Jogo.getJogadores().get(jogo.getJogadorAtual()).getDinheiro();
-        String texto = Jogo.getJogadores().get(jogo.getJogadorAtual()).getNome() + " escolha uma ação";
+        String texto = "\t" + Jogo.getJogadores().get(jogo.getJogadorAtual()).getNome() + ", escolha uma ação";
         if (turno == 0) {
-            texto += "\n1. Jogar um D10 comum";
+            texto += "\n\t1. Jogar um D10 comum";
         } else if (turno == 1) {
-            texto += "\n1. Passar a vez";
+            texto += "\n\t1. Passar a vez";
         }
         if (Jogo.getJogadores().get(jogo.getJogadorAtual()).getGrupo() != null) {
             if (turno == 0) {
-                texto += "\n2. Jogar o dado especial do seu grupo";
+                texto += "\n\t2. Jogar o dado especial do seu grupo";
             }
         }
         if (Jogo.getJogadores().get(jogo.getJogadorAtual()).possuiDadoComprado()) {
             if (turno == 0) {
-                texto += "\n3. Jogar o dado comprado na loja";
+                texto += "\n\t3. Jogar o dado comprado na loja";
             }
         }
-        texto += "\nL. Abrir a loja";
-        texto += "\nM. Abrir o manual";
+        texto += "\n\tL. Abrir a loja";
+        texto += "\n\tM. Abrir o manual";
         labelTerminal.setText(texto);
+        labelTerminal.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 16));
 
         if (Jogo.getJogadores().get(jogo.getJogadorAtual()).getGrupo() != null) {
             descricaoJogador += "\n" + Jogo.getJogadores().get(jogo.getJogadorAtual()).getGrupo().getNome();

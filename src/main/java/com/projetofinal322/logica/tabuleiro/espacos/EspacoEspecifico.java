@@ -315,6 +315,7 @@ public class EspacoEspecifico extends Espaco {
                 System.out.printf("Você tirou %d no dado.\n", qtdPessoas / 6);
                 jogador.adicionarPontosNetworking(qtdPessoas);
                 System.out.printf("Você ganhou %d pontos de networking!\n", qtdPessoas);
+                break;
 
             default:
                 throw new IllegalArgumentException("ID não reconhecido de espaço específico: " + id);

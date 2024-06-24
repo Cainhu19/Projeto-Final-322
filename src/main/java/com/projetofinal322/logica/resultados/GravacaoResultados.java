@@ -38,8 +38,8 @@ public class GravacaoResultados {
                 String dinheiroFinal = "Dinheiro = " + jogador.getDinheiro() + " [" + jogador.getMultiplicadorDinheiro() + "]";
                 String oportunidadesFinal = "Pontos de oportunidades = " + jogador.getPontosOportunidade() + " ["  + jogador.getMultiplicadorOportunidade() + "]";
                 String networkingFinal = "Pontos de networking = " + jogador.getPontosNetworking() + " ["  + jogador.getMultiplicadorNetworking() + "]";
-                String fonteDeRendaFinal = "Fonte de renda final: " + jogador.getFonteDeRenda().getNome();
-                String grupoFinal = "Grupo final: " + jogador.getGrupo().getNome();
+                String fonteDeRendaFinal = "Fonte de renda final: " + (jogador.getFonteDeRenda() == null ? "nenhuma" : jogador.getFonteDeRenda().getNome());
+                String grupoFinal = "Grupo final: " + (jogador.getGrupo() == null ? "nenhum" : jogador.getGrupo().getNome());
 
                 writer.println(ranking);
                 writer.println(dinheiroFinal);

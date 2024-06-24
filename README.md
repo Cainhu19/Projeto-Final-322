@@ -10,7 +10,10 @@ O jogo foi feito em Java, enquanto a interface gráfica foi feita usando JavaFX,
 O software foi desenvolvido por nós, mas a arte é de autoria de Bruna Ruy, estudante de Design. Neste momento (Junho de 2024), Bruna ainda não tem um website pessoal para contato, mas quando tiver, nós adicionaremos aqui.
 
 ## Instruções de Setup
-(Seção em construção)
+1. Clone o repositório na sua máquina com Git.
+2. Navegue até o diretório do repositório clonado.
+3. Use `mvn clean install` para construir o projeto na sua máquina. Como referência, usamos Apache Maven 3.9.8.
+4. Rode a aplicação usando `mvn exec:java -Dexec.mainClass="com.projetofinal322.Main"`.
 
 
 # Life: College Edition
@@ -25,4 +28,7 @@ The game was made in Java, while the GUI was made with JavaFX, both using Maven 
 This software was developed by us, but the art was made by Bruna Ruy, a Design undergraduate student. As of June 2024, Bruna does not have a personal website, but when she creates one, we will add it here as her contact information.
 
 ## Setup instructions
-(Work in progress)
+1. Clone the repository into your local machine.
+2. Navigate into the project directory.
+3. Use `mvn clean install` to build the project in your local machine. For reference, we used Apache Maven 3.9.8.
+4. Run the application using `mvn exec:java -Dexec.mainClass="com.projetofinal322.Main"`.
