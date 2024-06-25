@@ -48,7 +48,7 @@
                         <!-- Usage: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.projetofinal322.App</mainClass>
+                            <mainClass>com.projetofinal322/com.projetofinal322.Main</mainClass>
                         </configuration>
                     </execution>
                 </executions>
