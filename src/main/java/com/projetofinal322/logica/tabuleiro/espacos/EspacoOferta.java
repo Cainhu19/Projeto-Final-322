@@ -72,7 +72,7 @@ public class EspacoOferta extends Espaco {
                     System.out.printf("Você já faz parte de %s!\n", grupo.getNome());
                 }
             } else {
-                if (Entrada.respostaString().equals("s") || Entrada.respostaString().equals("S")) {
+                if (Entrada.respostaString().equals("s")) {
                     GerenciadorDeGrupos.ocupar(grupo, jogador);
                     jogador.adicionarPontosNetworking(grupo.getBonusNetworking());
                     System.out.printf("Novo grupo: %s. (+%d pontos de networking)\n", grupo.getNome(),
